@@ -1,0 +1,19 @@
+logs:
+  - name: test3
+    level: info
+    appenders:
+      - type: ConsoleAppender
+      - type: FileAppender
+        name: test1
+        filename: ./log/test_conf.txt
+      - type: DailyRollingFileAppender
+        name: test2
+        rolling: minute
+        filename: ./log/test_conf.txt
+  - name: system
+    level: info
+    appenders:
+      - type: FileAppender
+        format: "%d [%p][%c] %f:%l> (%r) %m%n"
+        filename: ./log/system/test_conf.txt
+      - type: ConsoleAppender

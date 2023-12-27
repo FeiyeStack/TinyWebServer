@@ -1,0 +1,27 @@
+variable:
+  int_vec:
+    - 12
+    - 43
+    - 12
+    - 45
+
+  int_set:
+    - 5
+    - 6
+    - 7
+    - 8
+
+  string_int_map:
+    zhangsan: 54
+    lishi: 65
+    zhaoliu: 88
+
+  int_unordered_set:
+    - 7
+    - 5
+    - 6
+
+  string_int_unordered_map:
+    zhangsan: 67
+    lishi: 45
+    zhaoliu: 88

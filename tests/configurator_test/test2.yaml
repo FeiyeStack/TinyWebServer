@@ -1,0 +1,39 @@
+person:
+  person:
+    name: zhangshan
+    age: 32
+    sex: m
+  list:
+    - name: zhangshan
+      age: 32
+      sex: m
+    - name: lisi
+      age: 23
+      sex: f
+    - name: wangwu
+      age: 32
+      sex: m
+  set:
+    - name: zhangshan
+      age: 32
+      sex: m
+    - name: lisi
+      age: 23
+      sex: f
+    - name: wangwu
+      age: 32
+      sex: m
+
+  map:
+    zhangshan: 
+      name: zhangshan
+      age: 32
+      sex: m
+    lisi: 
+      name: lisi
+      age: 23
+      sex: f
+    wangwu:
+      name: wangwu
+      age: 32
+      sex: m
