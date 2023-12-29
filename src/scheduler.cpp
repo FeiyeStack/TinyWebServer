@@ -1,5 +1,6 @@
 #include "scheduler.h"
 #include "log.h"
+#include "hook.h"
 namespace WebSrv
 {
 
@@ -7,7 +8,7 @@ namespace WebSrv
     static thread_local Scheduler *t_scheduler = nullptr;
     static thread_local Fiber *t_schedulerFiber = nullptr;
 
-    Scheduler::Scheduler(uint64_t threads, bool use_caller, const std::string &name)
+    Scheduler::Scheduler(size_t threads, bool use_caller, const std::string &name)
         : _name(name), _threadNum(threads)
     {
         if (threads <= 0)
@@ -21,7 +22,7 @@ namespace WebSrv
             Fiber::getThis();
             --threads;
             t_scheduler = this;
-            _rootFiber.reset(new Fiber(std::bind(&Scheduler::run, this), 0));
+            _rootFiber.reset(new Fiber(std::bind(&Scheduler::run, this), 0,true));
 
             t_schedulerFiber = _rootFiber.get();
             _rootThreadid = std::this_thread::get_id();
@@ -88,7 +89,7 @@ namespace WebSrv
 
         if (_rootFiber)
         {
-            _rootFiber->resume();
+            _rootFiber->call();
         }
 
         std::vector<std::thread> threads;
@@ -129,6 +130,7 @@ namespace WebSrv
     {
         SRV_LOG_DEBUG(g_logger) << _name << " " << __func__;
         setThis();
+        setHookEnable(true);
         if (_rootThreadid != std::this_thread::get_id())
         {
             // 构建每个线程的主协程
@@ -182,7 +184,7 @@ namespace WebSrv
                 (ft._fiber->getState() != Fiber::DONE &&
                  ft._fiber->getState() != Fiber::EXCEPT))
             {
-                ft._fiber->resume();
+                ft._fiber->swapIn();
                 --_activeThreadCount;
 
                 if (ft._fiber->getState() == Fiber::READY)
@@ -202,7 +204,7 @@ namespace WebSrv
                     cbFiber.reset(new Fiber(ft._cb));
                 }
                 ft.reset();
-                cbFiber->resume();
+                cbFiber->swapIn();
                 --_activeThreadCount;
 
                 if (cbFiber->getState() == Fiber::READY)
@@ -232,7 +234,7 @@ namespace WebSrv
                 }
 
                 ++_idleThreadCount;
-                idleFiber->resume();
+                idleFiber->swapIn();
                 --_idleThreadCount;
             }
         }

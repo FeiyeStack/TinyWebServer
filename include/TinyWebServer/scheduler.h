@@ -21,7 +21,7 @@ namespace WebSrv
          * @param use_caller 是否由当前线程调用
          * @param name 协程调度器名
          */
-        Scheduler(uint64_t threads = 1, bool use_caller = true, const std::string &name = "");
+        Scheduler(size_t threads = 1, bool use_caller = true, const std::string &name = "");
 
         virtual ~Scheduler();
         /**
@@ -235,7 +235,7 @@ namespace WebSrv
         /// @brief 主线程id(use_caller)
         std::thread::id _rootThreadid;
         /// @brief 线程数量
-        uint64_t _threadNum;
+        size_t _threadNum;
     };
 
 } // namespace WebSrv

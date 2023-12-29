@@ -15,6 +15,12 @@ set(SRC
     scheduler.cpp
     iomanager.cpp
     timer.cpp
+    hook.cpp
+    fdmanager.cpp
+    socket.cpp
+    address.cpp
+    http/http.cpp
+    http/httpparser.cpp
     )
 
 # 添加源文件

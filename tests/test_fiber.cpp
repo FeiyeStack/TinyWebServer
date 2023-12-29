@@ -3,9 +3,9 @@
 static WebSrv::Logger::ptr g_logger = SRV_LOGGER_NAME("test");
 void runFiber(){
     SRV_LOG_DEBUG(g_logger)<<__func__<<" begin";
-    WebSrv::Fiber::yieldToSuspend();
+    WebSrv::Fiber::getThis()->back();
     SRV_LOG_DEBUG(g_logger)<<__func__;
-    WebSrv::Fiber::yieldToSuspend();
+    WebSrv::Fiber::getThis()->back();
     SRV_LOG_DEBUG(g_logger)<<__func__<<" end";
 }
 
@@ -15,9 +15,9 @@ void testFiber(){
         WebSrv::Fiber::getThis();
         SRV_LOG_DEBUG(g_logger)<<"main begin";
         WebSrv::Fiber::ptr fiber(new WebSrv::Fiber(runFiber));
-        fiber->resume();
+        fiber->call();
         SRV_LOG_DEBUG(g_logger)<<"main resume";
-        fiber->resume();
+        fiber->call();
         SRV_LOG_DEBUG(g_logger)<<"main end";
     }
     SRV_LOG_DEBUG(g_logger)<<__func__<<" end";

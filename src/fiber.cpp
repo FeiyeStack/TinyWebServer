@@ -3,6 +3,7 @@
 #include "macro.h"
 #include "log.h"
 #include "scheduler.h"
+#include "configurator.h"
 namespace WebSrv
 {
     static Logger::ptr g_logger = SRV_LOGGER_NAME("system");
@@ -14,6 +15,8 @@ namespace WebSrv
     /// @brief 当前线程协程
     static thread_local Fiber::ptr t_threadFiber = nullptr;
 
+    static ConfigVar<uint32_t>::ptr g_fiberStackSize =
+        Configurator::lookup<uint32_t>("fiber.stack_size", 128 * 1024, "fiber stack size");
     /**
      * @brief 栈空间配置类
      *
@@ -41,21 +44,26 @@ namespace WebSrv
         SRV_LOG_DEBUG(g_logger) << "main fiber create";
     }
 
-    Fiber::Fiber(std::function<void()> cb, size_t stacksize)
+    Fiber::Fiber(std::function<void()> cb, size_t stacksize,bool use_caller)
         : _id(++s_fiberId),
           _cb(cb)
     {
         ++s_fiberCount;
-        _stacksize = 128 * 1024;
+        _stacksize = stacksize ? stacksize : g_fiberStackSize->getValue();
         _stack = StackAllocator::Alloc(_stacksize);
         getcontext(&_ctx);
         _ctx.uc_link = nullptr;
         _ctx.uc_stack.ss_sp = _stack;
         _ctx.uc_stack.ss_size = _stacksize;
 
- 
-        makecontext(&_ctx, &Fiber::mainFunc, 0); // 主协程调度
- 
+        if (!use_caller)
+        {
+            makecontext(&_ctx, &Fiber::mainFunc, 0);
+        }
+        else
+        {
+            makecontext(&_ctx, &Fiber::callerMainFunc, 0);
+        }
 
         SRV_LOG_DEBUG(g_logger) << "fiber create id=" << _id;
     }
@@ -93,7 +101,7 @@ namespace WebSrv
         _state = INIT;
     }
 
-    void Fiber::resume()
+    void Fiber::call()
     {
         setThis(this);
         WebSrvAssert(_state != RUNNING);
@@ -101,7 +109,7 @@ namespace WebSrv
         swapcontext(&t_threadFiber->_ctx, &_ctx);
     }
 
-    void Fiber::yield()
+    void Fiber::back()
     {
         // 切换为主协程
         setThis(Scheduler::getMainFiber());
@@ -111,6 +119,26 @@ namespace WebSrv
             _state = SUSPEND;
         }
         swapcontext(&_ctx, &t_threadFiber->_ctx);
+    }
+
+    void Fiber::swapIn()
+    {
+        setThis(this);
+        WebSrvAssert(_state != RUNNING);
+        _state = RUNNING;
+        swapcontext(&Scheduler::getMainFiber()->_ctx, &_ctx);
+    }
+
+    void Fiber::swapOut()
+    {
+        // 切换为主协程
+        setThis(Scheduler::getMainFiber());
+        WebSrvAssert(_state != SUSPEND);
+        if (_state == RUNNING)
+        {
+            _state = SUSPEND;
+        }
+        swapcontext(&_ctx, &Scheduler::getMainFiber()->_ctx);
     }
 
     void Fiber::setThis(Fiber *fiber)
@@ -136,14 +164,14 @@ namespace WebSrv
         Fiber::ptr cur = getThis();
         WebSrvAssert2(cur->_state == RUNNING, cur->_state);
         cur->_state = READY;
-        cur->yield();
+        cur->swapOut();
     }
 
     void Fiber::yieldToSuspend()
     {
         Fiber::ptr cur = getThis();
         WebSrvAssert2(cur->_state == RUNNING, cur->_state);
-        cur->yield();
+        cur->swapOut();
     }
 
     uint64_t Fiber::totalFibers()
@@ -177,7 +205,37 @@ namespace WebSrv
 
         auto ptr = cur.get();
         cur.reset();
-        ptr->yield();
+        ptr->swapOut();
+        WebSrvAssert2(false, "never reach fiber_id=" + std::to_string(ptr->getId()));
+    }
+
+    void Fiber::callerMainFunc()
+    {
+        Fiber::ptr cur = getThis();
+        WebSrvAssert(cur);
+        try
+        {
+            WebSrvAssert(cur->_cb);
+            cur->_cb();
+            cur->_cb = nullptr;
+            cur->_state = DONE;
+        }
+        catch (const std::exception &e)
+        {
+            cur->_state = EXCEPT;
+            SRV_LOG_ERROR(g_logger) << "Fiber except " << e.what()
+                                    << " fiber id=" << cur->getId();
+        }
+        catch (...)
+        {
+            cur->_state = EXCEPT;
+            SRV_LOG_ERROR(g_logger) << "Fiber except"
+                                    << "fiber id=" << cur->getId();
+        }
+
+        auto ptr = cur.get();
+        cur.reset();
+        ptr->back();
         WebSrvAssert2(false, "never reach fiber_id=" + std::to_string(ptr->getId()));
     }
 

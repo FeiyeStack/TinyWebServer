@@ -21,3 +21,15 @@ target_link_libraries(test_scheduler TinyWebServerLib)
 
 add_executable(test_iomanager test_iomanager.cpp)
 target_link_libraries(test_iomanager TinyWebServerLib)
+
+add_executable(test_socket test_socket.cpp)
+target_link_libraries(test_socket TinyWebServerLib)
+
+add_executable(test_address test_address.cpp)
+target_link_libraries(test_address TinyWebServerLib)
+
+add_executable(test_http test_http.cpp)
+target_link_libraries(test_http TinyWebServerLib)
+
+add_executable(test_httpparse test_httpparse.cpp)
+target_link_libraries(test_httpparse TinyWebServerLib)

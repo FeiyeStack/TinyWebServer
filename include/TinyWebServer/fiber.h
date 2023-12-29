@@ -38,7 +38,7 @@ namespace WebSrv
          * @param stacksize 协程栈大小
          * @param use_caller 是否在MainFiber上调度
          */
-        Fiber(std::function<void()> cb, size_t stacksize = 0);
+        Fiber(std::function<void()> cb, size_t stacksize = 0,bool use_caller=false);
     
         ~Fiber();
         /**
@@ -48,15 +48,25 @@ namespace WebSrv
          */
         void reset(std::function<void()> cb);
         /**
-         * @brief 将当前协程切换到运行状态
+         * @brief 将当前线程切换到运行状态(由当前线程的主协程执行)
          * 
          */
-        void resume();
+        void call();
+        /**
+         * @brief 将当前线程切出到后台(由当前线程的主协程执行)
+         *
+         */
+        void back();
+        /**
+         * @brief 将当前协程切换到运行状态
+         *
+         */
+        void swapIn();
         /**
          * @brief 将当前协程切出到后台
-         * 
+         *
          */
-        void yield();
+        void swapOut();
         /**
          * @brief Get fiber Id
          * 
