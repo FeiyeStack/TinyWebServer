@@ -282,9 +282,10 @@ namespace WebSrv::http
         }
     }
     HttpResponse::HttpResponse(uint8_t version)
-        :_version(version)
+        :_version(version),_status(HttpStatus::HTTP_STATUS_OK)
     {
     }
+    
     std::string HttpResponse::getHeader(const std::string &key, const std::string &def) const
     {
         auto it = _headers.find(key);

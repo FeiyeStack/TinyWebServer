@@ -33,3 +33,9 @@ target_link_libraries(test_http TinyWebServerLib)
 
 add_executable(test_httpparse test_httpparse.cpp)
 target_link_libraries(test_httpparse TinyWebServerLib)
+
+add_executable(test_tcpserver test_tcpserver.cpp)
+target_link_libraries(test_tcpserver TinyWebServerLib)
+
+add_executable(test_httpserver test_httpserver.cpp)
+target_link_libraries(test_httpserver TinyWebServerLib)

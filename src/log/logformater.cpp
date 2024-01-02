@@ -263,7 +263,7 @@ namespace WebSrv
         std::string temp = "";
         char fistFmt;
         std::string secondFmt = "";
-        for (int i = 0; i < _pattern.size(); i++)
+        for (size_t i = 0; i < _pattern.size(); i++)
         {
             switch (state)
             {

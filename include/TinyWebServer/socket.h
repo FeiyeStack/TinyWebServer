@@ -225,8 +225,11 @@ namespace WebSrv
         virtual std::ostream &dump(std::ostream &os) const;
 
         virtual std::string toString() const;
+        // socket
+        operator int() const { return _socket; }
 
     protected:
+
         void newSocket();
         void initLocalAddress();
         void initSocket();

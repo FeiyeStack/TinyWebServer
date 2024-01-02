@@ -331,7 +331,7 @@ namespace WebSrv
             }
             if (node["appenders"].IsDefined())
             {
-                for (int i = 0; i < node["appenders"].size(); ++i)
+                for (size_t i = 0; i < node["appenders"].size(); ++i)
                 {
                     auto aNode = node["appenders"][i];
                     LogAppenderDefine appender;

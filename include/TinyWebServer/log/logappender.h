@@ -93,9 +93,9 @@ namespace WebSrv
         std::string _filename;
         std::ofstream _ofs;
         // 刷新缓存存入文件时间
-        time_t _flushTime;
+        time_t _flushTime=0;
         // 刷新缓存间隔,为0时立即刷新
-        int _delayed;
+        int _delayed=0;
     };
 
     /**
@@ -136,7 +136,7 @@ namespace WebSrv
         // 原始文件名称，不加入时间后缀
         std::string _orgFilename;
         Rolling _rollingType = Rolling::DAY;
-        time_t _nextTime;
+        time_t _nextTime=0;
     };
 
     /**

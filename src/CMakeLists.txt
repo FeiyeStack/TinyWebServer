@@ -21,6 +21,12 @@ set(SRC
     address.cpp
     http/http.cpp
     http/httpparser.cpp
+    tcpserver.cpp
+    http/httpserver.cpp
+    stream.cpp
+    streams/socketstream.cpp
+    http/httpsession.cpp
+    http/servlet.cpp
     )
 
 # 添加源文件

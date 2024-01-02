@@ -101,7 +101,7 @@ void test()
             return;                                                                              \
         }                                                                                        \
         byteArr2->setPosition(0);                                                                \
-        WebSrvAssert(byteArr2->toString() == byteArr->toString(), "write or read to file fail"); \
+        WebSrvAssert2(byteArr2->toString() == byteArr->toString(), "write or read to file fail"); \
         if (byteArr2->getPosition() != 0 || byteArr->getPosition() != 0)                         \
         {                                                                                        \
             SRV_LOG_DEBUG(g_logger) << "byteArr2 or byteArr1 incorrect";                         \

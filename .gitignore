@@ -1,3 +1,4 @@
 build
 extern/benchmark
 .vscode/
+examples/http

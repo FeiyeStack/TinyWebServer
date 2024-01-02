@@ -19,7 +19,7 @@ namespace WebSrv
     }
 
     FileAppender::FileAppender(const std::string &fileName,const std::string& name)
-        : LogAppender(name),_filename(fileName), _delayed(0), _flushTime(0)
+        :LogAppender(name),_filename(fileName)
     {
         open();
     }
@@ -133,7 +133,7 @@ namespace WebSrv
     }
 
     DailyRollingFileAppender::DailyRollingFileAppender(const std::string &filename,Rolling rolling,const std::string& name)
-        :  _nextTime(0),_rollingType(rolling)
+        :  _rollingType(rolling)
     {
         _orgFilename=filename;
         _filename= modifyFilename(filename);
@@ -175,9 +175,6 @@ namespace WebSrv
         std::string fmt2;
         tm next = *p_tm;
 
-        int year=p_tm->tm_year + 1900;
-        int mon=p_tm->tm_mon + 1;
-        int day=p_tm->tm_mday;
         switch (_rollingType)
         {
         case Rolling::DAY:
