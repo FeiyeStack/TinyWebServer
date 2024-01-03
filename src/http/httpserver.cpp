@@ -35,7 +35,7 @@ namespace WebSrv::http
                 SRV_LOG_DEBUG(g_logger) << "recv http request fail, errno=" << errno << " errstr=" << strerror(errno);
                 break;
             }
-
+            SRV_LOG_DEBUG(g_logger)<<(int)*client<<"recv request:\n"<<request->toString();
             //  判断是否是长连接
             if (!first)
             {
@@ -86,13 +86,18 @@ namespace WebSrv::http
 
             int ret=session->sendResponse(response);
 
+            if(ret<=0){
+                SRV_LOG_DEBUG(g_logger) <<(int)*client<< "sendResponse http request fail, errno=" << errno << " errstr=" << strerror(errno);
+                break;
+            }
+
             if (isClose)
             {
                 break;
             }
 
         } while (true);
-        SRV_LOG_DEBUG(g_logger) << "handleClient end";
+        SRV_LOG_DEBUG(g_logger) <<(int)*client<<"handleClient end";
         client->close();
     }
 } // namespace WebSrv

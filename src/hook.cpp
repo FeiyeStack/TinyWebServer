@@ -122,7 +122,7 @@ namespace WebSrv
                 Timer::ptr timer;
                 std::weak_ptr<TimerInfo> weakInfo(timerInfo);
                 //设置超时
-                if (to != -1)
+                if (to != (uint64_t)-1)
                 {
                     timer = ioManager->addConditionTimer(
                         to,

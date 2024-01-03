@@ -8,7 +8,7 @@ namespace WebSrv
         size_t left = len;
         while (left > 0)
         {
-            size_t length = read((char *)buffer + offset, left);
+            int length = read((char *)buffer + offset, left);
             if (length <= 0)
             {
                 return length;
@@ -24,7 +24,7 @@ namespace WebSrv
         size_t left = len;
         while (left > 0)
         {
-            size_t length = read(ba, left);
+            int length = read(ba, left);
             if (length <= 0)
             {
                 return length;
@@ -40,7 +40,7 @@ namespace WebSrv
         size_t left = len;
         while (left > 0)
         {
-            size_t length = write((const char *)buffer + offset, left);
+            int length = write((const char *)buffer + offset, left);
             if (length <= 0)
             {
                 return length;
@@ -55,7 +55,7 @@ namespace WebSrv
         size_t left = len;
         while (left > 0)
         {
-            size_t length = write(ba, left);
+            int length = write(ba, left);
             if (length <= 0)
             {
                 return length;

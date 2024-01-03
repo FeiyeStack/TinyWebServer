@@ -63,11 +63,11 @@ namespace WebSrv
     }
 
     Socket::Socket(int family, int type, int protocol)
-        : _family(family),
+        : _socket(-1),
+          _family(family),
           _type(type),
           _protocol(protocol),
-          _isConnected(false),
-          _socket(-1)
+          _isConnected(false)
     {
         _socket = socket(_family, _type, _protocol);
     }
@@ -179,16 +179,12 @@ namespace WebSrv
 
     int Socket::getError()
     {
-        if (!isValid())
-        {
-            return -1;
-        }
         int error = 0;
         if (!getOption(SOL_SOCKET, SO_ERROR, errno))
         {
             error = errno;
         }
-        return errno;
+        return error;
     }
 
     bool Socket::bind(Address::ptr address)
@@ -210,6 +206,7 @@ namespace WebSrv
         if (::bind(_socket, address->getAddr(), address->getAddrLen()))
         {
             SRV_LOG_ERROR(g_logger) << "bind error errno=" << errno << " err str=" << strerror(errno);
+            return false;
         }
         // 获取本地地址
         initLocalAddress();

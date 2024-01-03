@@ -22,15 +22,14 @@ namespace WebSrv::http
         // 获取请求头
         do
         {
-            u_long outLen;
-            int ret = read(data + offset, buffSize - offset);
-            if (ret <= 0)
+            int len = read(data + offset, buffSize - offset);
+            if (len <= 0)
             {
                 close();
                 return nullptr;
             }
-            outLen += offset;
-            size_t nParse = parser->execute(data, outLen);
+            len += offset;
+            size_t nParse = parser->execute(data, len);
             if (nParse < 0)
             {
                 // 解析错误
@@ -38,7 +37,7 @@ namespace WebSrv::http
                 return nullptr;
             }
             // nParse==0 报文不完整(不处理到缓存满或者超时退出)
-            offset = outLen - nParse;
+            offset = len - nParse;
 
             // 解析完成
             if (nParse > 0)
@@ -54,7 +53,7 @@ namespace WebSrv::http
 
         } while (true);
         // 获取请求消息体
-        int64_t length = parser->getContentLength();
+        u_int64_t length = parser->getContentLength();
         if (length > 0)
         {
             if (length > HttpRequestParser::getHttpRequestMaxBodySize())
@@ -65,13 +64,15 @@ namespace WebSrv::http
             std::string body;
             body.resize(length);
             int len = 0;
-            if (length >= offset)
+            if (length >= (u_int64_t)offset)
             {
                 memcpy(&body[0], data, offset);
+                len = offset;
             }
             else
             {
                 memcpy(&body[0], data, length);
+                len = length;
             }
             length -= offset;
             // 如果消息体没获取完整，继续读消息体

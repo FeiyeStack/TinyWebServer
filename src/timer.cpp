@@ -98,7 +98,7 @@ namespace WebSrv
     }
 
     Timer::Timer(uint64_t next)
-        : _next(getCurrentMilliseconds())
+        : _ms(0),_next(getCurrentMilliseconds())
     {
     }
 

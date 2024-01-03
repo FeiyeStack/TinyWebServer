@@ -14,7 +14,7 @@ namespace WebSrv
 
     void FdCtx::setTimeout(int so_timeout, uint64_t timeout)
     {
-        if (so_timeout = SO_RCVTIMEO)
+        if (so_timeout == SO_RCVTIMEO)
         {
             _recvTimeout = timeout;
         }
@@ -26,7 +26,7 @@ namespace WebSrv
 
     uint64_t FdCtx::getTimeout(int so_timeout)
     {
-        if (so_timeout = SO_RCVTIMEO)
+        if (so_timeout == SO_RCVTIMEO)
         {
             return _recvTimeout;
         }
@@ -70,7 +70,7 @@ namespace WebSrv
             return nullptr;
         }
         ReadMutex readlock(_mutex);
-        if (_fds.size() <= fd)
+        if ((int)_fds.size() <= fd)
         {
             if (autoCreate == false)
             {
@@ -88,7 +88,7 @@ namespace WebSrv
         readlock.unlock();
         WriteMutex writelock(_mutex);
         FdCtx::ptr ctx(new FdCtx(fd));
-        if (fd >= _fds.size())
+        if (fd >= (int)_fds.size())
         {
             _fds.resize(fd * 1.5);
         }
@@ -99,7 +99,7 @@ namespace WebSrv
     void FdManager::del(int fd)
     {
         WriteMutex writelock(_mutex);
-        if(fd>=_fds.size()){
+        if(fd>=(int)_fds.size()){
             return;
         }
         _fds[fd].reset();

@@ -530,8 +530,9 @@ namespace WebSrv::http
 		{
 			CookieOptions()
 				: expiration(0),
-				  secure(false), httpOnly(false),
-				  partitioned(false)
+				  httpOnly(false),
+				  partitioned(false),
+				  secure(false)
 			{
 			}
 			enum SameSite

@@ -66,13 +66,13 @@ namespace WebSrv
         
         //结束所有循环任务
     private:
+        uint64_t _ms;
         std::function<void()> _cb; 
-        uint64_t _ms=0;
-        //时间戳
-        uint64_t _next=0;
-        //是否循环执行
-        bool _recurring=false;
-        TimerManager* _manager=nullptr;
+        // 是否循环执行
+        bool _recurring = false;
+        TimerManager *_manager = nullptr;
+        // 时间戳
+        uint64_t _next;
     };
 
 

@@ -792,7 +792,7 @@ namespace WebSrv
             temp = temp->next;
         }
         Node *first = nullptr;
-        for (int i = 0; i < count; i++)
+        for (size_t i = 0; i < count; i++)
         {
             temp->next = new Node(_baseSize);
             if (!first)

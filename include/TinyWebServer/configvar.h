@@ -106,7 +106,7 @@ namespace WebSrv
             typename std::vector<T> res;
             std::stringstream ss;
             // 先转成字符流在转成对应类型
-            for (int i = 0; i < node.size(); i++)
+            for (size_t i = 0; i < node.size(); i++)
             {
                 // 清空流字符
                 ss.str("");
@@ -154,7 +154,7 @@ namespace WebSrv
             typename std::list<T> res;
             std::stringstream ss;
             // 先转成字符流在转成对应类型
-            for (int i = 0; i < node.size(); i++)
+            for (size_t i = 0; i < node.size(); i++)
             {
                 // 清空流字符
                 ss.str("");
@@ -202,7 +202,7 @@ namespace WebSrv
             typename std::set<T> res;
             std::stringstream ss;
             // 先转成字符流在转成对应类型
-            for (int i = 0; i < node.size(); i++)
+            for (size_t i = 0; i < node.size(); i++)
             {
                 // 清空流字符
                 ss.str("");
@@ -298,7 +298,7 @@ namespace WebSrv
             typename std::unordered_set<T> res;
             std::stringstream ss;
             // 先转成字符流在转成对应类型
-            for (int i = 0; i < node.size(); i++)
+            for (size_t i = 0; i < node.size(); i++)
             {
                 // 清空流字符
                 ss.str("");

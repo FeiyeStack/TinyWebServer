@@ -185,7 +185,7 @@ namespace WebSrv::http
     int HttpRequestParser::parseHeaders(std::vector<char *> &headers)
     {
         size_t len;
-        for (int i = 1; i < headers.size(); i++)
+        for (size_t i = 1; i < headers.size(); i++)
         {
             char *v = strchr(headers[i], ':');
             if (v == nullptr)
@@ -296,7 +296,7 @@ namespace WebSrv::http
     bool HttpResponseParser::parseHeaders(std::vector<char *> headers)
     {
         size_t len;
-        for (int i = 1; i < headers.size(); i++)
+        for (size_t i = 1; i < headers.size(); i++)
         {
             char *v = strchr(headers[i], ':');
             if (v == nullptr)

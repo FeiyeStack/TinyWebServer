@@ -14,7 +14,7 @@ namespace WebSrv
         : _worker(worker), _ioWorker(ioWorker), _acceptWorker(acceptWorker),
           _recvTimeout(g_tcpServerReadTimeout->getValue()),
           _sendTimeout(g_tcpServerSendTimeout->getValue()),
-          _name("TcpServer/1.0.0"), _stop(true)
+          _stop(true),_name("TcpServer/1.0.0")
     {
     }
 

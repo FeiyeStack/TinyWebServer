@@ -504,7 +504,7 @@ namespace WebSrv
         sockaddr_in6 subnet{};
         subnet.sin6_family = AF_INET6;
         subnet.sin6_addr.s6_addr[prefixLen / 8] = ~createMask<uint8_t>(prefixLen % 8);
-        for (int i = 0; i < prefixLen / 8; ++i)
+        for (u_int32_t i = 0; i < prefixLen / 8; ++i)
         {
             subnet.sin6_addr.s6_addr[i] = 0xff;
         }

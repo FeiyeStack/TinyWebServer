@@ -37,7 +37,7 @@ namespace WebSrv::http
     const char *HttpMethodToString(const HttpMethod &method)
     {
         int index = (int)method;
-        if (index >= (sizeof(s_methodStr) / sizeof(s_methodStr[0])))
+        if (index >= (int)(sizeof(s_methodStr) / sizeof(s_methodStr[0])))
         {
             return "Unkown Method";
         }
@@ -214,7 +214,6 @@ namespace WebSrv::http
     }
     void HttpRequest::addHeaders(std::ostream &os) const
     {
-        auto it = _headers.find("connection");
         for (auto &&[key, value] : _headers)
         {
             os << key << ": " << value << "\r\n";
@@ -282,7 +281,7 @@ namespace WebSrv::http
         }
     }
     HttpResponse::HttpResponse(uint8_t version)
-        :_version(version),_status(HttpStatus::HTTP_STATUS_OK)
+        :_status(HttpStatus::HTTP_STATUS_OK),_version(version)
     {
     }
     

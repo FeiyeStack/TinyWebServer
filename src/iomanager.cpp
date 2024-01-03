@@ -3,6 +3,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <cstring>
+#include <signal.h>
 #include "macro.h"
 namespace WebSrv
 {
@@ -26,6 +27,7 @@ namespace WebSrv
 
         ret = epoll_ctl(_epollFd, EPOLL_CTL_ADD, _tickleFds[0], &event);
         WebSrvAssert(ret == 0);
+        signal(SIGPIPE,SIG_IGN);
         contextResize(32);
         start();
     }
@@ -190,19 +192,18 @@ namespace WebSrv
         {
             return;
         }
-        SRV_LOG_DEBUG(g_logger) << __func__;
         int rt = write(_tickleFds[1], "T", 1);
         WebSrvAssert(rt == 1); // 一对一
     }
     bool IOManager::stopping()
     {
-        uint64_t timeout;
+        uint64_t timeout=0;
         return stopping(timeout);
     }
     bool IOManager::stopping(uint64_t timeout)
     {
         timeout = getNextTimer();
-        return timeout == ~0ll &&
+        return timeout == ~0ull &&
                _pendingEventCount == 0 &&
                Scheduler::stopping();
     }
@@ -215,7 +216,7 @@ namespace WebSrv
                                               { delete[] ptr; });
         while (true)
         {
-            uint64_t nextTimeout;
+            uint64_t nextTimeout=0;
             if (stopping(nextTimeout))
             {
                 break;
