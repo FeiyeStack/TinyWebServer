@@ -294,14 +294,6 @@ namespace WebSrv
             {
                 free(i.buffer);
             }
-            // if(i.buffer_type == MYSQL_TYPE_TIMESTAMP
-            //     || i.buffer_type == MYSQL_TYPE_DATETIME
-            //     || i.buffer_type == MYSQL_TYPE_DATE
-            //     || i.buffer_type == MYSQL_TYPE_TIME) {
-            //     if(i.buffer) {
-            //         free(i.buffer);
-            //     }
-            // }
         }
     }
 
@@ -355,9 +347,6 @@ namespace WebSrv
         return bindDouble(idx, value);
     }
 
-    // int MySQLStmt::bind(int idx, const MYSQL_TIME& value, int type) {
-    //     return bindTime(idx, value, type);
-    // }
 
     int MySQLStmt::bind(int idx, const std::string &value)
     {
@@ -374,6 +363,10 @@ namespace WebSrv
         return bindBlob(idx, value, len);
     }
 
+    int MySQLStmt::bind(int idx, const MySQLTime &value)
+    {
+        return bindMySQLTime(idx,value);
+    }
     int MySQLStmt::bind(int idx)
     {
         idx -= 1;
@@ -408,7 +401,7 @@ namespace WebSrv
 #define BIND_COPY(ptr, size)                \
     if (m_binds[idx].buffer == nullptr)     \
     {                                       \
-        m_binds[idx].buffer = malloc(size); \
+        m_binds[idx].buffer = malloc(size+ 1); \
     }                                       \
     memcpy(m_binds[idx].buffer, ptr, size);
         BIND_COPY(&value, sizeof(value));
@@ -512,12 +505,12 @@ namespace WebSrv
 #define BIND_COPY_LEN(ptr, size)                                \
     if (m_binds[idx].buffer == nullptr)                         \
     {                                                           \
-        m_binds[idx].buffer = malloc(size);                     \
+        m_binds[idx].buffer = malloc(size + 1);                    \
     }                                                           \
     else if ((size_t)m_binds[idx].buffer_length < (size_t)size) \
     {                                                           \
         free(m_binds[idx].buffer);                              \
-        m_binds[idx].buffer = malloc(size);                     \
+        m_binds[idx].buffer = malloc(size+ 1);                    \
     }                                                           \
     memcpy(m_binds[idx].buffer, ptr, size);                     \
     m_binds[idx].buffer_length = size;
@@ -549,24 +542,18 @@ namespace WebSrv
         return 0;
     }
 
-    // int MySQLStmt::bindTime(int idx, const MYSQL_TIME& value, int type) {
-    //     idx -= 1;
-    //     m_binds[idx].buffer_type = (enum_field_types)type;
-    //     m_binds[idx].buffer = &value;
-    //     m_binds[idx].buffer_length = sizeof(value);
-    //     return 0;
-    // }
 
     int MySQLStmt::bindTime(int idx, const time_t &value)
     {
-        // idx -= 1;
-        // m_binds[idx].buffer_type = MYSQL_TYPE_TIMESTAMP;
-        // MYSQL_TIME* mt = (MYSQL_TIME*)malloc(sizeof(MYSQL_TIME));
-        // time_t_to_mysql_time(value, *mt);
-        // m_binds[idx].buffer = mt;
-        // m_binds[idx].buffer_length = sizeof(MYSQL_TIME);
-        // return 0;
-        return bindString(idx, timeToStr(value));
+        return bindMySQLTime(idx, MySQLTime(value));
+    }
+
+    int MySQLStmt::bindMySQLTime(int idx, const MySQLTime &value)
+    {
+        idx -= 1;
+        m_binds[idx].buffer_type = MYSQL_TYPE_DATETIME;
+        BIND_COPY(&value.mt, sizeof(value.mt));
+        return 0;
     }
 
     int MySQLStmt::execute()
@@ -728,7 +715,10 @@ namespace WebSrv
         {
             return 0;
         }
-        return timeFromStr(m_cur[idx],"%Y-%m-%d %H:%M:%S");
+        MYSQL_TIME *v = (MYSQL_TIME *)m_cur[idx];
+        time_t ts = 0;
+        mysql_time_to_time_t(*v, ts);
+        return ts;
     }
 
     bool MySQLRes::next()

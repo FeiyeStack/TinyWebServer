@@ -1,19 +1,22 @@
 #include <iostream>
 #include "TinyWebServer/db/mysql.h"
 #include "TinyWebServer/iomanager.h"
+#include "TinyWebServer/log.h"
+static WebSrv::Logger::ptr g_logger = SRV_LOGGER_NAME("test");
 
-void run() {
+void run()
+{
 
     std::map<std::string, std::string> params;
     params["host"] = "127.0.0.1";
     params["user"] = "test";
-    params["passwd"] = "123456";
+    params["passwd"] = "test123456";
     params["dbname"] = "test";
 
     WebSrv::MySQL::ptr mysql(new WebSrv::MySQL(params));
     if (!mysql->connect())
     {
-        std::cout << "connect fail" << std::endl;
+        SRV_LOG_ERROR(g_logger) << "connect fail";
         return;
     }
 
@@ -29,15 +32,27 @@ void run() {
 
     if (mysql->execute(createTableSQL) != 0)
     {
-        std::cout << "Failed to create table: " << mysql->getErrStr() << std::endl;
+        SRV_LOG_ERROR(g_logger) << "Failed to create table: " << mysql->getErrStr();
         return;
     }
 
     // 插入数据
     std::string insertDataSQL = "INSERT INTO user (name, age, update_time) VALUES (?, ?, ?)";
-    if (mysql->execStmt(insertDataSQL.c_str(), "John Doe", 25, WebSrv::MySQLTime(time(nullptr))) != 0)
+    if (mysql->execStmt(insertDataSQL.c_str(), "zhang san", 25, WebSrv::MySQLTime(time(nullptr))) != 0)
     {
-        std::cout << "Failed to insert data: " << mysql->getErrStr() << std::endl;
+        SRV_LOG_ERROR(g_logger) << "Failed to insert data: " << mysql->getErrStr();
+        return;
+    }
+
+    if (mysql->execStmt(insertDataSQL.c_str(), "li si", 17, WebSrv::MySQLTime(time(nullptr))) != 0)
+    {
+        SRV_LOG_ERROR(g_logger) << "Failed to insert data: " << mysql->getErrStr();
+        return;
+    }
+
+    if (mysql->execStmt(insertDataSQL.c_str(), "wang wu", 28, WebSrv::MySQLTime(time(nullptr))) != 0)
+    {
+        SRV_LOG_ERROR(g_logger) << "Failed to insert data: " << mysql->getErrStr();
         return;
     }
 
@@ -46,24 +61,24 @@ void run() {
     auto result = mysql->queryStmt(queryDataSQL.c_str(), 20);
     if (!result)
     {
-        std::cout << "Failed to query data: " << mysql->getErrStr() << std::endl;
+        SRV_LOG_ERROR(g_logger) << "Failed to query data: " << mysql->getErrStr();
         return;
     }
 
     // 输出查询结果
     while (result->next())
     {
-        std::cout << "id: " << result->getInt64(0)
-                  << ", name: " << result->getString(1)
-                  << ", age: " << result->getInt32(2)
-                  << ", update_time: " << result->getTime(3) << std::endl;
+        SRV_LOG_DEBUG(g_logger) << "id: " << result->getInt32(0)
+                                << ", name: " << result->getString(1)
+                                << ", age: " << result->getInt32(2)
+                                << ", update_time: " << WebSrv::timeToStr(result->getTime(3));
     }
 
     // 更新数据
     std::string updateDataSQL = "UPDATE user SET age = ? WHERE name = ?";
-    if (mysql->execStmt(updateDataSQL.c_str(), 30, "John Doe") != 0)
+    if (mysql->execStmt(updateDataSQL.c_str(), 30, "zhang san") != 0)
     {
-        std::cout << "Failed to update data: " << mysql->getErrStr() << std::endl;
+        SRV_LOG_ERROR(g_logger) << "Failed to update data: " << mysql->getErrStr();
         return;
     }
 
@@ -71,14 +86,33 @@ void run() {
     std::string deleteDataSQL = "DELETE FROM user WHERE age < ?";
     if (mysql->execStmt(deleteDataSQL.c_str(), 25) != 0)
     {
-        std::cout << "Failed to delete data: " << mysql->getErrStr() << std::endl;
+        SRV_LOG_ERROR(g_logger) << "Failed to delete data: " << mysql->getErrStr();
         return;
+    }
+
+    // 查询数据
+    std::string queryAllDataSQL = "SELECT * FROM user";
+    auto result2 = mysql->queryStmt(queryAllDataSQL.c_str());
+    if (!result)
+    {
+        SRV_LOG_ERROR(g_logger) << "Failed to query data: " << mysql->getErrStr();
+        return;
+    }
+
+    // 输出查询结果
+    while (result2->next())
+    {
+        SRV_LOG_DEBUG(g_logger) << "id: " << result2->getInt32(0)
+                                << ", name: " << result2->getString(1)
+                                << ", age: " << result2->getInt32(2)
+                                << ", update_time: " << WebSrv::timeToStr(result2->getTime(3));
     }
 }
 
-int main(int argc, char** argv) {
+int main(int argc, char **argv)
+{
     WebSrv::IOManager iom(1);
     iom.schedule(run);
-    //iom.addTimer(1000, run, true);
+    // iom.addTimer(1000, run, true);
     return 0;
 }

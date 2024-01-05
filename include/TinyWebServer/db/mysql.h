@@ -11,17 +11,21 @@
 
 namespace WebSrv {
 
+bool mysql_time_to_time_t(const MYSQL_TIME& mt, time_t& ts);
+bool time_t_to_mysql_time(const time_t& ts, MYSQL_TIME& mt);
 
 class MySQL;
 class MySQLStmt;
 struct MySQLTime {
     MySQLTime(time_t t)
-        :ts(t) { }
+        :ts(t) { 
+            time_t_to_mysql_time(ts,mt);
+        }
     time_t ts;
+    MYSQL_TIME mt;
 };
 
-bool mysql_time_to_time_t(const MYSQL_TIME& mt, time_t& ts);
-bool time_t_to_mysql_time(const time_t& ts, MYSQL_TIME& mt);
+
 
 class MySQLRes : public ISQLData {
 public:
@@ -224,7 +228,8 @@ public:
     int bind(int idx, const std::string& value);
     int bind(int idx, const char* value);
     int bind(int idx, const void* value, int len);
-    //int bind(int idx, const MYSQL_TIME& value, int type = MYSQL_TYPE_TIMESTAMP);
+    int bind(int idx, const MySQLTime& value);
+
     //for null type
     int bind(int idx);
 
@@ -242,8 +247,9 @@ public:
     int bindString(int idx, const std::string& value) override;
     int bindBlob(int idx, const void* value, int64_t size) override;
     int bindBlob(int idx, const std::string& value) override;
-    //int bindTime(int idx, const MYSQL_TIME& value, int type = MYSQL_TYPE_TIMESTAMP);
     int bindTime(int idx, const time_t& value) override;
+    int bindMySQLTime(int idx, const MySQLTime& value);
+
     int bindNull(int idx) override;
 
     int getErrno() override;
@@ -314,18 +320,50 @@ public:
     static int TryExecute(const std::string& name, uint32_t count, const std::string& sql);
 };
 
+namespace
+{
+    template <size_t N, typename... Args>
+    struct MySQLBinder;
 
-namespace {
+    template <size_t N, typename T, typename... Tail>
+    struct MySQLBinder<N, T, Tail...>
+    {
+        static int Bind(MySQLStmt::ptr stmt, T value, Tail &...tail)
+        {
+            int rt = stmt->bind(N, value);
+            if (rt != 0)
+            {
+                return rt;
+            }
+            return MySQLBinder<N + 1, Tail...>::Bind(stmt, tail...);
+        }
+    };
 
-template<size_t N, typename... Args>
-struct MySQLBinder {
-    static int Bind(std::shared_ptr<MySQLStmt> stmt) { return 0; }
-};
+    template <size_t N>
+    struct MySQLBinder<N>
+    {
+        static int Bind(MySQLStmt::ptr stmt)
+        {
+            return 0;
+        }
+    };
 
-template<typename... Args>
-int bindX(MySQLStmt::ptr stmt, Args&... args) {
-    return MySQLBinder<1, Args...>::Bind(stmt, args...);
-}
+
+
+    // template <size_t N>
+    // struct MySQLBinder<N, const char *>
+    // {
+    //     static int Bind(MySQLStmt::ptr stmt, const char *value)
+    //     {
+    //         return stmt->bind(N, value);
+    //     }
+    // };
+
+    template <typename... Args>
+    int bindX(MySQLStmt::ptr stmt, Args &&...args)
+    {
+        return MySQLBinder<1, Args...>::Bind(stmt, std::forward<Args>(args)...);
+    }
 }
 
 template<typename... Args>
@@ -354,47 +392,5 @@ ISQLData::ptr MySQL::queryStmt(const char* stmt, Args&&... args) {
     return st->query();
 }
 
-namespace {
-
-template<size_t N, typename Head, typename... Tail>
-struct MySQLBinder<N, Head, Tail...> {
-    static int Bind(MySQLStmt::ptr stmt
-                    ,const Head&, Tail&...) {
-        //static_assert(false, "invalid type");
-        //static_assert(sizeof...(Tail) < 0, "invalid type");
-        return 0;
-    }
-};
-
-#define XX(type, type2) \
-template<size_t N, typename... Tail> \
-struct MySQLBinder<N, type, Tail...> { \
-    static int Bind(MySQLStmt::ptr stmt \
-                    , type2 value \
-                    , Tail&... tail) { \
-        int rt = stmt->bind(N, value); \
-        if(rt != 0) { \
-            return rt; \
-        } \
-        return MySQLBinder<N + 1, Tail...>::Bind(stmt, tail...); \
-    } \
-};
-
-XX(char*, char*);
-XX(const char*, char*);
-XX(std::string, std::string&);
-XX(int8_t, int8_t&);
-XX(uint8_t, uint8_t&);
-XX(int16_t, int16_t&);
-XX(uint16_t, uint16_t&);
-XX(int32_t, int32_t&);
-XX(uint32_t, uint32_t&);
-XX(int64_t, int64_t&);
-XX(uint64_t, uint64_t&);
-XX(float, float&);
-XX(double, double&);
-//XX(MYSQL_TIME, MYSQL_TIME&);
-#undef XX
-}
 }
 
