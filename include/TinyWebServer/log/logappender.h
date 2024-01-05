@@ -3,7 +3,7 @@
 #include <sstream>
 #include <memory>
 #include <mutex>
-#include "../mutex.h"
+#include "mutex.h"
 #include "logformater.h"
 #include <fstream>
 #include "logevent.h"

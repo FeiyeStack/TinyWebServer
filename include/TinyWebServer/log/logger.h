@@ -9,13 +9,13 @@
 #include <thread>
 
 #include <map>
-#include "../mutex.h"
+#include "mutex.h"
 #include "logevent.h"
 #include "logappender.h"
 #include "logformater.h"
-#include "../util.h"
-#include "../thread.h"
-#include "../fiber.h"
+#include "util.h"
+#include "thread.h"
+#include "fiber.h"
 #define CALLER_FILE() __builtin_FILE()
 #define CALLER_LINE() __builtin_LINE()
 #define CALLER_FUNCTION() __builtin_FUNCTION()

@@ -108,6 +108,11 @@ namespace WebSrv
          */
         int getError() const;
 
+        /**
+         * @brief 返回Socket类
+         */
+        Socket::ptr getSocket() const { return _socket; }
+
     protected:
         Socket::ptr _socket;
         /// @brief 是否主控

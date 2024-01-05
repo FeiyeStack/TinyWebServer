@@ -27,6 +27,8 @@ set(SRC
     streams/socketstream.cpp
     http/httpsession.cpp
     http/servlet.cpp
+    http/httpconnection.cpp
+    db/mysql.cpp
     )
 
 # 添加源文件
@@ -36,9 +38,10 @@ add_library(TinyWebServerLib ${SRC})
 target_include_directories(TinyWebServerLib PUBLIC ${CMAKE_SOURCE_DIR}/include/TinyWebServer)
 
 
+include_directories(/usr/include/mysql)
 
 # 查找yaml-cpp包
 find_package(yaml-cpp REQUIRED)
 
 # 链接yaml-cpp库
-target_link_libraries(TinyWebServerLib yaml-cpp)
+target_link_libraries(TinyWebServerLib yaml-cpp mysqlclient)

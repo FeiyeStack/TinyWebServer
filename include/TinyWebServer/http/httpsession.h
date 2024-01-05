@@ -1,9 +1,9 @@
 #pragma once
 
 #include <memory>
-#include "../socket.h"
+#include "socket.h"
 #include "http.h"
-#include "../streams/socketstream.h"
+#include "streams/socketstream.h"
 #include "httpsession.h"
 #include "httpparser.h"
 namespace WebSrv::http

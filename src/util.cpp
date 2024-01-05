@@ -310,4 +310,17 @@ namespace WebSrv
         return false;
     }
 
+    std::string Formatv(const char *fmt, va_list ap)
+    {
+        char *buf = nullptr;
+        auto len = vasprintf(&buf, fmt, ap);
+        if (len == -1)
+        {
+            return "";
+        }
+        std::string ret(buf, len);
+        free(buf);
+        return ret;
+    }
+
 } // namespace WebSrv

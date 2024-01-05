@@ -39,3 +39,9 @@ target_link_libraries(test_tcpserver TinyWebServerLib)
 
 add_executable(test_httpserver test_httpserver.cpp)
 target_link_libraries(test_httpserver TinyWebServerLib)
+
+add_executable(test_httpconnection test_httpconnection.cpp)
+target_link_libraries(test_httpconnection TinyWebServerLib)
+
+add_executable(test_mysql test_mysql.cpp)
+target_link_libraries(test_mysql TinyWebServerLib)
