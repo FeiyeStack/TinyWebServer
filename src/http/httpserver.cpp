@@ -98,6 +98,6 @@ namespace WebSrv::http
 
         } while (true);
         SRV_LOG_DEBUG(g_logger) <<"handleClient end";
-        client->close();
+        session->close();
     }
 } // namespace WebSrv
