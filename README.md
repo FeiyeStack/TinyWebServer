@@ -1,8 +1,8 @@
 # TinyWebServer
 
 ## 前言
-该服务器框架主要参考b站[[C++高级教程]从零开始开发服务器框架(sylar)教程实现](https://www.bilibili.com/video/BV184411s7qF/?spm_id_from=333.337.search-card.all.click)，完成了服务器基础部分，并添加了mysql接口，实现了一个简单http静态文件例子
-原本打算跟着教程实现windows,linux双端，但因为因为c++20的协程结构问题（需要协程函数包裹等），对于设计模式不清楚的我只能转头先实现linux，后续可能会使用boost的协程已实现windows端
+该服务器框架主要参考b站[[C++高级教程]从零开始开发服务器框架(sylar)](https://www.bilibili.com/video/BV184411s7qF/?spm_id_from=333.337.search-card.all.click)教程实现，完成了服务器基础部分，并添加了mysql接口，实现了一个简单http静态文件例子
+原本打算跟着教程（linux），然后同时实现windows,linux双端，但因为因为c++20的协程结构问题（需要协程函数包裹等），对于设计模式不清楚的我只能转头先实现linux，后续可能会使用boost的协程已实现windows端
 
 ## 结构
 
