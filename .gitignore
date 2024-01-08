@@ -1,4 +1,3 @@
 build
 extern/benchmark
 .vscode/
-examples/httpstaticfile/html
