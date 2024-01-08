@@ -1,0 +1,101 @@
+\hypertarget{structWebSrv_1_1http_1_1HttpResult}{}\doxysection{Web\+Srv\+::http\+::Http\+Result Struct Reference}
+\label{structWebSrv_1_1http_1_1HttpResult}\index{WebSrv::http::HttpResult@{WebSrv::http::HttpResult}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07}{Error}} \{ \newline
+\mbox{\hyperlink{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07ae0aa021e21dddbd6d8cecec71e9cf564}{OK}} = 0
+, \mbox{\hyperlink{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07a9ba423abc90614e7ec03992f6484517a}{INVALID\+\_\+\+URL}} = 1
+, \mbox{\hyperlink{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07a8ec92b8be851c2c9f935c17f94310401}{INVALID\+\_\+\+HOST}} = 2
+, \mbox{\hyperlink{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07adca3fec5c248b241263e8a63b7abaf9d}{CONNECT\+\_\+\+FAIL}} = 3
+, \newline
+\mbox{\hyperlink{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07a4eb3ef838bd587136925ddfa42206a51}{SEND\+\_\+\+CLOSE\+\_\+\+BY\+\_\+\+PEER}} = 4
+, \mbox{\hyperlink{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07aa20970543da334c5772bb5de140fb47f}{SEND\+\_\+\+SOCKET\+\_\+\+ERROR}} = 5
+, \mbox{\hyperlink{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07a070a0fb40f6c308ab544b227660aadff}{TIMEOUT}} = 6
+, \mbox{\hyperlink{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07a5459c7f06ce10ec753e440f8d1613aba}{CREATE\+\_\+\+SOCKET\+\_\+\+ERROR}} = 7
+, \newline
+\mbox{\hyperlink{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07a3c96e045074fe542e6b8a5dea8331102}{POOL\+\_\+\+GET\+\_\+\+CONNECTION}} = 8
+, \mbox{\hyperlink{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07a61454a702ca29f60f09ea881dbdad142}{POOL\+\_\+\+INVALID\+\_\+\+CONNECTION}} = 9
+ \}
+\item 
+\mbox{\Hypertarget{structWebSrv_1_1http_1_1HttpResult_a841efb4a2d753201d0ebe22908bfd5ab}\label{structWebSrv_1_1http_1_1HttpResult_a841efb4a2d753201d0ebe22908bfd5ab}} 
+using {\bfseries ptr} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structWebSrv_1_1http_1_1HttpResult}{Http\+Result}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structWebSrv_1_1http_1_1HttpResult_a66f5904637f0a4ac6cd45f326533c8b1}\label{structWebSrv_1_1http_1_1HttpResult_a66f5904637f0a4ac6cd45f326533c8b1}} 
+{\bfseries Http\+Result} (int res, Http\+Response\+::ptr rep, const std\+::string \&err)
+\item 
+\mbox{\Hypertarget{structWebSrv_1_1http_1_1HttpResult_a4b29dad03d63b1bc73b59a691107039a}\label{structWebSrv_1_1http_1_1HttpResult_a4b29dad03d63b1bc73b59a691107039a}} 
+std\+::string {\bfseries to\+String} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structWebSrv_1_1http_1_1HttpResult_a7932251a9c97bbed9d9fc237309d4ca7}\label{structWebSrv_1_1http_1_1HttpResult_a7932251a9c97bbed9d9fc237309d4ca7}} 
+int {\bfseries error}
+\item 
+\mbox{\Hypertarget{structWebSrv_1_1http_1_1HttpResult_a6b01eee38d241767c597ce01812b7d0c}\label{structWebSrv_1_1http_1_1HttpResult_a6b01eee38d241767c597ce01812b7d0c}} 
+Http\+Response\+::ptr {\bfseries response}
+\item 
+\mbox{\Hypertarget{structWebSrv_1_1http_1_1HttpResult_ac7f925062b4de5454655b9975e06d52a}\label{structWebSrv_1_1http_1_1HttpResult_ac7f925062b4de5454655b9975e06d52a}} 
+std\+::string \mbox{\hyperlink{structWebSrv_1_1http_1_1HttpResult_ac7f925062b4de5454655b9975e06d52a}{error\+Str}}
+\begin{DoxyCompactList}\small\item\em 错误描述 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07}\label{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07}} 
+\index{WebSrv::http::HttpResult@{WebSrv::http::HttpResult}!Error@{Error}}
+\index{Error@{Error}!WebSrv::http::HttpResult@{WebSrv::http::HttpResult}}
+\doxysubsubsection{\texorpdfstring{Error}{Error}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07}{Web\+Srv\+::http\+::\+Http\+Result\+::\+Error}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OK@{OK}!WebSrv::http::HttpResult@{WebSrv::http::HttpResult}}\index{WebSrv::http::HttpResult@{WebSrv::http::HttpResult}!OK@{OK}}}\mbox{\Hypertarget{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07ae0aa021e21dddbd6d8cecec71e9cf564}\label{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07ae0aa021e21dddbd6d8cecec71e9cf564}} 
+OK&正常 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_URL@{INVALID\_URL}!WebSrv::http::HttpResult@{WebSrv::http::HttpResult}}\index{WebSrv::http::HttpResult@{WebSrv::http::HttpResult}!INVALID\_URL@{INVALID\_URL}}}\mbox{\Hypertarget{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07a9ba423abc90614e7ec03992f6484517a}\label{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07a9ba423abc90614e7ec03992f6484517a}} 
+INVALID\+\_\+\+URL&非法\+URL \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_HOST@{INVALID\_HOST}!WebSrv::http::HttpResult@{WebSrv::http::HttpResult}}\index{WebSrv::http::HttpResult@{WebSrv::http::HttpResult}!INVALID\_HOST@{INVALID\_HOST}}}\mbox{\Hypertarget{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07a8ec92b8be851c2c9f935c17f94310401}\label{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07a8ec92b8be851c2c9f935c17f94310401}} 
+INVALID\+\_\+\+HOST&无法解析\+HOST \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONNECT\_FAIL@{CONNECT\_FAIL}!WebSrv::http::HttpResult@{WebSrv::http::HttpResult}}\index{WebSrv::http::HttpResult@{WebSrv::http::HttpResult}!CONNECT\_FAIL@{CONNECT\_FAIL}}}\mbox{\Hypertarget{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07adca3fec5c248b241263e8a63b7abaf9d}\label{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07adca3fec5c248b241263e8a63b7abaf9d}} 
+CONNECT\+\_\+\+FAIL&连接失败 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SEND\_CLOSE\_BY\_PEER@{SEND\_CLOSE\_BY\_PEER}!WebSrv::http::HttpResult@{WebSrv::http::HttpResult}}\index{WebSrv::http::HttpResult@{WebSrv::http::HttpResult}!SEND\_CLOSE\_BY\_PEER@{SEND\_CLOSE\_BY\_PEER}}}\mbox{\Hypertarget{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07a4eb3ef838bd587136925ddfa42206a51}\label{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07a4eb3ef838bd587136925ddfa42206a51}} 
+SEND\+\_\+\+CLOSE\+\_\+\+BY\+\_\+\+PEER&连接被对端关闭 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SEND\_SOCKET\_ERROR@{SEND\_SOCKET\_ERROR}!WebSrv::http::HttpResult@{WebSrv::http::HttpResult}}\index{WebSrv::http::HttpResult@{WebSrv::http::HttpResult}!SEND\_SOCKET\_ERROR@{SEND\_SOCKET\_ERROR}}}\mbox{\Hypertarget{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07aa20970543da334c5772bb5de140fb47f}\label{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07aa20970543da334c5772bb5de140fb47f}} 
+SEND\+\_\+\+SOCKET\+\_\+\+ERROR&发送请求产生\+Socket错误 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIMEOUT@{TIMEOUT}!WebSrv::http::HttpResult@{WebSrv::http::HttpResult}}\index{WebSrv::http::HttpResult@{WebSrv::http::HttpResult}!TIMEOUT@{TIMEOUT}}}\mbox{\Hypertarget{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07a070a0fb40f6c308ab544b227660aadff}\label{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07a070a0fb40f6c308ab544b227660aadff}} 
+TIMEOUT&超时 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CREATE\_SOCKET\_ERROR@{CREATE\_SOCKET\_ERROR}!WebSrv::http::HttpResult@{WebSrv::http::HttpResult}}\index{WebSrv::http::HttpResult@{WebSrv::http::HttpResult}!CREATE\_SOCKET\_ERROR@{CREATE\_SOCKET\_ERROR}}}\mbox{\Hypertarget{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07a5459c7f06ce10ec753e440f8d1613aba}\label{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07a5459c7f06ce10ec753e440f8d1613aba}} 
+CREATE\+\_\+\+SOCKET\+\_\+\+ERROR&创建\+Socket失败 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POOL\_GET\_CONNECTION@{POOL\_GET\_CONNECTION}!WebSrv::http::HttpResult@{WebSrv::http::HttpResult}}\index{WebSrv::http::HttpResult@{WebSrv::http::HttpResult}!POOL\_GET\_CONNECTION@{POOL\_GET\_CONNECTION}}}\mbox{\Hypertarget{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07a3c96e045074fe542e6b8a5dea8331102}\label{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07a3c96e045074fe542e6b8a5dea8331102}} 
+POOL\+\_\+\+GET\+\_\+\+CONNECTION&从连接池中取连接失败 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POOL\_INVALID\_CONNECTION@{POOL\_INVALID\_CONNECTION}!WebSrv::http::HttpResult@{WebSrv::http::HttpResult}}\index{WebSrv::http::HttpResult@{WebSrv::http::HttpResult}!POOL\_INVALID\_CONNECTION@{POOL\_INVALID\_CONNECTION}}}\mbox{\Hypertarget{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07a61454a702ca29f60f09ea881dbdad142}\label{structWebSrv_1_1http_1_1HttpResult_a68704051392491528dd22a80396f8a07a61454a702ca29f60f09ea881dbdad142}} 
+POOL\+\_\+\+INVALID\+\_\+\+CONNECTION&无效的连接 \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tiny\+Web\+Server/http/httpconnection.\+h\item 
+src/http/httpconnection.\+cpp\end{DoxyCompactItemize}

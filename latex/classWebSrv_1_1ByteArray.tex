@@ -1,0 +1,952 @@
+\hypertarget{classWebSrv_1_1ByteArray}{}\doxysection{Web\+Srv\+::Byte\+Array Class Reference}
+\label{classWebSrv_1_1ByteArray}\index{WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structWebSrv_1_1ByteArray_1_1Node}{Node}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classWebSrv_1_1ByteArray}{Byte\+Array}} 储存节点 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_ade37242fbd7378881cc1e2998e2a02e6}\label{classWebSrv_1_1ByteArray_ade37242fbd7378881cc1e2998e2a02e6}} 
+using {\bfseries ptr} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classWebSrv_1_1ByteArray}{Byte\+Array}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWebSrv_1_1ByteArray_a0417a6e566f137ff0d5369cbc30e0e1a}{Byte\+Array}} (size\+\_\+t base\+Size=4096)
+\begin{DoxyCompactList}\small\item\em 指定每个构建的节点内存块大小，构造\+Byte\+Array数组 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1ByteArray_ae108ccd0e9bbdd9db4fd83b764196c40}{write\+FInt8}} (int8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em 写入固定长度int8\+\_\+t类型 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1ByteArray_a625d6c44dc68a904572262a8f18261d5}{write\+FUint8}} (uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em 写入固定长度uint8\+\_\+t类型 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1ByteArray_a068f77fdb60838c890fc4903c062a950}{write\+FInt16}} (int16\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em 写入固定长度int16\+\_\+t类型 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1ByteArray_aae01427950a1fc4c3ae472c98b504a5a}{write\+FUint16}} (uint16\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em 写入固定长度uint16\+\_\+t类型 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1ByteArray_a5715dc39d19ead87bba343f238c387c9}{write\+FInt32}} (int32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em 写入固定长度int32\+\_\+t类型 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1ByteArray_a47d3d28f8cb52cb24835b3f3b52c7ae1}{write\+FUint32}} (uint32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em 写入固定长度uint32\+\_\+t类型 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1ByteArray_ae54307c63d2777db9be47e4282f9e29a}{write\+FInt64}} (int64\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em 写入固定长度int64\+\_\+t类型 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1ByteArray_afaf053a9dbae1616bc7e50ea552d0092}{write\+FUint64}} (uint64\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em 写入固定长度uint64\+\_\+t类型 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1ByteArray_a3e4d7dad557373f92b4fc862e41ba209}{write\+Int32}} (int32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em 写入int32\+\_\+t类型 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1ByteArray_a8f698cd3f8eff722f0283446627dcea7}{write\+Uint32}} (uint32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em 写入uint32\+\_\+t类型 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1ByteArray_abb79fd816c33cb89c5325d721cbb5f6b}{write\+Int64}} (int64\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em 写入int64\+\_\+t类型 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1ByteArray_a1a1486e99de9286cc03e38e3ec4c3485}{write\+Uint64}} (uint64\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em 写入uint64\+\_\+t类型 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1ByteArray_a15159454c8ff7fc958a088db63da3e97}{write\+Double}} (double value)
+\begin{DoxyCompactList}\small\item\em 写入double类型 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1ByteArray_a97bc7e637b9b300be9381f5f6e7ec29d}{write\+Float}} (float value)
+\begin{DoxyCompactList}\small\item\em 写入float类型 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1ByteArray_a13a25a44ed6bdfed1b140f4fd38c4fcb}{write\+String\+FUInt16}} (const std\+::string \&value)
+\begin{DoxyCompactList}\small\item\em 写入std\+::string 类型，用于uint16\+\_\+t作为长度类型 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1ByteArray_a69880547e41366888bb138172f72db16}{write\+String\+FUInt32}} (const std\+::string \&value)
+\begin{DoxyCompactList}\small\item\em 写入std\+::string 类型，用于uint32\+\_\+t作为长度类型 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1ByteArray_af95728a7fb772b2d2fc87c3921543db6}{write\+String\+FUInt64}} (const std\+::string \&value)
+\begin{DoxyCompactList}\small\item\em 写入std\+::string 类型，用于uint64\+\_\+t作为长度类型 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1ByteArray_a265822081089abdce05f06d1a3af43e3}{write\+String\+VInt}} (const std\+::string \&value)
+\begin{DoxyCompactList}\small\item\em 写入std\+::string 类型，用于\+Var\+Int64\+\_\+t(可变长度)作为长度类型 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a1a68f6b0a4436490de75807e813164a3}\label{classWebSrv_1_1ByteArray_a1a68f6b0a4436490de75807e813164a3}} 
+void \mbox{\hyperlink{classWebSrv_1_1ByteArray_a1a68f6b0a4436490de75807e813164a3}{write\+String\+Without\+Length}} (const std\+::string \&value)
+\begin{DoxyCompactList}\small\item\em 写入std\+::string 类型，无长度 \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{classWebSrv_1_1ByteArray_a058516d744597a07c19b3c5de662f4df}{read\+FInt8}} ()
+\begin{DoxyCompactList}\small\item\em 读取固定长度int8\+\_\+t类型 \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classWebSrv_1_1ByteArray_ae35a0a035c6b68e5914467eb32febf37}{read\+FUint8}} ()
+\begin{DoxyCompactList}\small\item\em 读取固定长度uint8\+\_\+t类型 \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classWebSrv_1_1ByteArray_ac0ea7072b419e9127e36d74b341a85e5}{read\+FInt16}} ()
+\begin{DoxyCompactList}\small\item\em 读取固定长度int16\+\_\+t类型 \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{classWebSrv_1_1ByteArray_ad962743956adfb67f88b20e488d943cb}{read\+FUint16}} ()
+\begin{DoxyCompactList}\small\item\em 读取固定长度uint16\+\_\+t类型 \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{classWebSrv_1_1ByteArray_aecef2d82864102f5af596665a45e1155}{read\+FInt32}} ()
+\begin{DoxyCompactList}\small\item\em 读取固定长度int32\+\_\+t类型 \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{classWebSrv_1_1ByteArray_a238352a0c18f78f5d98690ff1ac43742}{read\+FUint32}} ()
+\begin{DoxyCompactList}\small\item\em 读取固定长度uint32\+\_\+t类型 \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{classWebSrv_1_1ByteArray_a7e8ad4f31e5be8328607f520c1766783}{read\+FInt64}} ()
+\begin{DoxyCompactList}\small\item\em 读取固定长度int64\+\_\+t类型 \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{classWebSrv_1_1ByteArray_acdba15a0629d570793fec05eb6988ffd}{read\+FUint64}} ()
+\begin{DoxyCompactList}\small\item\em 读取固定长度uint64\+\_\+t类型 \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{classWebSrv_1_1ByteArray_a32efa4b894d7ce597d60ab7ce2353976}{read\+Int32}} ()
+\begin{DoxyCompactList}\small\item\em 读取\+Var\+Int32\+\_\+t类型 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classWebSrv_1_1ByteArray_a3643f1a5c8fd737f1dc9781f562475f7}{read\+Uint32}} ()
+\begin{DoxyCompactList}\small\item\em 读取\+Var\+Uint32\+\_\+t类型 \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{classWebSrv_1_1ByteArray_aee87117501b254d3ef1985f731e68f60}{read\+Int64}} ()
+\begin{DoxyCompactList}\small\item\em 读取\+Var\+Int64\+\_\+t类型 \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{classWebSrv_1_1ByteArray_abda8cd3c5844343860fe21dbb35b0de8}{read\+Uint64}} ()
+\begin{DoxyCompactList}\small\item\em 读取\+Var\+Uint64\+\_\+t类型 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classWebSrv_1_1ByteArray_af232a8e63b9d3c67811d4ba6b04f54e2}{read\+Double}} ()
+\begin{DoxyCompactList}\small\item\em 读取double类型 \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classWebSrv_1_1ByteArray_acd0400221ef1518895f8f9347f8b8cd6}{read\+Float}} ()
+\begin{DoxyCompactList}\small\item\em 读取float类型 \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classWebSrv_1_1ByteArray_af015a42242dbbd8f592fa65c66e11ef5}{read\+String\+FInt16}} ()
+\begin{DoxyCompactList}\small\item\em 读取std\+::string 类型，用于uint16\+\_\+t作为长度类型 \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classWebSrv_1_1ByteArray_ac8a021dbe0644d6ab0c8e5741129b243}{read\+String\+FInt32}} ()
+\begin{DoxyCompactList}\small\item\em 读取std\+::string 类型，用于uint32\+\_\+t作为长度类型 \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classWebSrv_1_1ByteArray_a40033773981e8bce272789c651ddba8f}{read\+String\+FInt64}} ()
+\begin{DoxyCompactList}\small\item\em 读取std\+::string 类型，用于uint64\+\_\+t作为长度类型 \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classWebSrv_1_1ByteArray_aec5c4ce58167fe0a3975ee087b048a1b}{read\+String\+VInt}} ()
+\begin{DoxyCompactList}\small\item\em 读取std\+::string 类型，用于\+Var\+Int64\+\_\+t(可变长度)作为长度类型 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a0d7af283fe872a81e179ebb1acdfaeea}\label{classWebSrv_1_1ByteArray_a0d7af283fe872a81e179ebb1acdfaeea}} 
+void \mbox{\hyperlink{classWebSrv_1_1ByteArray_a0d7af283fe872a81e179ebb1acdfaeea}{clear}} ()
+\begin{DoxyCompactList}\small\item\em 清空数据 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1ByteArray_a5906a7f1fc10676c9bff0ca7b7a56a8b}{write}} (const void $\ast$buff, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em 写入size长度的数据 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1ByteArray_a538b5c21fe859e974fbf474a315e8620}{read}} (void $\ast$buff, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em 读取size长度的数据 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1ByteArray_adc197326862dca863363412c324df44d}{read}} (void $\ast$buff, size\+\_\+t size, size\+\_\+t position) const
+\begin{DoxyCompactList}\small\item\em 从指定位置读取数据(不会改变之前读过的位置) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1ByteArray_ad604f2d08f1b9e51bead9f21fe29e646}{set\+Position}} (size\+\_\+t pos)
+\begin{DoxyCompactList}\small\item\em 设置byte\+Array当前位置 \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classWebSrv_1_1ByteArray_abd25249da52c9b884a34a5602804d2a8}{get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em 返回当前的位置 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebSrv_1_1ByteArray_afc93f9be0d53c481933a2415a43eaa6e}{write\+To\+File}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em 将\+Byte\+Array数据写入文件中 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebSrv_1_1ByteArray_a90a1a171979a8da91fb07dd5e6266cee}{read\+From\+File}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em 从文件读取数据 \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classWebSrv_1_1ByteArray_ab8ced1109b76f7467abfc2f133fd6eff}{get\+Base\+Size}} () const
+\begin{DoxyCompactList}\small\item\em 当前内存块大小 \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classWebSrv_1_1ByteArray_a29d3894cc4dbb536f5fe0e5fbfb3cffd}{get\+Read\+Size}} () const
+\begin{DoxyCompactList}\small\item\em 当前可读大小 \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classWebSrv_1_1ByteArray_a5a83a3db8c82423f543f8ca48d72c1a5}{get\+Size}} () const
+\begin{DoxyCompactList}\small\item\em 当前数据长度 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebSrv_1_1ByteArray_ac4a7c5cb0b00498f2c155a4d2b197bb6}{is\+Little\+Endian}} () const
+\begin{DoxyCompactList}\small\item\em 储存的数据是否是小端 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1ByteArray_ad4eb7b57d403a51f57c04a96711de458}{set\+Is\+Little\+Endian}} (bool val)
+\begin{DoxyCompactList}\small\item\em 设置是否为小端数据（存入数据前使用） \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classWebSrv_1_1ByteArray_a79382c5b19c4610bd2e956576ea39d24}{to\+String}} () const
+\begin{DoxyCompactList}\small\item\em 将当前位置到末尾的数据转换成std\+::string \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classWebSrv_1_1ByteArray_abce387737d9a5103b14c533d64356799}{to\+Hex\+String}} () const
+\begin{DoxyCompactList}\small\item\em 将当前位置到末尾的数据转换成16进制的std\+::string \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{classWebSrv_1_1ByteArray_adfab8509160a143f16a5acff51415bfc}{get\+Read\+Buffers}} (std\+::vector$<$ iovec $>$ \&buffers, uint64\+\_\+t len=$\sim$0ull) const
+\begin{DoxyCompactList}\small\item\em 获取可读取的缓存,将数据保存到\+WSABUF数组中（从当前位置开始）（缓存内存区块） \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{classWebSrv_1_1ByteArray_a8966d1329037f832486fc7eb2ec0bfcd}{get\+Read\+Buffers}} (std\+::vector$<$ iovec $>$ \&buffers, uint64\+\_\+t len, uint64\+\_\+t position) const
+\begin{DoxyCompactList}\small\item\em 获取可读取的缓存，将数据保存到\+WSABUF数组中，从指定位置开始（缓存内存区块） \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{classWebSrv_1_1ByteArray_acf3d8fc28ec7f2df7aef9eec78e77a60}{get\+Write\+Buffers}} (std\+::vector$<$ iovec $>$ \&buffers, uint64\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em 获取可写入缓存，将数据保存到\+WSABUF数组中 （缓存内存区块） \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a0417a6e566f137ff0d5369cbc30e0e1a}\label{classWebSrv_1_1ByteArray_a0417a6e566f137ff0d5369cbc30e0e1a}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!ByteArray@{ByteArray}}
+\index{ByteArray@{ByteArray}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{ByteArray()}{ByteArray()}}
+{\footnotesize\ttfamily Web\+Srv\+::\+Byte\+Array\+::\+Byte\+Array (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{base\+Size = {\ttfamily 4096} }\end{DoxyParamCaption})}
+
+
+
+指定每个构建的节点内存块大小，构造\+Byte\+Array数组 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Size} & 内存块大小 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_ab8ced1109b76f7467abfc2f133fd6eff}\label{classWebSrv_1_1ByteArray_ab8ced1109b76f7467abfc2f133fd6eff}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!getBaseSize@{getBaseSize}}
+\index{getBaseSize@{getBaseSize}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{getBaseSize()}{getBaseSize()}}
+{\footnotesize\ttfamily size\+\_\+t Web\+Srv\+::\+Byte\+Array\+::get\+Base\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+当前内存块大小 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_abd25249da52c9b884a34a5602804d2a8}\label{classWebSrv_1_1ByteArray_abd25249da52c9b884a34a5602804d2a8}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily size\+\_\+t Web\+Srv\+::\+Byte\+Array\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+返回当前的位置 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a8966d1329037f832486fc7eb2ec0bfcd}\label{classWebSrv_1_1ByteArray_a8966d1329037f832486fc7eb2ec0bfcd}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!getReadBuffers@{getReadBuffers}}
+\index{getReadBuffers@{getReadBuffers}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{getReadBuffers()}{getReadBuffers()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily uint64\+\_\+t Web\+Srv\+::\+Byte\+Array\+::get\+Read\+Buffers (\begin{DoxyParamCaption}\item[{std\+::vector$<$ iovec $>$ \&}]{buffers,  }\item[{uint64\+\_\+t}]{len,  }\item[{uint64\+\_\+t}]{position }\end{DoxyParamCaption}) const}
+
+
+
+获取可读取的缓存，将数据保存到\+WSABUF数组中，从指定位置开始（缓存内存区块） 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffers} & \\
+\hline
+{\em len} & 读取数据长度，超过可读取长度时，等于可读取长度 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint64\+\_\+t 读取大小 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_adfab8509160a143f16a5acff51415bfc}\label{classWebSrv_1_1ByteArray_adfab8509160a143f16a5acff51415bfc}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!getReadBuffers@{getReadBuffers}}
+\index{getReadBuffers@{getReadBuffers}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{getReadBuffers()}{getReadBuffers()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint64\+\_\+t Web\+Srv\+::\+Byte\+Array\+::get\+Read\+Buffers (\begin{DoxyParamCaption}\item[{std\+::vector$<$ iovec $>$ \&}]{buffers,  }\item[{uint64\+\_\+t}]{len = {\ttfamily $\sim$0ull} }\end{DoxyParamCaption}) const}
+
+
+
+获取可读取的缓存,将数据保存到\+WSABUF数组中（从当前位置开始）（缓存内存区块） 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffers} & \\
+\hline
+{\em len} & 读取数据长度，超过可读取长度时，等于可读取长度 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint64\+\_\+t 读取大小 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a29d3894cc4dbb536f5fe0e5fbfb3cffd}\label{classWebSrv_1_1ByteArray_a29d3894cc4dbb536f5fe0e5fbfb3cffd}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!getReadSize@{getReadSize}}
+\index{getReadSize@{getReadSize}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{getReadSize()}{getReadSize()}}
+{\footnotesize\ttfamily size\+\_\+t Web\+Srv\+::\+Byte\+Array\+::get\+Read\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+当前可读大小 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a5a83a3db8c82423f543f8ca48d72c1a5}\label{classWebSrv_1_1ByteArray_a5a83a3db8c82423f543f8ca48d72c1a5}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!getSize@{getSize}}
+\index{getSize@{getSize}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily size\+\_\+t Web\+Srv\+::\+Byte\+Array\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+当前数据长度 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_acf3d8fc28ec7f2df7aef9eec78e77a60}\label{classWebSrv_1_1ByteArray_acf3d8fc28ec7f2df7aef9eec78e77a60}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!getWriteBuffers@{getWriteBuffers}}
+\index{getWriteBuffers@{getWriteBuffers}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{getWriteBuffers()}{getWriteBuffers()}}
+{\footnotesize\ttfamily uint64\+\_\+t Web\+Srv\+::\+Byte\+Array\+::get\+Write\+Buffers (\begin{DoxyParamCaption}\item[{std\+::vector$<$ iovec $>$ \&}]{buffers,  }\item[{uint64\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+获取可写入缓存，将数据保存到\+WSABUF数组中 （缓存内存区块） 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffers} & \\
+\hline
+{\em len} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint64\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_ac4a7c5cb0b00498f2c155a4d2b197bb6}\label{classWebSrv_1_1ByteArray_ac4a7c5cb0b00498f2c155a4d2b197bb6}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!isLittleEndian@{isLittleEndian}}
+\index{isLittleEndian@{isLittleEndian}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{isLittleEndian()}{isLittleEndian()}}
+{\footnotesize\ttfamily bool Web\+Srv\+::\+Byte\+Array\+::is\+Little\+Endian (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+储存的数据是否是小端 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a538b5c21fe859e974fbf474a315e8620}\label{classWebSrv_1_1ByteArray_a538b5c21fe859e974fbf474a315e8620}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!read@{read}}
+\index{read@{read}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Byte\+Array\+::read (\begin{DoxyParamCaption}\item[{void $\ast$}]{buff,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+读取size长度的数据 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buff} & \\
+\hline
+{\em size} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em getp\+Position()} & $<$size 说明可读数据不够长，抛出 std\+::out\+\_\+of\+\_\+range \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_adc197326862dca863363412c324df44d}\label{classWebSrv_1_1ByteArray_adc197326862dca863363412c324df44d}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!read@{read}}
+\index{read@{read}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Byte\+Array\+::read (\begin{DoxyParamCaption}\item[{void $\ast$}]{buff,  }\item[{size\+\_\+t}]{size,  }\item[{size\+\_\+t}]{position }\end{DoxyParamCaption}) const}
+
+
+
+从指定位置读取数据(不会改变之前读过的位置) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buff} & \\
+\hline
+{\em size} & \\
+\hline
+{\em position} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em (\+\_\+size-\/} & position)$<$size 说明可读数据不够长，抛出 std\+::out\+\_\+of\+\_\+range \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_af232a8e63b9d3c67811d4ba6b04f54e2}\label{classWebSrv_1_1ByteArray_af232a8e63b9d3c67811d4ba6b04f54e2}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!readDouble@{readDouble}}
+\index{readDouble@{readDouble}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{readDouble()}{readDouble()}}
+{\footnotesize\ttfamily double Web\+Srv\+::\+Byte\+Array\+::read\+Double (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+读取double类型 
+
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_ac0ea7072b419e9127e36d74b341a85e5}\label{classWebSrv_1_1ByteArray_ac0ea7072b419e9127e36d74b341a85e5}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!readFInt16@{readFInt16}}
+\index{readFInt16@{readFInt16}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{readFInt16()}{readFInt16()}}
+{\footnotesize\ttfamily int16\+\_\+t Web\+Srv\+::\+Byte\+Array\+::read\+FInt16 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+读取固定长度int16\+\_\+t类型 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_aecef2d82864102f5af596665a45e1155}\label{classWebSrv_1_1ByteArray_aecef2d82864102f5af596665a45e1155}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!readFInt32@{readFInt32}}
+\index{readFInt32@{readFInt32}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{readFInt32()}{readFInt32()}}
+{\footnotesize\ttfamily int32\+\_\+t Web\+Srv\+::\+Byte\+Array\+::read\+FInt32 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+读取固定长度int32\+\_\+t类型 
+
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a7e8ad4f31e5be8328607f520c1766783}\label{classWebSrv_1_1ByteArray_a7e8ad4f31e5be8328607f520c1766783}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!readFInt64@{readFInt64}}
+\index{readFInt64@{readFInt64}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{readFInt64()}{readFInt64()}}
+{\footnotesize\ttfamily int64\+\_\+t Web\+Srv\+::\+Byte\+Array\+::read\+FInt64 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+读取固定长度int64\+\_\+t类型 
+
+\begin{DoxyReturn}{Returns}
+int64\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a058516d744597a07c19b3c5de662f4df}\label{classWebSrv_1_1ByteArray_a058516d744597a07c19b3c5de662f4df}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!readFInt8@{readFInt8}}
+\index{readFInt8@{readFInt8}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{readFInt8()}{readFInt8()}}
+{\footnotesize\ttfamily int8\+\_\+t Web\+Srv\+::\+Byte\+Array\+::read\+FInt8 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+读取固定长度int8\+\_\+t类型 
+
+\begin{DoxyReturn}{Returns}
+int8\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_acd0400221ef1518895f8f9347f8b8cd6}\label{classWebSrv_1_1ByteArray_acd0400221ef1518895f8f9347f8b8cd6}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!readFloat@{readFloat}}
+\index{readFloat@{readFloat}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{readFloat()}{readFloat()}}
+{\footnotesize\ttfamily float Web\+Srv\+::\+Byte\+Array\+::read\+Float (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+读取float类型 
+
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a90a1a171979a8da91fb07dd5e6266cee}\label{classWebSrv_1_1ByteArray_a90a1a171979a8da91fb07dd5e6266cee}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!readFromFile@{readFromFile}}
+\index{readFromFile@{readFromFile}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{readFromFile()}{readFromFile()}}
+{\footnotesize\ttfamily bool Web\+Srv\+::\+Byte\+Array\+::read\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+从文件读取数据 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_ad962743956adfb67f88b20e488d943cb}\label{classWebSrv_1_1ByteArray_ad962743956adfb67f88b20e488d943cb}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!readFUint16@{readFUint16}}
+\index{readFUint16@{readFUint16}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{readFUint16()}{readFUint16()}}
+{\footnotesize\ttfamily uint16\+\_\+t Web\+Srv\+::\+Byte\+Array\+::read\+FUint16 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+读取固定长度uint16\+\_\+t类型 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a238352a0c18f78f5d98690ff1ac43742}\label{classWebSrv_1_1ByteArray_a238352a0c18f78f5d98690ff1ac43742}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!readFUint32@{readFUint32}}
+\index{readFUint32@{readFUint32}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{readFUint32()}{readFUint32()}}
+{\footnotesize\ttfamily uint64\+\_\+t Web\+Srv\+::\+Byte\+Array\+::read\+FUint32 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+读取固定长度uint32\+\_\+t类型 
+
+\begin{DoxyReturn}{Returns}
+uint64\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_acdba15a0629d570793fec05eb6988ffd}\label{classWebSrv_1_1ByteArray_acdba15a0629d570793fec05eb6988ffd}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!readFUint64@{readFUint64}}
+\index{readFUint64@{readFUint64}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{readFUint64()}{readFUint64()}}
+{\footnotesize\ttfamily uint64\+\_\+t Web\+Srv\+::\+Byte\+Array\+::read\+FUint64 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+读取固定长度uint64\+\_\+t类型 
+
+\begin{DoxyReturn}{Returns}
+uint64\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_ae35a0a035c6b68e5914467eb32febf37}\label{classWebSrv_1_1ByteArray_ae35a0a035c6b68e5914467eb32febf37}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!readFUint8@{readFUint8}}
+\index{readFUint8@{readFUint8}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{readFUint8()}{readFUint8()}}
+{\footnotesize\ttfamily uint8\+\_\+t Web\+Srv\+::\+Byte\+Array\+::read\+FUint8 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+读取固定长度uint8\+\_\+t类型 
+
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a32efa4b894d7ce597d60ab7ce2353976}\label{classWebSrv_1_1ByteArray_a32efa4b894d7ce597d60ab7ce2353976}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!readInt32@{readInt32}}
+\index{readInt32@{readInt32}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{readInt32()}{readInt32()}}
+{\footnotesize\ttfamily int32\+\_\+t Web\+Srv\+::\+Byte\+Array\+::read\+Int32 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+读取\+Var\+Int32\+\_\+t类型 
+
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_aee87117501b254d3ef1985f731e68f60}\label{classWebSrv_1_1ByteArray_aee87117501b254d3ef1985f731e68f60}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!readInt64@{readInt64}}
+\index{readInt64@{readInt64}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{readInt64()}{readInt64()}}
+{\footnotesize\ttfamily int64\+\_\+t Web\+Srv\+::\+Byte\+Array\+::read\+Int64 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+读取\+Var\+Int64\+\_\+t类型 
+
+\begin{DoxyReturn}{Returns}
+int64\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_af015a42242dbbd8f592fa65c66e11ef5}\label{classWebSrv_1_1ByteArray_af015a42242dbbd8f592fa65c66e11ef5}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!readStringFInt16@{readStringFInt16}}
+\index{readStringFInt16@{readStringFInt16}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{readStringFInt16()}{readStringFInt16()}}
+{\footnotesize\ttfamily std\+::string Web\+Srv\+::\+Byte\+Array\+::read\+String\+FInt16 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+读取std\+::string 类型，用于uint16\+\_\+t作为长度类型 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_ac8a021dbe0644d6ab0c8e5741129b243}\label{classWebSrv_1_1ByteArray_ac8a021dbe0644d6ab0c8e5741129b243}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!readStringFInt32@{readStringFInt32}}
+\index{readStringFInt32@{readStringFInt32}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{readStringFInt32()}{readStringFInt32()}}
+{\footnotesize\ttfamily std\+::string Web\+Srv\+::\+Byte\+Array\+::read\+String\+FInt32 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+读取std\+::string 类型，用于uint32\+\_\+t作为长度类型 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a40033773981e8bce272789c651ddba8f}\label{classWebSrv_1_1ByteArray_a40033773981e8bce272789c651ddba8f}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!readStringFInt64@{readStringFInt64}}
+\index{readStringFInt64@{readStringFInt64}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{readStringFInt64()}{readStringFInt64()}}
+{\footnotesize\ttfamily std\+::string Web\+Srv\+::\+Byte\+Array\+::read\+String\+FInt64 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+读取std\+::string 类型，用于uint64\+\_\+t作为长度类型 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_aec5c4ce58167fe0a3975ee087b048a1b}\label{classWebSrv_1_1ByteArray_aec5c4ce58167fe0a3975ee087b048a1b}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!readStringVInt@{readStringVInt}}
+\index{readStringVInt@{readStringVInt}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{readStringVInt()}{readStringVInt()}}
+{\footnotesize\ttfamily std\+::string Web\+Srv\+::\+Byte\+Array\+::read\+String\+VInt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+读取std\+::string 类型，用于\+Var\+Int64\+\_\+t(可变长度)作为长度类型 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a3643f1a5c8fd737f1dc9781f562475f7}\label{classWebSrv_1_1ByteArray_a3643f1a5c8fd737f1dc9781f562475f7}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!readUint32@{readUint32}}
+\index{readUint32@{readUint32}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{readUint32()}{readUint32()}}
+{\footnotesize\ttfamily uint32\+\_\+t Web\+Srv\+::\+Byte\+Array\+::read\+Uint32 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+读取\+Var\+Uint32\+\_\+t类型 
+
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_abda8cd3c5844343860fe21dbb35b0de8}\label{classWebSrv_1_1ByteArray_abda8cd3c5844343860fe21dbb35b0de8}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!readUint64@{readUint64}}
+\index{readUint64@{readUint64}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{readUint64()}{readUint64()}}
+{\footnotesize\ttfamily uint64\+\_\+t Web\+Srv\+::\+Byte\+Array\+::read\+Uint64 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+读取\+Var\+Uint64\+\_\+t类型 
+
+\begin{DoxyReturn}{Returns}
+uint64\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_ad4eb7b57d403a51f57c04a96711de458}\label{classWebSrv_1_1ByteArray_ad4eb7b57d403a51f57c04a96711de458}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!setIsLittleEndian@{setIsLittleEndian}}
+\index{setIsLittleEndian@{setIsLittleEndian}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{setIsLittleEndian()}{setIsLittleEndian()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Byte\+Array\+::set\+Is\+Little\+Endian (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})}
+
+
+
+设置是否为小端数据（存入数据前使用） 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_ad604f2d08f1b9e51bead9f21fe29e646}\label{classWebSrv_1_1ByteArray_ad604f2d08f1b9e51bead9f21fe29e646}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Byte\+Array\+::set\+Position (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{pos }\end{DoxyParamCaption})}
+
+
+
+设置byte\+Array当前位置 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \+\_\+position} & 不能大于容器大小 \+\_\+capacity 否则抛出 std\+::out\+\_\+of\+\_\+range \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_abce387737d9a5103b14c533d64356799}\label{classWebSrv_1_1ByteArray_abce387737d9a5103b14c533d64356799}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!toHexString@{toHexString}}
+\index{toHexString@{toHexString}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{toHexString()}{toHexString()}}
+{\footnotesize\ttfamily std\+::string Web\+Srv\+::\+Byte\+Array\+::to\+Hex\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+将当前位置到末尾的数据转换成16进制的std\+::string 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a79382c5b19c4610bd2e956576ea39d24}\label{classWebSrv_1_1ByteArray_a79382c5b19c4610bd2e956576ea39d24}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!toString@{toString}}
+\index{toString@{toString}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string Web\+Srv\+::\+Byte\+Array\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+将当前位置到末尾的数据转换成std\+::string 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a5906a7f1fc10676c9bff0ca7b7a56a8b}\label{classWebSrv_1_1ByteArray_a5906a7f1fc10676c9bff0ca7b7a56a8b}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!write@{write}}
+\index{write@{write}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Byte\+Array\+::write (\begin{DoxyParamCaption}\item[{const void $\ast$}]{buff,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+写入size长度的数据 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buff} & \\
+\hline
+{\em size} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a15159454c8ff7fc958a088db63da3e97}\label{classWebSrv_1_1ByteArray_a15159454c8ff7fc958a088db63da3e97}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!writeDouble@{writeDouble}}
+\index{writeDouble@{writeDouble}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{writeDouble()}{writeDouble()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Byte\+Array\+::write\+Double (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})}
+
+
+
+写入double类型 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a068f77fdb60838c890fc4903c062a950}\label{classWebSrv_1_1ByteArray_a068f77fdb60838c890fc4903c062a950}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!writeFInt16@{writeFInt16}}
+\index{writeFInt16@{writeFInt16}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{writeFInt16()}{writeFInt16()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Byte\+Array\+::write\+FInt16 (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+写入固定长度int16\+\_\+t类型 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a5715dc39d19ead87bba343f238c387c9}\label{classWebSrv_1_1ByteArray_a5715dc39d19ead87bba343f238c387c9}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!writeFInt32@{writeFInt32}}
+\index{writeFInt32@{writeFInt32}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{writeFInt32()}{writeFInt32()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Byte\+Array\+::write\+FInt32 (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+写入固定长度int32\+\_\+t类型 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_ae54307c63d2777db9be47e4282f9e29a}\label{classWebSrv_1_1ByteArray_ae54307c63d2777db9be47e4282f9e29a}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!writeFInt64@{writeFInt64}}
+\index{writeFInt64@{writeFInt64}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{writeFInt64()}{writeFInt64()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Byte\+Array\+::write\+FInt64 (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+写入固定长度int64\+\_\+t类型 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_ae108ccd0e9bbdd9db4fd83b764196c40}\label{classWebSrv_1_1ByteArray_ae108ccd0e9bbdd9db4fd83b764196c40}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!writeFInt8@{writeFInt8}}
+\index{writeFInt8@{writeFInt8}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{writeFInt8()}{writeFInt8()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Byte\+Array\+::write\+FInt8 (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+写入固定长度int8\+\_\+t类型 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a97bc7e637b9b300be9381f5f6e7ec29d}\label{classWebSrv_1_1ByteArray_a97bc7e637b9b300be9381f5f6e7ec29d}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!writeFloat@{writeFloat}}
+\index{writeFloat@{writeFloat}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{writeFloat()}{writeFloat()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Byte\+Array\+::write\+Float (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})}
+
+
+
+写入float类型 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_aae01427950a1fc4c3ae472c98b504a5a}\label{classWebSrv_1_1ByteArray_aae01427950a1fc4c3ae472c98b504a5a}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!writeFUint16@{writeFUint16}}
+\index{writeFUint16@{writeFUint16}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{writeFUint16()}{writeFUint16()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Byte\+Array\+::write\+FUint16 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+写入固定长度uint16\+\_\+t类型 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a47d3d28f8cb52cb24835b3f3b52c7ae1}\label{classWebSrv_1_1ByteArray_a47d3d28f8cb52cb24835b3f3b52c7ae1}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!writeFUint32@{writeFUint32}}
+\index{writeFUint32@{writeFUint32}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{writeFUint32()}{writeFUint32()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Byte\+Array\+::write\+FUint32 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+写入固定长度uint32\+\_\+t类型 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_afaf053a9dbae1616bc7e50ea552d0092}\label{classWebSrv_1_1ByteArray_afaf053a9dbae1616bc7e50ea552d0092}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!writeFUint64@{writeFUint64}}
+\index{writeFUint64@{writeFUint64}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{writeFUint64()}{writeFUint64()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Byte\+Array\+::write\+FUint64 (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+写入固定长度uint64\+\_\+t类型 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a625d6c44dc68a904572262a8f18261d5}\label{classWebSrv_1_1ByteArray_a625d6c44dc68a904572262a8f18261d5}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!writeFUint8@{writeFUint8}}
+\index{writeFUint8@{writeFUint8}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{writeFUint8()}{writeFUint8()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Byte\+Array\+::write\+FUint8 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+写入固定长度uint8\+\_\+t类型 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a3e4d7dad557373f92b4fc862e41ba209}\label{classWebSrv_1_1ByteArray_a3e4d7dad557373f92b4fc862e41ba209}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!writeInt32@{writeInt32}}
+\index{writeInt32@{writeInt32}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{writeInt32()}{writeInt32()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Byte\+Array\+::write\+Int32 (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+写入int32\+\_\+t类型 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_abb79fd816c33cb89c5325d721cbb5f6b}\label{classWebSrv_1_1ByteArray_abb79fd816c33cb89c5325d721cbb5f6b}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!writeInt64@{writeInt64}}
+\index{writeInt64@{writeInt64}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{writeInt64()}{writeInt64()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Byte\+Array\+::write\+Int64 (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+写入int64\+\_\+t类型 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a13a25a44ed6bdfed1b140f4fd38c4fcb}\label{classWebSrv_1_1ByteArray_a13a25a44ed6bdfed1b140f4fd38c4fcb}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!writeStringFUInt16@{writeStringFUInt16}}
+\index{writeStringFUInt16@{writeStringFUInt16}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{writeStringFUInt16()}{writeStringFUInt16()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Byte\+Array\+::write\+String\+FUInt16 (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{value }\end{DoxyParamCaption})}
+
+
+
+写入std\+::string 类型，用于uint16\+\_\+t作为长度类型 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a69880547e41366888bb138172f72db16}\label{classWebSrv_1_1ByteArray_a69880547e41366888bb138172f72db16}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!writeStringFUInt32@{writeStringFUInt32}}
+\index{writeStringFUInt32@{writeStringFUInt32}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{writeStringFUInt32()}{writeStringFUInt32()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Byte\+Array\+::write\+String\+FUInt32 (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{value }\end{DoxyParamCaption})}
+
+
+
+写入std\+::string 类型，用于uint32\+\_\+t作为长度类型 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_af95728a7fb772b2d2fc87c3921543db6}\label{classWebSrv_1_1ByteArray_af95728a7fb772b2d2fc87c3921543db6}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!writeStringFUInt64@{writeStringFUInt64}}
+\index{writeStringFUInt64@{writeStringFUInt64}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{writeStringFUInt64()}{writeStringFUInt64()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Byte\+Array\+::write\+String\+FUInt64 (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{value }\end{DoxyParamCaption})}
+
+
+
+写入std\+::string 类型，用于uint64\+\_\+t作为长度类型 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a265822081089abdce05f06d1a3af43e3}\label{classWebSrv_1_1ByteArray_a265822081089abdce05f06d1a3af43e3}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!writeStringVInt@{writeStringVInt}}
+\index{writeStringVInt@{writeStringVInt}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{writeStringVInt()}{writeStringVInt()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Byte\+Array\+::write\+String\+VInt (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{value }\end{DoxyParamCaption})}
+
+
+
+写入std\+::string 类型，用于\+Var\+Int64\+\_\+t(可变长度)作为长度类型 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_afc93f9be0d53c481933a2415a43eaa6e}\label{classWebSrv_1_1ByteArray_afc93f9be0d53c481933a2415a43eaa6e}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!writeToFile@{writeToFile}}
+\index{writeToFile@{writeToFile}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{writeToFile()}{writeToFile()}}
+{\footnotesize\ttfamily bool Web\+Srv\+::\+Byte\+Array\+::write\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+将\+Byte\+Array数据写入文件中 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a8f698cd3f8eff722f0283446627dcea7}\label{classWebSrv_1_1ByteArray_a8f698cd3f8eff722f0283446627dcea7}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!writeUint32@{writeUint32}}
+\index{writeUint32@{writeUint32}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{writeUint32()}{writeUint32()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Byte\+Array\+::write\+Uint32 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+写入uint32\+\_\+t类型 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1ByteArray_a1a1486e99de9286cc03e38e3ec4c3485}\label{classWebSrv_1_1ByteArray_a1a1486e99de9286cc03e38e3ec4c3485}} 
+\index{WebSrv::ByteArray@{WebSrv::ByteArray}!writeUint64@{writeUint64}}
+\index{writeUint64@{writeUint64}!WebSrv::ByteArray@{WebSrv::ByteArray}}
+\doxysubsubsection{\texorpdfstring{writeUint64()}{writeUint64()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Byte\+Array\+::write\+Uint64 (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+写入uint64\+\_\+t类型 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tiny\+Web\+Server/bytearray.\+h\item 
+src/bytearray.\+cpp\end{DoxyCompactItemize}

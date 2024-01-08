@@ -1,0 +1,199 @@
+\hypertarget{classWebSrv_1_1http_1_1HttpConnection}{}\doxysection{Web\+Srv\+::http\+::Http\+Connection Class Reference}
+\label{classWebSrv_1_1http_1_1HttpConnection}\index{WebSrv::http::HttpConnection@{WebSrv::http::HttpConnection}}
+
+
+Inheritance diagram for Web\+Srv\+::http\+::Http\+Connection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classWebSrv_1_1http_1_1HttpConnection__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Web\+Srv\+::http\+::Http\+Connection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classWebSrv_1_1http_1_1HttpConnection__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpConnection_a01d81075752ebb3b5fc9bac6cb666d5b}\label{classWebSrv_1_1http_1_1HttpConnection_a01d81075752ebb3b5fc9bac6cb666d5b}} 
+using {\bfseries ptr} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpConnection}{Http\+Connection}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWebSrv_1_1http_1_1HttpConnection_ac6275e0b1012e197fa025449807b477e}{Http\+Connection}} (Socket\+::ptr sock, bool owner=true)
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+Http\+Response\+::ptr \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpConnection_a9704922f02e9e78855349bbd27c28446}{recv\+Response}} ()
+\begin{DoxyCompactList}\small\item\em 接收\+HTTP响应 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpConnection_af17280b62f3e9cef30bbf39e87d28e57}{send\+Request}} (Http\+Request\+::ptr response)
+\begin{DoxyCompactList}\small\item\em 发送\+HTTP请求 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Http\+Result\+::ptr \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpConnection_ae0cc4cda797489a821c75a68e9a47c82}{do\+Get}} (const std\+::string \&url, uint64\+\_\+t timeout, const std\+::map$<$ std\+::string, std\+::string $>$ \&headers=\{\}, const std\+::string \&body=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em 发送\+Http的\+Get请求 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpConnection_ab8cd6c8f4717c49a891949cf3d0e3b03}\label{classWebSrv_1_1http_1_1HttpConnection_ab8cd6c8f4717c49a891949cf3d0e3b03}} 
+static Http\+Result\+::ptr {\bfseries do\+Get} (const \mbox{\hyperlink{structWebSrv_1_1URL}{URL}} \&url, uint64\+\_\+t timeout, const std\+::map$<$ std\+::string, std\+::string $>$ \&headers=\{\}, const std\+::string \&body=\char`\"{}\char`\"{})
+\item 
+static Http\+Result\+::ptr \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpConnection_a0365b122d41968499f80a295d808bb92}{do\+Post}} (const std\+::string \&url, uint64\+\_\+t timeout, const std\+::map$<$ std\+::string, std\+::string $>$ \&headers=\{\}, const std\+::string \&body=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em 发送\+Http的\+Post请求 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpConnection_a0f856f3ab1764fe58e591b18180e1293}\label{classWebSrv_1_1http_1_1HttpConnection_a0f856f3ab1764fe58e591b18180e1293}} 
+static Http\+Result\+::ptr {\bfseries do\+Post} (const \mbox{\hyperlink{structWebSrv_1_1URL}{URL}} \&url, uint64\+\_\+t timeout, const std\+::map$<$ std\+::string, std\+::string $>$ \&headers=\{\}, const std\+::string \&body=\char`\"{}\char`\"{})
+\item 
+static Http\+Result\+::ptr \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpConnection_a2cc61af8aeaaf48a1e8711378665a01b}{do\+Request}} (Http\+Method method, const std\+::string \&url, uint64\+\_\+t timeout, const std\+::map$<$ std\+::string, std\+::string $>$ \&headers=\{\}, const std\+::string \&body=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em 发送\+HTTP请求 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpConnection_a13c7424d3f919ad49373fa226dabb5ca}\label{classWebSrv_1_1http_1_1HttpConnection_a13c7424d3f919ad49373fa226dabb5ca}} 
+static Http\+Result\+::ptr {\bfseries do\+Request} (Http\+Method method, const \mbox{\hyperlink{structWebSrv_1_1URL}{URL}} \&url, uint64\+\_\+t timeout, const std\+::map$<$ std\+::string, std\+::string $>$ \&headers=\{\}, const std\+::string \&body=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpConnection_a11f3632c84ad47e6bbe96cd5ace624a4}\label{classWebSrv_1_1http_1_1HttpConnection_a11f3632c84ad47e6bbe96cd5ace624a4}} 
+static Http\+Result\+::ptr {\bfseries do\+Request} (Http\+Request\+::ptr req, const \mbox{\hyperlink{structWebSrv_1_1URL}{URL}} \&url, uint64\+\_\+t timeout\+\_\+ms)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpConnection_ab0ebe12cfc12798e7a08d6de4e1c849f}\label{classWebSrv_1_1http_1_1HttpConnection_ab0ebe12cfc12798e7a08d6de4e1c849f}} 
+class {\bfseries Http\+Connection\+Pool}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpConnection_ac6275e0b1012e197fa025449807b477e}\label{classWebSrv_1_1http_1_1HttpConnection_ac6275e0b1012e197fa025449807b477e}} 
+\index{WebSrv::http::HttpConnection@{WebSrv::http::HttpConnection}!HttpConnection@{HttpConnection}}
+\index{HttpConnection@{HttpConnection}!WebSrv::http::HttpConnection@{WebSrv::http::HttpConnection}}
+\doxysubsubsection{\texorpdfstring{HttpConnection()}{HttpConnection()}}
+{\footnotesize\ttfamily Web\+Srv\+::http\+::\+Http\+Connection\+::\+Http\+Connection (\begin{DoxyParamCaption}\item[{Socket\+::ptr}]{sock,  }\item[{bool}]{owner = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+构造函数 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sock} & Socket类 \\
+\hline
+{\em \mbox{[}} & owner 是否掌握所有权 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpConnection_ae0cc4cda797489a821c75a68e9a47c82}\label{classWebSrv_1_1http_1_1HttpConnection_ae0cc4cda797489a821c75a68e9a47c82}} 
+\index{WebSrv::http::HttpConnection@{WebSrv::http::HttpConnection}!doGet@{doGet}}
+\index{doGet@{doGet}!WebSrv::http::HttpConnection@{WebSrv::http::HttpConnection}}
+\doxysubsubsection{\texorpdfstring{doGet()}{doGet()}}
+{\footnotesize\ttfamily Http\+Result\+::ptr Web\+Srv\+::http\+::\+Http\+Connection\+::do\+Get (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{url,  }\item[{uint64\+\_\+t}]{timeout,  }\item[{const std\+::map$<$ std\+::string, std\+::string $>$ \&}]{headers = {\ttfamily \{\}},  }\item[{const std\+::string \&}]{body = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+发送\+Http的\+Get请求 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & 请求url,需要使用绝对地址 \\
+\hline
+{\em timeout} & \\
+\hline
+{\em headers} & \\
+\hline
+{\em body} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Http\+Result\+::ptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpConnection_a0365b122d41968499f80a295d808bb92}\label{classWebSrv_1_1http_1_1HttpConnection_a0365b122d41968499f80a295d808bb92}} 
+\index{WebSrv::http::HttpConnection@{WebSrv::http::HttpConnection}!doPost@{doPost}}
+\index{doPost@{doPost}!WebSrv::http::HttpConnection@{WebSrv::http::HttpConnection}}
+\doxysubsubsection{\texorpdfstring{doPost()}{doPost()}}
+{\footnotesize\ttfamily Http\+Result\+::ptr Web\+Srv\+::http\+::\+Http\+Connection\+::do\+Post (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{url,  }\item[{uint64\+\_\+t}]{timeout,  }\item[{const std\+::map$<$ std\+::string, std\+::string $>$ \&}]{headers = {\ttfamily \{\}},  }\item[{const std\+::string \&}]{body = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+发送\+Http的\+Post请求 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & 请求url,需要使用绝对地址 \\
+\hline
+{\em timeout} & \\
+\hline
+{\em headers} & \\
+\hline
+{\em body} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Http\+Result\+::ptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpConnection_a2cc61af8aeaaf48a1e8711378665a01b}\label{classWebSrv_1_1http_1_1HttpConnection_a2cc61af8aeaaf48a1e8711378665a01b}} 
+\index{WebSrv::http::HttpConnection@{WebSrv::http::HttpConnection}!doRequest@{doRequest}}
+\index{doRequest@{doRequest}!WebSrv::http::HttpConnection@{WebSrv::http::HttpConnection}}
+\doxysubsubsection{\texorpdfstring{doRequest()}{doRequest()}}
+{\footnotesize\ttfamily Http\+Result\+::ptr Web\+Srv\+::http\+::\+Http\+Connection\+::do\+Request (\begin{DoxyParamCaption}\item[{Http\+Method}]{method,  }\item[{const std\+::string \&}]{url,  }\item[{uint64\+\_\+t}]{timeout,  }\item[{const std\+::map$<$ std\+::string, std\+::string $>$ \&}]{headers = {\ttfamily \{\}},  }\item[{const std\+::string \&}]{body = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+发送\+HTTP请求 
+
+
+\begin{DoxyParams}{Parameters}
+{\em method} & \\
+\hline
+{\em url} & 请求url,需要使用绝对地址 \\
+\hline
+{\em timeout\+\_\+ms} & \\
+\hline
+{\em headers} & \\
+\hline
+{\em body} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Http\+Result\+::ptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpConnection_a9704922f02e9e78855349bbd27c28446}\label{classWebSrv_1_1http_1_1HttpConnection_a9704922f02e9e78855349bbd27c28446}} 
+\index{WebSrv::http::HttpConnection@{WebSrv::http::HttpConnection}!recvResponse@{recvResponse}}
+\index{recvResponse@{recvResponse}!WebSrv::http::HttpConnection@{WebSrv::http::HttpConnection}}
+\doxysubsubsection{\texorpdfstring{recvResponse()}{recvResponse()}}
+{\footnotesize\ttfamily Http\+Response\+::ptr Web\+Srv\+::http\+::\+Http\+Connection\+::recv\+Response (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+接收\+HTTP响应 
+
+\begin{DoxyReturn}{Returns}
+Http\+Response\+::ptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpConnection_af17280b62f3e9cef30bbf39e87d28e57}\label{classWebSrv_1_1http_1_1HttpConnection_af17280b62f3e9cef30bbf39e87d28e57}} 
+\index{WebSrv::http::HttpConnection@{WebSrv::http::HttpConnection}!sendRequest@{sendRequest}}
+\index{sendRequest@{sendRequest}!WebSrv::http::HttpConnection@{WebSrv::http::HttpConnection}}
+\doxysubsubsection{\texorpdfstring{sendRequest()}{sendRequest()}}
+{\footnotesize\ttfamily int Web\+Srv\+::http\+::\+Http\+Connection\+::send\+Request (\begin{DoxyParamCaption}\item[{Http\+Request\+::ptr}]{response }\end{DoxyParamCaption})}
+
+
+
+发送\+HTTP请求 
+
+
+\begin{DoxyParams}{Parameters}
+{\em response} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tiny\+Web\+Server/http/httpconnection.\+h\item 
+src/http/httpconnection.\+cpp\end{DoxyCompactItemize}

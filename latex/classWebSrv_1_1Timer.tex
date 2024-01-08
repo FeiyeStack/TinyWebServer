@@ -1,0 +1,88 @@
+\hypertarget{classWebSrv_1_1Timer}{}\doxysection{Web\+Srv\+::Timer Class Reference}
+\label{classWebSrv_1_1Timer}\index{WebSrv::Timer@{WebSrv::Timer}}
+
+
+定时器  
+
+
+
+
+{\ttfamily \#include $<$timer.\+h$>$}
+
+
+
+Inheritance diagram for Web\+Srv\+::Timer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classWebSrv_1_1Timer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Web\+Srv\+::Timer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classWebSrv_1_1Timer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Timer_af04f5c4ab5894ff0391fd09ef18d3b3f}\label{classWebSrv_1_1Timer_af04f5c4ab5894ff0391fd09ef18d3b3f}} 
+using {\bfseries ptr} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classWebSrv_1_1Timer}{Timer}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Timer_ad3be87632f71f21d0861a67c2bda63d2}\label{classWebSrv_1_1Timer_ad3be87632f71f21d0861a67c2bda63d2}} 
+bool \mbox{\hyperlink{classWebSrv_1_1Timer_ad3be87632f71f21d0861a67c2bda63d2}{cannel}} ()
+\begin{DoxyCompactList}\small\item\em 取消定时器 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1Timer_a1f521b4d694854eb63c7dd286062bdd5}\label{classWebSrv_1_1Timer_a1f521b4d694854eb63c7dd286062bdd5}} 
+bool \mbox{\hyperlink{classWebSrv_1_1Timer_a1f521b4d694854eb63c7dd286062bdd5}{refresh}} ()
+\begin{DoxyCompactList}\small\item\em 立刻刷新设置的执行时间 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebSrv_1_1Timer_a4d027752acb177f1e995cd5b47b921b5}{reset}} (uint64\+\_\+t ms, bool from\+Now)
+\begin{DoxyCompactList}\small\item\em 重置定时器时间 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Timer_a8f762e12639d620eb0f10068e6ab6521}\label{classWebSrv_1_1Timer_a8f762e12639d620eb0f10068e6ab6521}} 
+class {\bfseries Timer\+Manager}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+定时器 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebSrv_1_1Timer_a4d027752acb177f1e995cd5b47b921b5}\label{classWebSrv_1_1Timer_a4d027752acb177f1e995cd5b47b921b5}} 
+\index{WebSrv::Timer@{WebSrv::Timer}!reset@{reset}}
+\index{reset@{reset}!WebSrv::Timer@{WebSrv::Timer}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily bool Web\+Srv\+::\+Timer\+::reset (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{ms,  }\item[{bool}]{from\+Now }\end{DoxyParamCaption})}
+
+
+
+重置定时器时间 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ms} & 定时器执行间隔 \\
+\hline
+{\em from\+Now} & 是否从当前时间算起 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tiny\+Web\+Server/timer.\+h\item 
+src/timer.\+cpp\end{DoxyCompactItemize}

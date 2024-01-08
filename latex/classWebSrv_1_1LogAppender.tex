@@ -1,0 +1,99 @@
+\hypertarget{classWebSrv_1_1LogAppender}{}\doxysection{Web\+Srv\+::Log\+Appender Class Reference}
+\label{classWebSrv_1_1LogAppender}\index{WebSrv::LogAppender@{WebSrv::LogAppender}}
+
+
+日志输出目标 将格式化的字符流输出到对应目标  
+
+
+
+
+{\ttfamily \#include $<$logappender.\+h$>$}
+
+
+
+Inheritance diagram for Web\+Srv\+::Log\+Appender\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classWebSrv_1_1LogAppender__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Web\+Srv\+::Log\+Appender\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{classWebSrv_1_1LogAppender__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1LogAppender_a2e917a87acaceb229ab96ee9e6cc37ca}\label{classWebSrv_1_1LogAppender_a2e917a87acaceb229ab96ee9e6cc37ca}} 
+using {\bfseries ptr} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classWebSrv_1_1LogAppender}{Log\+Appender}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1LogAppender_ab605fdb7859f4032803dbd099ba20c4b}\label{classWebSrv_1_1LogAppender_ab605fdb7859f4032803dbd099ba20c4b}} 
+{\bfseries Log\+Appender} (const std\+::string \&name=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1LogAppender_a10552d927a7f765afed624c12cbbfb41}\label{classWebSrv_1_1LogAppender_a10552d927a7f765afed624c12cbbfb41}} 
+virtual void {\bfseries log} (Log\+Event\+::ptr sp\+Log\+Event)=0
+\item 
+void \mbox{\hyperlink{classWebSrv_1_1LogAppender_a721364cb459e7f3f541b329f290c5362}{set\+Formater}} (Log\+Formater\+::ptr sp\+Log\+Format)
+\begin{DoxyCompactList}\small\item\em 如果没有设置格式器，它将默认使用\+Logger的格式器 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1LogAppender_a2da132ff3b7c99b0a6abf62054453a14}\label{classWebSrv_1_1LogAppender_a2da132ff3b7c99b0a6abf62054453a14}} 
+Log\+Formater\+::ptr {\bfseries get\+Formater} ()
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1LogAppender_a331a1b508685ab30c948d514d9a8673a}\label{classWebSrv_1_1LogAppender_a331a1b508685ab30c948d514d9a8673a}} 
+void {\bfseries set\+Name} (const std\+::string name)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1LogAppender_a4c708ad41bc6ab195aad2b8524981ec4}\label{classWebSrv_1_1LogAppender_a4c708ad41bc6ab195aad2b8524981ec4}} 
+std\+::string {\bfseries get\+Name} () const
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1LogAppender_aa671d431feba4278f2217af7b47eaa44}\label{classWebSrv_1_1LogAppender_aa671d431feba4278f2217af7b47eaa44}} 
+bool {\bfseries is\+Formater} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1LogAppender_a27e6e98968f4e411361235d7d008d303}\label{classWebSrv_1_1LogAppender_a27e6e98968f4e411361235d7d008d303}} 
+Log\+Formater\+::ptr {\bfseries \+\_\+sp\+Log\+Formater}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1LogAppender_a1270cb627e19e63d84886da0b8f985c0}\label{classWebSrv_1_1LogAppender_a1270cb627e19e63d84886da0b8f985c0}} 
+\mbox{\hyperlink{classWebSrv_1_1SpinLock}{Spin\+Lock}} {\bfseries \+\_\+spinlock}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1LogAppender_a6b8ef9b0c86a0d859f8c83d29a878df1}\label{classWebSrv_1_1LogAppender_a6b8ef9b0c86a0d859f8c83d29a878df1}} 
+std\+::string {\bfseries \+\_\+name} = \char`\"{}\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+日志输出目标 将格式化的字符流输出到对应目标 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebSrv_1_1LogAppender_a721364cb459e7f3f541b329f290c5362}\label{classWebSrv_1_1LogAppender_a721364cb459e7f3f541b329f290c5362}} 
+\index{WebSrv::LogAppender@{WebSrv::LogAppender}!setFormater@{setFormater}}
+\index{setFormater@{setFormater}!WebSrv::LogAppender@{WebSrv::LogAppender}}
+\doxysubsubsection{\texorpdfstring{setFormater()}{setFormater()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Log\+Appender\+::set\+Formater (\begin{DoxyParamCaption}\item[{Log\+Formater\+::ptr}]{sp\+Log\+Format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+如果没有设置格式器，它将默认使用\+Logger的格式器 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sp\+Log\+Format} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tiny\+Web\+Server/log/logappender.\+h\item 
+src/log/logappender.\+cpp\end{DoxyCompactItemize}

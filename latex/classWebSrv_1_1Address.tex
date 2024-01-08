@@ -1,0 +1,279 @@
+\hypertarget{classWebSrv_1_1Address}{}\doxysection{Web\+Srv\+::Address Class Reference}
+\label{classWebSrv_1_1Address}\index{WebSrv::Address@{WebSrv::Address}}
+
+
+网络地址类型  
+
+
+
+
+{\ttfamily \#include $<$address.\+h$>$}
+
+
+
+Inheritance diagram for Web\+Srv\+::Address\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classWebSrv_1_1Address__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Address_af42a1f4c73ed3d96d7f00b4fd8761be7}\label{classWebSrv_1_1Address_af42a1f4c73ed3d96d7f00b4fd8761be7}} 
+using {\bfseries ptr} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classWebSrv_1_1Address}{Address}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Address_a7ee5c39a41d3d2e14d3fee26ca0f0cd6}\label{classWebSrv_1_1Address_a7ee5c39a41d3d2e14d3fee26ca0f0cd6}} 
+int {\bfseries get\+Family} () const
+\item 
+virtual const sockaddr $\ast$ \mbox{\hyperlink{classWebSrv_1_1Address_af98d567004396034504eef745ef280d0}{get\+Addr}} () const =0
+\begin{DoxyCompactList}\small\item\em sockaddr$\ast$ 只读 \end{DoxyCompactList}\item 
+virtual sockaddr $\ast$ \mbox{\hyperlink{classWebSrv_1_1Address_a5396c15433468d8a9afebf343be3256f}{get\+Addr}} ()=0
+\begin{DoxyCompactList}\small\item\em sockaddr$\ast$ 读写 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1Address_abdb586fa349f74b444672e1a0e3bea5c}\label{classWebSrv_1_1Address_abdb586fa349f74b444672e1a0e3bea5c}} 
+virtual socklen\+\_\+t {\bfseries get\+Addr\+Len} () const =0
+\item 
+virtual std\+::ostream \& \mbox{\hyperlink{classWebSrv_1_1Address_a5e664e4845e92cc03935d946754a0cc3}{insert}} (std\+::ostream \&os) const =0
+\begin{DoxyCompactList}\small\item\em 可读性输出地址 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1Address_a32697d5a365b27b3ef799d53aea2f815}\label{classWebSrv_1_1Address_a32697d5a365b27b3ef799d53aea2f815}} 
+std\+::string {\bfseries to\+String} () const
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Address_a8f0e8f4d696407e81dc62f6dd7da5055}\label{classWebSrv_1_1Address_a8f0e8f4d696407e81dc62f6dd7da5055}} 
+bool {\bfseries operator$<$} (const \mbox{\hyperlink{classWebSrv_1_1Address}{Address}} \&other) const
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Address_a820b4ee68e1d1215a17ba5ba6867378e}\label{classWebSrv_1_1Address_a820b4ee68e1d1215a17ba5ba6867378e}} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{classWebSrv_1_1Address}{Address}} \&other) const
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Address_a90b489ba73f3483300dbbd12ee50117c}\label{classWebSrv_1_1Address_a90b489ba73f3483300dbbd12ee50117c}} 
+bool {\bfseries operator!=} (const \mbox{\hyperlink{classWebSrv_1_1Address}{Address}} \&other) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Address\+::ptr \mbox{\hyperlink{classWebSrv_1_1Address_a86bdbffa4acc6b872aecac55b9337d83}{create}} (const sockaddr $\ast$addr, socklen\+\_\+t addrlen)
+\begin{DoxyCompactList}\small\item\em 使用sockaddr 创建 \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classWebSrv_1_1Address_af5abf46357770c748b3c3d391e7a82b3}{lookup}} (std\+::vector$<$ Address\+::ptr $>$ \&result, const std\+::string \&host, int family=AF\+\_\+\+INET, int type=0, int protocol=0)
+\begin{DoxyCompactList}\small\item\em 通过host返回满足对应条件的所有\+Address \end{DoxyCompactList}\item 
+static Address\+::ptr \mbox{\hyperlink{classWebSrv_1_1Address_a2f5e6666a11953cd77e5cdb03dd4e16b}{lookup\+Any}} (const std\+::string \&host, int family=AF\+\_\+\+INET, int type=0, int protocol=0)
+\begin{DoxyCompactList}\small\item\em 通过host返回满足对应条件的任意\+Address \end{DoxyCompactList}\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classWebSrv_1_1IPAddress}{IPAddress}} $>$ \mbox{\hyperlink{classWebSrv_1_1Address_a6d217ee8cb10e59ffb29560fe649652c}{lookup\+Any\+IPAddress}} (const std\+::string \&host, int family=AF\+\_\+\+INET, int type=0, int protocol=0)
+\begin{DoxyCompactList}\small\item\em 通过host返回条件的任意\+IPAddress \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classWebSrv_1_1Address_a9282f02fb8e96a79ca7c0b687491c807}{get\+Inter\+Face\+Addresses}} (std\+::multimap$<$ std\+::string, std\+::pair$<$ Address\+::ptr, uint32\+\_\+t $>$$>$ \&result, int family=AF\+\_\+\+INET)
+\begin{DoxyCompactList}\small\item\em 返回本机所有网卡的$<$网卡名，$<$地址，子网掩码位数$>$$>$ \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classWebSrv_1_1Address_a4beef8f16f94fd1aa9f70d94cd66aa32}{get\+Inter\+Face\+Addresses}} (std\+::vector$<$ std\+::pair$<$ Address\+::ptr, uint32\+\_\+t $>$$>$ \&result, const std\+::string \&iface, int family=AF\+\_\+\+INET)
+\begin{DoxyCompactList}\small\item\em 获取指定网卡的地址和子网掩码位数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+网络地址类型 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebSrv_1_1Address_a86bdbffa4acc6b872aecac55b9337d83}\label{classWebSrv_1_1Address_a86bdbffa4acc6b872aecac55b9337d83}} 
+\index{WebSrv::Address@{WebSrv::Address}!create@{create}}
+\index{create@{create}!WebSrv::Address@{WebSrv::Address}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily Address\+::ptr Web\+Srv\+::\+Address\+::create (\begin{DoxyParamCaption}\item[{const sockaddr $\ast$}]{addr,  }\item[{socklen\+\_\+t}]{addrlen }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+使用sockaddr 创建 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & \\
+\hline
+{\em addrlen} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Address\+::ptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1Address_af98d567004396034504eef745ef280d0}\label{classWebSrv_1_1Address_af98d567004396034504eef745ef280d0}} 
+\index{WebSrv::Address@{WebSrv::Address}!getAddr@{getAddr}}
+\index{getAddr@{getAddr}!WebSrv::Address@{WebSrv::Address}}
+\doxysubsubsection{\texorpdfstring{getAddr()}{getAddr()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual const sockaddr$\ast$ Web\+Srv\+::\+Address\+::get\+Addr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+sockaddr$\ast$ 只读 
+
+\begin{DoxyReturn}{Returns}
+const sockaddr$\ast$ 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classWebSrv_1_1UnknownAddress_afa6ef24065ade95bdc2957964e84fa51}{Web\+Srv\+::\+Unknown\+Address}}, \mbox{\hyperlink{classWebSrv_1_1UnixAddress_a3484586484ddb271d4e91ba252032f6f}{Web\+Srv\+::\+Unix\+Address}}, \mbox{\hyperlink{classWebSrv_1_1IPv6Address_a9edcf80430cd1d605c44991dcb6efd88}{Web\+Srv\+::\+IPv6\+Address}}, and \mbox{\hyperlink{classWebSrv_1_1IPv4Address_af46057bb758f3f55889eec45b08572ff}{Web\+Srv\+::\+IPv4\+Address}}.
+
+\mbox{\Hypertarget{classWebSrv_1_1Address_a5396c15433468d8a9afebf343be3256f}\label{classWebSrv_1_1Address_a5396c15433468d8a9afebf343be3256f}} 
+\index{WebSrv::Address@{WebSrv::Address}!getAddr@{getAddr}}
+\index{getAddr@{getAddr}!WebSrv::Address@{WebSrv::Address}}
+\doxysubsubsection{\texorpdfstring{getAddr()}{getAddr()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual sockaddr$\ast$ Web\+Srv\+::\+Address\+::get\+Addr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+sockaddr$\ast$ 读写 
+
+\begin{DoxyReturn}{Returns}
+const sockaddr$\ast$ 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classWebSrv_1_1UnknownAddress_a605152ff9dc006928750a070f0b7beb4}{Web\+Srv\+::\+Unknown\+Address}}, \mbox{\hyperlink{classWebSrv_1_1UnixAddress_add8909d603ae169564622611e99923e3}{Web\+Srv\+::\+Unix\+Address}}, \mbox{\hyperlink{classWebSrv_1_1IPv6Address_a9420d83d48b1e7274099e1136c0c5d31}{Web\+Srv\+::\+IPv6\+Address}}, and \mbox{\hyperlink{classWebSrv_1_1IPv4Address_a2dcf13ec2153438f3262a06862f2c4d0}{Web\+Srv\+::\+IPv4\+Address}}.
+
+\mbox{\Hypertarget{classWebSrv_1_1Address_a9282f02fb8e96a79ca7c0b687491c807}\label{classWebSrv_1_1Address_a9282f02fb8e96a79ca7c0b687491c807}} 
+\index{WebSrv::Address@{WebSrv::Address}!getInterFaceAddresses@{getInterFaceAddresses}}
+\index{getInterFaceAddresses@{getInterFaceAddresses}!WebSrv::Address@{WebSrv::Address}}
+\doxysubsubsection{\texorpdfstring{getInterFaceAddresses()}{getInterFaceAddresses()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Web\+Srv\+::\+Address\+::get\+Inter\+Face\+Addresses (\begin{DoxyParamCaption}\item[{std\+::multimap$<$ std\+::string, std\+::pair$<$ Address\+::ptr, uint32\+\_\+t $>$$>$ \&}]{result,  }\item[{int}]{family = {\ttfamily AF\+\_\+INET} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+返回本机所有网卡的$<$网卡名，$<$地址，子网掩码位数$>$$>$ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em result} & 保存本机所有地址 \\
+\hline
+{\em family} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1Address_a4beef8f16f94fd1aa9f70d94cd66aa32}\label{classWebSrv_1_1Address_a4beef8f16f94fd1aa9f70d94cd66aa32}} 
+\index{WebSrv::Address@{WebSrv::Address}!getInterFaceAddresses@{getInterFaceAddresses}}
+\index{getInterFaceAddresses@{getInterFaceAddresses}!WebSrv::Address@{WebSrv::Address}}
+\doxysubsubsection{\texorpdfstring{getInterFaceAddresses()}{getInterFaceAddresses()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Web\+Srv\+::\+Address\+::get\+Inter\+Face\+Addresses (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::pair$<$ Address\+::ptr, uint32\+\_\+t $>$$>$ \&}]{result,  }\item[{const std\+::string \&}]{iface,  }\item[{int}]{family = {\ttfamily AF\+\_\+INET} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+获取指定网卡的地址和子网掩码位数 
+
+
+\begin{DoxyParams}{Parameters}
+{\em result} & \\
+\hline
+{\em iface} & \\
+\hline
+{\em family} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1Address_a5e664e4845e92cc03935d946754a0cc3}\label{classWebSrv_1_1Address_a5e664e4845e92cc03935d946754a0cc3}} 
+\index{WebSrv::Address@{WebSrv::Address}!insert@{insert}}
+\index{insert@{insert}!WebSrv::Address@{WebSrv::Address}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily virtual std\+::ostream\& Web\+Srv\+::\+Address\+::insert (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+可读性输出地址 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::ostream\& 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classWebSrv_1_1UnknownAddress_a7528f8646b1edf86f8bf75ca724817aa}{Web\+Srv\+::\+Unknown\+Address}}, \mbox{\hyperlink{classWebSrv_1_1UnixAddress_a3d47fd89ac4cf7efd780d9abe23c1b21}{Web\+Srv\+::\+Unix\+Address}}, \mbox{\hyperlink{classWebSrv_1_1IPv6Address_a70862102294b62fe9069d44ef8f507f5}{Web\+Srv\+::\+IPv6\+Address}}, and \mbox{\hyperlink{classWebSrv_1_1IPv4Address_a482354203dcdfb5f52ee663d63bc4359}{Web\+Srv\+::\+IPv4\+Address}}.
+
+\mbox{\Hypertarget{classWebSrv_1_1Address_af5abf46357770c748b3c3d391e7a82b3}\label{classWebSrv_1_1Address_af5abf46357770c748b3c3d391e7a82b3}} 
+\index{WebSrv::Address@{WebSrv::Address}!lookup@{lookup}}
+\index{lookup@{lookup}!WebSrv::Address@{WebSrv::Address}}
+\doxysubsubsection{\texorpdfstring{lookup()}{lookup()}}
+{\footnotesize\ttfamily bool Web\+Srv\+::\+Address\+::lookup (\begin{DoxyParamCaption}\item[{std\+::vector$<$ Address\+::ptr $>$ \&}]{result,  }\item[{const std\+::string \&}]{host,  }\item[{int}]{family = {\ttfamily AF\+\_\+INET},  }\item[{int}]{type = {\ttfamily 0},  }\item[{int}]{protocol = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+通过host返回满足对应条件的所有\+Address 
+
+
+\begin{DoxyParams}{Parameters}
+{\em result} & 满足条件\+Address \\
+\hline
+{\em host} & 域名，服务器名等 \\
+\hline
+{\em family} & \\
+\hline
+{\em type} & \\
+\hline
+{\em protocol} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1Address_a2f5e6666a11953cd77e5cdb03dd4e16b}\label{classWebSrv_1_1Address_a2f5e6666a11953cd77e5cdb03dd4e16b}} 
+\index{WebSrv::Address@{WebSrv::Address}!lookupAny@{lookupAny}}
+\index{lookupAny@{lookupAny}!WebSrv::Address@{WebSrv::Address}}
+\doxysubsubsection{\texorpdfstring{lookupAny()}{lookupAny()}}
+{\footnotesize\ttfamily Address\+::ptr Web\+Srv\+::\+Address\+::lookup\+Any (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{host,  }\item[{int}]{family = {\ttfamily AF\+\_\+INET},  }\item[{int}]{type = {\ttfamily 0},  }\item[{int}]{protocol = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+通过host返回满足对应条件的任意\+Address 
+
+
+\begin{DoxyParams}{Parameters}
+{\em host} & \\
+\hline
+{\em family} & \\
+\hline
+{\em type} & \\
+\hline
+{\em protocol} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Address\+::ptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1Address_a6d217ee8cb10e59ffb29560fe649652c}\label{classWebSrv_1_1Address_a6d217ee8cb10e59ffb29560fe649652c}} 
+\index{WebSrv::Address@{WebSrv::Address}!lookupAnyIPAddress@{lookupAnyIPAddress}}
+\index{lookupAnyIPAddress@{lookupAnyIPAddress}!WebSrv::Address@{WebSrv::Address}}
+\doxysubsubsection{\texorpdfstring{lookupAnyIPAddress()}{lookupAnyIPAddress()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classWebSrv_1_1IPAddress}{IPAddress}} $>$ Web\+Srv\+::\+Address\+::lookup\+Any\+IPAddress (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{host,  }\item[{int}]{family = {\ttfamily AF\+\_\+INET},  }\item[{int}]{type = {\ttfamily 0},  }\item[{int}]{protocol = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+通过host返回条件的任意\+IPAddress 
+
+
+\begin{DoxyParams}{Parameters}
+{\em host} & \\
+\hline
+{\em family} & \\
+\hline
+{\em type} & \\
+\hline
+{\em protocol} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+IPAddress$>$ 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tiny\+Web\+Server/address.\+h\item 
+src/address.\+cpp\end{DoxyCompactItemize}

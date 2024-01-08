@@ -1,0 +1,124 @@
+\hypertarget{classWebSrv_1_1UnknownAddress}{}\doxysection{Web\+Srv\+::Unknown\+Address Class Reference}
+\label{classWebSrv_1_1UnknownAddress}\index{WebSrv::UnknownAddress@{WebSrv::UnknownAddress}}
+
+
+未知地址  
+
+
+
+
+{\ttfamily \#include $<$address.\+h$>$}
+
+
+
+Inheritance diagram for Web\+Srv\+::Unknown\+Address\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classWebSrv_1_1UnknownAddress__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Web\+Srv\+::Unknown\+Address\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classWebSrv_1_1UnknownAddress__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1UnknownAddress_a745555b65ce7adf5906001e5f606bb03}\label{classWebSrv_1_1UnknownAddress_a745555b65ce7adf5906001e5f606bb03}} 
+using {\bfseries ptr} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classWebSrv_1_1UnknownAddress}{Unknown\+Address}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1UnknownAddress_aec6ac34103b3a40fc0b6ae5b17475c18}\label{classWebSrv_1_1UnknownAddress_aec6ac34103b3a40fc0b6ae5b17475c18}} 
+{\bfseries Unknown\+Address} (const sockaddr \&addr)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1UnknownAddress_a4b29edb005b3bb7b8331b1f2a41f3b09}\label{classWebSrv_1_1UnknownAddress_a4b29edb005b3bb7b8331b1f2a41f3b09}} 
+{\bfseries Unknown\+Address} (int family)
+\item 
+const sockaddr $\ast$ \mbox{\hyperlink{classWebSrv_1_1UnknownAddress_afa6ef24065ade95bdc2957964e84fa51}{get\+Addr}} () const override
+\begin{DoxyCompactList}\small\item\em sockaddr$\ast$ 只读 \end{DoxyCompactList}\item 
+sockaddr $\ast$ \mbox{\hyperlink{classWebSrv_1_1UnknownAddress_a605152ff9dc006928750a070f0b7beb4}{get\+Addr}} () override
+\begin{DoxyCompactList}\small\item\em sockaddr$\ast$ 读写 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1UnknownAddress_a6b0efcd9cf5b7917cd613a3cdf227555}\label{classWebSrv_1_1UnknownAddress_a6b0efcd9cf5b7917cd613a3cdf227555}} 
+socklen\+\_\+t {\bfseries get\+Addr\+Len} () const override
+\item 
+std\+::ostream \& \mbox{\hyperlink{classWebSrv_1_1UnknownAddress_a7528f8646b1edf86f8bf75ca724817aa}{insert}} (std\+::ostream \&os) const override
+\begin{DoxyCompactList}\small\item\em 可读性输出地址 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+未知地址 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebSrv_1_1UnknownAddress_afa6ef24065ade95bdc2957964e84fa51}\label{classWebSrv_1_1UnknownAddress_afa6ef24065ade95bdc2957964e84fa51}} 
+\index{WebSrv::UnknownAddress@{WebSrv::UnknownAddress}!getAddr@{getAddr}}
+\index{getAddr@{getAddr}!WebSrv::UnknownAddress@{WebSrv::UnknownAddress}}
+\doxysubsubsection{\texorpdfstring{getAddr()}{getAddr()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const sockaddr $\ast$ Web\+Srv\+::\+Unknown\+Address\+::get\+Addr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+sockaddr$\ast$ 只读 
+
+\begin{DoxyReturn}{Returns}
+const sockaddr$\ast$ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classWebSrv_1_1Address_af98d567004396034504eef745ef280d0}{Web\+Srv\+::\+Address}}.
+
+\mbox{\Hypertarget{classWebSrv_1_1UnknownAddress_a605152ff9dc006928750a070f0b7beb4}\label{classWebSrv_1_1UnknownAddress_a605152ff9dc006928750a070f0b7beb4}} 
+\index{WebSrv::UnknownAddress@{WebSrv::UnknownAddress}!getAddr@{getAddr}}
+\index{getAddr@{getAddr}!WebSrv::UnknownAddress@{WebSrv::UnknownAddress}}
+\doxysubsubsection{\texorpdfstring{getAddr()}{getAddr()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sockaddr $\ast$ Web\+Srv\+::\+Unknown\+Address\+::get\+Addr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+sockaddr$\ast$ 读写 
+
+\begin{DoxyReturn}{Returns}
+const sockaddr$\ast$ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classWebSrv_1_1Address_a5396c15433468d8a9afebf343be3256f}{Web\+Srv\+::\+Address}}.
+
+\mbox{\Hypertarget{classWebSrv_1_1UnknownAddress_a7528f8646b1edf86f8bf75ca724817aa}\label{classWebSrv_1_1UnknownAddress_a7528f8646b1edf86f8bf75ca724817aa}} 
+\index{WebSrv::UnknownAddress@{WebSrv::UnknownAddress}!insert@{insert}}
+\index{insert@{insert}!WebSrv::UnknownAddress@{WebSrv::UnknownAddress}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily std\+::ostream \& Web\+Srv\+::\+Unknown\+Address\+::insert (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+可读性输出地址 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::ostream\& 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classWebSrv_1_1Address_a5e664e4845e92cc03935d946754a0cc3}{Web\+Srv\+::\+Address}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tiny\+Web\+Server/address.\+h\item 
+src/address.\+cpp\end{DoxyCompactItemize}

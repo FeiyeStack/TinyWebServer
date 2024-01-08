@@ -1,0 +1,237 @@
+\hypertarget{classWebSrv_1_1Logger}{}\doxysection{Web\+Srv\+::Logger Class Reference}
+\label{classWebSrv_1_1Logger}\index{WebSrv::Logger@{WebSrv::Logger}}
+
+
+日志器 发布日志事件，指定打印格式，输出目标  
+
+
+
+
+{\ttfamily \#include $<$logger.\+h$>$}
+
+
+
+Inheritance diagram for Web\+Srv\+::Logger\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{classWebSrv_1_1Logger__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Web\+Srv\+::Logger\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{classWebSrv_1_1Logger__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Logger_ae3c756bcac6b925b9e5823c56454ceef}\label{classWebSrv_1_1Logger_ae3c756bcac6b925b9e5823c56454ceef}} 
+using {\bfseries ptr} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classWebSrv_1_1Logger}{Logger}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Logger_a1ce8853dbcfe6db5e52e30fcc30d1f99}\label{classWebSrv_1_1Logger_a1ce8853dbcfe6db5e52e30fcc30d1f99}} 
+{\bfseries Logger} (std\+::string name)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Logger_ae854f31a5459ab83ae3088dd2839bf80}\label{classWebSrv_1_1Logger_ae854f31a5459ab83ae3088dd2839bf80}} 
+std\+::string {\bfseries get\+Name} () const
+\item 
+void \mbox{\hyperlink{classWebSrv_1_1Logger_aca3900ab28bba1b24277468f71e39ea7}{log}} (Log\+Event\+::ptr sp\+Log\+Event)
+\begin{DoxyCompactList}\small\item\em 使用事件，向目标器输出日志 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1Logger_ae5ce8d2aa332227bc5c2b73128bb3864}{log}} (const std\+::string \&msg, Log\+Level\+::\+Level level, const char $\ast$cur\+File=CALLER\+\_\+\+FILE(), int cur\+Line=CALLER\+\_\+\+LINE(), const char $\ast$cur\+Func=CALLER\+\_\+\+FUNCTION())
+\begin{DoxyCompactList}\small\item\em 直接构建日志事件，向目标器输出日志 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1Logger_a2886d52ab686c21b4cb785dcbe9a9f66}\label{classWebSrv_1_1Logger_a2886d52ab686c21b4cb785dcbe9a9f66}} 
+void {\bfseries debug} (const std\+::string \&msg, const char $\ast$cur\+File=CALLER\+\_\+\+FILE(), int cur\+Line=CALLER\+\_\+\+LINE(), const char $\ast$cur\+Func=CALLER\+\_\+\+FUNCTION())
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Logger_af5b21767832ed52415953b4a82ab8954}\label{classWebSrv_1_1Logger_af5b21767832ed52415953b4a82ab8954}} 
+void {\bfseries info} (const std\+::string \&msg, const char $\ast$cur\+File=CALLER\+\_\+\+FILE(), int cur\+Line=CALLER\+\_\+\+LINE(), const char $\ast$cur\+Func=CALLER\+\_\+\+FUNCTION())
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Logger_a25aed5865236d9ca784cbb4359e29090}\label{classWebSrv_1_1Logger_a25aed5865236d9ca784cbb4359e29090}} 
+void {\bfseries warn} (const std\+::string \&msg, const char $\ast$cur\+File=CALLER\+\_\+\+FILE(), int cur\+Line=CALLER\+\_\+\+LINE(), const char $\ast$cur\+Func=CALLER\+\_\+\+FUNCTION())
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Logger_a5d0c4ba736aa47bba5aa19715ff2073d}\label{classWebSrv_1_1Logger_a5d0c4ba736aa47bba5aa19715ff2073d}} 
+void {\bfseries error} (const std\+::string \&msg, const char $\ast$cur\+File=CALLER\+\_\+\+FILE(), int cur\+Line=CALLER\+\_\+\+LINE(), const char $\ast$cur\+Func=CALLER\+\_\+\+FUNCTION())
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Logger_ac181bf51af3b30f5b6182f00586df2e3}\label{classWebSrv_1_1Logger_ac181bf51af3b30f5b6182f00586df2e3}} 
+void {\bfseries fatal} (const std\+::string \&msg, const char $\ast$cur\+File=CALLER\+\_\+\+FILE(), int cur\+Line=CALLER\+\_\+\+LINE(), const char $\ast$cur\+Func=CALLER\+\_\+\+FUNCTION())
+\item 
+void \mbox{\hyperlink{classWebSrv_1_1Logger_ad1104a98e74ca82d58418b72b80f09ce}{add\+Appender}} (Log\+Appender\+::ptr appender)
+\begin{DoxyCompactList}\small\item\em 添加目标器 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1Logger_ab63b34a03f403ad615b48790246ee559}{del\+Appender}} (Log\+Appender\+::ptr appender)
+\begin{DoxyCompactList}\small\item\em 删除目标器 用对应指针移除 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1Logger_ae35285640dd50b9a42e3c16d54bdffdb}{del\+Appender}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em 删除目标器 先提是非匿名的 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1Logger_a5f8f96aef490b59e06f6fee98c16920a}\label{classWebSrv_1_1Logger_a5f8f96aef490b59e06f6fee98c16920a}} 
+void {\bfseries clear\+Appender} ()
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Logger_a9eaa666e60dd8f13d717432a5d61f275}\label{classWebSrv_1_1Logger_a9eaa666e60dd8f13d717432a5d61f275}} 
+Log\+Appender\+::ptr {\bfseries get\+Log\+Appender} (const std\+::string \&name)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Logger_ad3f02846db7425be0d1e8a97d0168380}\label{classWebSrv_1_1Logger_ad3f02846db7425be0d1e8a97d0168380}} 
+std\+::list$<$ Log\+Appender\+::ptr $>$ {\bfseries get\+Log\+Appender} ()
+\item 
+void \mbox{\hyperlink{classWebSrv_1_1Logger_a822149c290b82f78d0359d453847473e}{set\+Log\+Formater}} (Log\+Formater\+::ptr sp\+Log\+Formater)
+\begin{DoxyCompactList}\small\item\em 设置格式器，如果目标器使用相同的格式器，将被一起被设置 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1Logger_a84ebf7acd113f5a6122cab5639b985b6}{set\+Log\+Formater}} (const std\+::string \&fmt)
+\begin{DoxyCompactList}\small\item\em 以字符格式的形式添加格式器 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1Logger_a3ae79ba99dbf04ba9f437cf74ce9ae0d}\label{classWebSrv_1_1Logger_a3ae79ba99dbf04ba9f437cf74ce9ae0d}} 
+Log\+Formater\+::ptr {\bfseries get\+Log\+Formater} ()
+\item 
+Logger\+::ptr \mbox{\hyperlink{classWebSrv_1_1Logger_afd430cfb95f2bab83c0b18e4c26464a7}{get\+Root}} ()
+\begin{DoxyCompactList}\small\item\em 主日志器 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1Logger_aaeb53a1e66a98995bd72fbab01af769f}\label{classWebSrv_1_1Logger_aaeb53a1e66a98995bd72fbab01af769f}} 
+void {\bfseries set\+Level} (Log\+Level\+::\+Level level)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Logger_ab5df57b399d2c7d2c63e6a2b1f7170ba}\label{classWebSrv_1_1Logger_ab5df57b399d2c7d2c63e6a2b1f7170ba}} 
+Log\+Level\+::\+Level {\bfseries get\+Level} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Logger_a96e1b0ecc46b098c61336115df3ef1da}\label{classWebSrv_1_1Logger_a96e1b0ecc46b098c61336115df3ef1da}} 
+class {\bfseries Logger\+Manage}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+日志器 发布日志事件，指定打印格式，输出目标 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebSrv_1_1Logger_ad1104a98e74ca82d58418b72b80f09ce}\label{classWebSrv_1_1Logger_ad1104a98e74ca82d58418b72b80f09ce}} 
+\index{WebSrv::Logger@{WebSrv::Logger}!addAppender@{addAppender}}
+\index{addAppender@{addAppender}!WebSrv::Logger@{WebSrv::Logger}}
+\doxysubsubsection{\texorpdfstring{addAppender()}{addAppender()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Logger\+::add\+Appender (\begin{DoxyParamCaption}\item[{Log\+Appender\+::ptr}]{appender }\end{DoxyParamCaption})}
+
+
+
+添加目标器 
+
+
+\begin{DoxyParams}{Parameters}
+{\em appender} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1Logger_ae35285640dd50b9a42e3c16d54bdffdb}\label{classWebSrv_1_1Logger_ae35285640dd50b9a42e3c16d54bdffdb}} 
+\index{WebSrv::Logger@{WebSrv::Logger}!delAppender@{delAppender}}
+\index{delAppender@{delAppender}!WebSrv::Logger@{WebSrv::Logger}}
+\doxysubsubsection{\texorpdfstring{delAppender()}{delAppender()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Logger\+::del\+Appender (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+删除目标器 先提是非匿名的 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & 目标器名 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1Logger_ab63b34a03f403ad615b48790246ee559}\label{classWebSrv_1_1Logger_ab63b34a03f403ad615b48790246ee559}} 
+\index{WebSrv::Logger@{WebSrv::Logger}!delAppender@{delAppender}}
+\index{delAppender@{delAppender}!WebSrv::Logger@{WebSrv::Logger}}
+\doxysubsubsection{\texorpdfstring{delAppender()}{delAppender()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Logger\+::del\+Appender (\begin{DoxyParamCaption}\item[{Log\+Appender\+::ptr}]{appender }\end{DoxyParamCaption})}
+
+
+
+删除目标器 用对应指针移除 
+
+
+\begin{DoxyParams}{Parameters}
+{\em appender} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1Logger_afd430cfb95f2bab83c0b18e4c26464a7}\label{classWebSrv_1_1Logger_afd430cfb95f2bab83c0b18e4c26464a7}} 
+\index{WebSrv::Logger@{WebSrv::Logger}!getRoot@{getRoot}}
+\index{getRoot@{getRoot}!WebSrv::Logger@{WebSrv::Logger}}
+\doxysubsubsection{\texorpdfstring{getRoot()}{getRoot()}}
+{\footnotesize\ttfamily Logger\+::ptr Web\+Srv\+::\+Logger\+::get\+Root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+主日志器 
+
+\begin{DoxyReturn}{Returns}
+Logger\+::ptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1Logger_ae5ce8d2aa332227bc5c2b73128bb3864}\label{classWebSrv_1_1Logger_ae5ce8d2aa332227bc5c2b73128bb3864}} 
+\index{WebSrv::Logger@{WebSrv::Logger}!log@{log}}
+\index{log@{log}!WebSrv::Logger@{WebSrv::Logger}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Logger\+::log (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{msg,  }\item[{Log\+Level\+::\+Level}]{level,  }\item[{const char $\ast$}]{cur\+File = {\ttfamily CALLER\+\_\+FILE()},  }\item[{int}]{cur\+Line = {\ttfamily CALLER\+\_\+LINE()},  }\item[{const char $\ast$}]{cur\+Func = {\ttfamily CALLER\+\_\+FUNCTION()} }\end{DoxyParamCaption})}
+
+
+
+直接构建日志事件，向目标器输出日志 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & 消息 \\
+\hline
+{\em level} & 日志级别 \\
+\hline
+{\em cur\+File} & 当前运行文件名 \\
+\hline
+{\em cur\+Line} & 当前运行行数 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1Logger_aca3900ab28bba1b24277468f71e39ea7}\label{classWebSrv_1_1Logger_aca3900ab28bba1b24277468f71e39ea7}} 
+\index{WebSrv::Logger@{WebSrv::Logger}!log@{log}}
+\index{log@{log}!WebSrv::Logger@{WebSrv::Logger}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Logger\+::log (\begin{DoxyParamCaption}\item[{Log\+Event\+::ptr}]{sp\+Log\+Event }\end{DoxyParamCaption})}
+
+
+
+使用事件，向目标器输出日志 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sp\+Log\+Event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1Logger_a84ebf7acd113f5a6122cab5639b985b6}\label{classWebSrv_1_1Logger_a84ebf7acd113f5a6122cab5639b985b6}} 
+\index{WebSrv::Logger@{WebSrv::Logger}!setLogFormater@{setLogFormater}}
+\index{setLogFormater@{setLogFormater}!WebSrv::Logger@{WebSrv::Logger}}
+\doxysubsubsection{\texorpdfstring{setLogFormater()}{setLogFormater()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Logger\+::set\+Log\+Formater (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fmt }\end{DoxyParamCaption})}
+
+
+
+以字符格式的形式添加格式器 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fmt} & 字符格式 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1Logger_a822149c290b82f78d0359d453847473e}\label{classWebSrv_1_1Logger_a822149c290b82f78d0359d453847473e}} 
+\index{WebSrv::Logger@{WebSrv::Logger}!setLogFormater@{setLogFormater}}
+\index{setLogFormater@{setLogFormater}!WebSrv::Logger@{WebSrv::Logger}}
+\doxysubsubsection{\texorpdfstring{setLogFormater()}{setLogFormater()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Logger\+::set\+Log\+Formater (\begin{DoxyParamCaption}\item[{Log\+Formater\+::ptr}]{sp\+Log\+Formater }\end{DoxyParamCaption})}
+
+
+
+设置格式器，如果目标器使用相同的格式器，将被一起被设置 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sp\+Log\+Formater} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tiny\+Web\+Server/log/logger.\+h\item 
+src/log/logger.\+cpp\end{DoxyCompactItemize}

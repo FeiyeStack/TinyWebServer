@@ -1,0 +1,188 @@
+\hypertarget{classWebSrv_1_1IOManager}{}\doxysection{Web\+Srv\+::IOManager Class Reference}
+\label{classWebSrv_1_1IOManager}\index{WebSrv::IOManager@{WebSrv::IOManager}}
+
+
+Inheritance diagram for Web\+Srv\+::IOManager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classWebSrv_1_1IOManager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Web\+Srv\+::IOManager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classWebSrv_1_1IOManager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1IOManager_a8edaa8e72bb20446153f1e9b6317453d}\label{classWebSrv_1_1IOManager_a8edaa8e72bb20446153f1e9b6317453d}} 
+enum {\bfseries Event} \{ {\bfseries NONE} = 0x0
+, {\bfseries READ} = 0x1
+, {\bfseries WRITE} = 0x4
+ \}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1IOManager_ad52cea121883260226b1a3e7e2ec5a39}\label{classWebSrv_1_1IOManager_ad52cea121883260226b1a3e7e2ec5a39}} 
+using {\bfseries ptr} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classWebSrv_1_1IOManager}{IOManager}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1IOManager_a41802c8681bce3f44b9f7ba01766bc34}\label{classWebSrv_1_1IOManager_a41802c8681bce3f44b9f7ba01766bc34}} 
+{\bfseries IOManager} (size\+\_\+t threads=1, bool use\+\_\+caller=true, const std\+::string \&name=\char`\"{}\char`\"{})
+\item 
+int \mbox{\hyperlink{classWebSrv_1_1IOManager_a511ace2b61c3c133e5a53560c42a7f24}{add\+Event}} (int fd, Event event, std\+::function$<$ void()$>$ cb=nullptr)
+\begin{DoxyCompactList}\small\item\em 添加事件 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebSrv_1_1IOManager_a60718cccea155d45a30dfbe5d911d59e}{cancel\+Event}} (int fd, Event event)
+\begin{DoxyCompactList}\small\item\em 取消事件,如果存在的话,立刻触发事件 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebSrv_1_1IOManager_a393a927a443915978bb37b23a7f75349}{cancel\+All}} (int fd)
+\begin{DoxyCompactList}\small\item\em 取消该句柄的所有事件,如果存在的话,立刻触发所有事件 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebSrv_1_1IOManager_afc04e991ab162893765682faea2e8b56}{del\+Event}} (int fd, Event event)
+\begin{DoxyCompactList}\small\item\em 取消该句柄的事件 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1IOManager_a7545bd3b9daf950d4b1133d52eabed6f}\label{classWebSrv_1_1IOManager_a7545bd3b9daf950d4b1133d52eabed6f}} 
+void \mbox{\hyperlink{classWebSrv_1_1IOManager_a7545bd3b9daf950d4b1133d52eabed6f}{stop}} () override
+\begin{DoxyCompactList}\small\item\em 停止运行 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1IOManager_ab3dccad45ba1d391dc83de59a017c742}\label{classWebSrv_1_1IOManager_ab3dccad45ba1d391dc83de59a017c742}} 
+static \mbox{\hyperlink{classWebSrv_1_1IOManager}{IOManager}} $\ast$ {\bfseries get\+This} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1IOManager_a85fc845a951317a97630512da08a58f2}\label{classWebSrv_1_1IOManager_a85fc845a951317a97630512da08a58f2}} 
+void \mbox{\hyperlink{classWebSrv_1_1IOManager_a85fc845a951317a97630512da08a58f2}{tickle}} () override
+\begin{DoxyCompactList}\small\item\em 通知调度器有任务发生 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1IOManager_a6dac8d944c2b9e8af5526a458292c4f9}\label{classWebSrv_1_1IOManager_a6dac8d944c2b9e8af5526a458292c4f9}} 
+bool {\bfseries stopping} () override
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1IOManager_a099ba7b54f8e883a73a03b140d2389d5}\label{classWebSrv_1_1IOManager_a099ba7b54f8e883a73a03b140d2389d5}} 
+bool {\bfseries stopping} (uint64\+\_\+t timeout)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1IOManager_a36fc725ad8e7e9b7facd42c09138e205}\label{classWebSrv_1_1IOManager_a36fc725ad8e7e9b7facd42c09138e205}} 
+void {\bfseries idle} () override
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1IOManager_a0c59133f54dac38ffd3d72bdc0241ecd}\label{classWebSrv_1_1IOManager_a0c59133f54dac38ffd3d72bdc0241ecd}} 
+void \mbox{\hyperlink{classWebSrv_1_1IOManager_a0c59133f54dac38ffd3d72bdc0241ecd}{on\+Timer\+Inserted\+At\+Front}} () override
+\begin{DoxyCompactList}\small\item\em 如果定时插入在顶部时触发操作 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1IOManager_ae16aa16b5b6d4e69b1058426e64fbda7}{context\+Resize}} (size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em socket句柄上下文容器大小 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebSrv_1_1IOManager_a511ace2b61c3c133e5a53560c42a7f24}\label{classWebSrv_1_1IOManager_a511ace2b61c3c133e5a53560c42a7f24}} 
+\index{WebSrv::IOManager@{WebSrv::IOManager}!addEvent@{addEvent}}
+\index{addEvent@{addEvent}!WebSrv::IOManager@{WebSrv::IOManager}}
+\doxysubsubsection{\texorpdfstring{addEvent()}{addEvent()}}
+{\footnotesize\ttfamily int Web\+Srv\+::\+IOManager\+::add\+Event (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{Event}]{event,  }\item[{std\+::function$<$ void()$>$}]{cb = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+添加事件 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & \\
+\hline
+{\em event} & \\
+\hline
+{\em cb} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1IOManager_a393a927a443915978bb37b23a7f75349}\label{classWebSrv_1_1IOManager_a393a927a443915978bb37b23a7f75349}} 
+\index{WebSrv::IOManager@{WebSrv::IOManager}!cancelAll@{cancelAll}}
+\index{cancelAll@{cancelAll}!WebSrv::IOManager@{WebSrv::IOManager}}
+\doxysubsubsection{\texorpdfstring{cancelAll()}{cancelAll()}}
+{\footnotesize\ttfamily bool Web\+Srv\+::\+IOManager\+::cancel\+All (\begin{DoxyParamCaption}\item[{int}]{fd }\end{DoxyParamCaption})}
+
+
+
+取消该句柄的所有事件,如果存在的话,立刻触发所有事件 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1IOManager_a60718cccea155d45a30dfbe5d911d59e}\label{classWebSrv_1_1IOManager_a60718cccea155d45a30dfbe5d911d59e}} 
+\index{WebSrv::IOManager@{WebSrv::IOManager}!cancelEvent@{cancelEvent}}
+\index{cancelEvent@{cancelEvent}!WebSrv::IOManager@{WebSrv::IOManager}}
+\doxysubsubsection{\texorpdfstring{cancelEvent()}{cancelEvent()}}
+{\footnotesize\ttfamily bool Web\+Srv\+::\+IOManager\+::cancel\+Event (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{Event}]{event }\end{DoxyParamCaption})}
+
+
+
+取消事件,如果存在的话,立刻触发事件 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & \\
+\hline
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1IOManager_ae16aa16b5b6d4e69b1058426e64fbda7}\label{classWebSrv_1_1IOManager_ae16aa16b5b6d4e69b1058426e64fbda7}} 
+\index{WebSrv::IOManager@{WebSrv::IOManager}!contextResize@{contextResize}}
+\index{contextResize@{contextResize}!WebSrv::IOManager@{WebSrv::IOManager}}
+\doxysubsubsection{\texorpdfstring{contextResize()}{contextResize()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+IOManager\+::context\+Resize (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+socket句柄上下文容器大小 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1IOManager_afc04e991ab162893765682faea2e8b56}\label{classWebSrv_1_1IOManager_afc04e991ab162893765682faea2e8b56}} 
+\index{WebSrv::IOManager@{WebSrv::IOManager}!delEvent@{delEvent}}
+\index{delEvent@{delEvent}!WebSrv::IOManager@{WebSrv::IOManager}}
+\doxysubsubsection{\texorpdfstring{delEvent()}{delEvent()}}
+{\footnotesize\ttfamily bool Web\+Srv\+::\+IOManager\+::del\+Event (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{Event}]{event }\end{DoxyParamCaption})}
+
+
+
+取消该句柄的事件 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & \\
+\hline
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tiny\+Web\+Server/iomanager.\+h\item 
+src/iomanager.\+cpp\end{DoxyCompactItemize}

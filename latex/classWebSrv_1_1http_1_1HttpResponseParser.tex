@@ -1,0 +1,105 @@
+\hypertarget{classWebSrv_1_1http_1_1HttpResponseParser}{}\doxysection{Web\+Srv\+::http\+::Http\+Response\+Parser Class Reference}
+\label{classWebSrv_1_1http_1_1HttpResponseParser}\index{WebSrv::http::HttpResponseParser@{WebSrv::http::HttpResponseParser}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponseParser_a84923b0bcf2a332cd4919d78863bbd9e}\label{classWebSrv_1_1http_1_1HttpResponseParser_a84923b0bcf2a332cd4919d78863bbd9e}} 
+using {\bfseries ptr} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponseParser}{Http\+Response\+Parser}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponseParser_a5dddbe2b1dbbe61b6f2f64b85bebb12c}{execute}} (char $\ast$data, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em 解析协议(不解析请求体) \end{DoxyCompactList}\item 
+Http\+Response\+::ptr \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponseParser_a997eee50cb2930ddaa345148b11708fa}{get\+Data}} () const
+\begin{DoxyCompactList}\small\item\em 获取http响应报文储存结构 \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponseParser_a1d6802716da86105ca7c55be8d72cb8a}{get\+Content\+Length}} ()
+\begin{DoxyCompactList}\small\item\em 获取消息体长度 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uint64\+\_\+t \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponseParser_a86234c609f0e1d575c28c7a62fb9d76c}{get\+Http\+Response\+Buffer\+Size}} ()
+\begin{DoxyCompactList}\small\item\em 返回http 响应协议解析的缓存大小 \end{DoxyCompactList}\item 
+static uint64\+\_\+t \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponseParser_a53198bddb80e068879cde18a93ea93a7}{get\+Http\+Response\+Max\+Body\+Size}} ()
+\begin{DoxyCompactList}\small\item\em 返回http 响应协议解析的最大消息体大小 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponseParser_a5dddbe2b1dbbe61b6f2f64b85bebb12c}\label{classWebSrv_1_1http_1_1HttpResponseParser_a5dddbe2b1dbbe61b6f2f64b85bebb12c}} 
+\index{WebSrv::http::HttpResponseParser@{WebSrv::http::HttpResponseParser}!execute@{execute}}
+\index{execute@{execute}!WebSrv::http::HttpResponseParser@{WebSrv::http::HttpResponseParser}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily size\+\_\+t Web\+Srv\+::http\+::\+Http\+Response\+Parser\+::execute (\begin{DoxyParamCaption}\item[{char $\ast$}]{data,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+解析协议(不解析请求体) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & 协议文本内存(会添加\textquotesingle{}\textbackslash{}0\textquotesingle{}破坏原有的结构) \\
+\hline
+{\em len} & 协议文本内存长度 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 成功返回解析长度，不是完整报文返回0，错误返回-\/1 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponseParser_a1d6802716da86105ca7c55be8d72cb8a}\label{classWebSrv_1_1http_1_1HttpResponseParser_a1d6802716da86105ca7c55be8d72cb8a}} 
+\index{WebSrv::http::HttpResponseParser@{WebSrv::http::HttpResponseParser}!getContentLength@{getContentLength}}
+\index{getContentLength@{getContentLength}!WebSrv::http::HttpResponseParser@{WebSrv::http::HttpResponseParser}}
+\doxysubsubsection{\texorpdfstring{getContentLength()}{getContentLength()}}
+{\footnotesize\ttfamily uint64\+\_\+t Web\+Srv\+::http\+::\+Http\+Response\+Parser\+::get\+Content\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+获取消息体长度 
+
+\begin{DoxyReturn}{Returns}
+uint64\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponseParser_a997eee50cb2930ddaa345148b11708fa}\label{classWebSrv_1_1http_1_1HttpResponseParser_a997eee50cb2930ddaa345148b11708fa}} 
+\index{WebSrv::http::HttpResponseParser@{WebSrv::http::HttpResponseParser}!getData@{getData}}
+\index{getData@{getData}!WebSrv::http::HttpResponseParser@{WebSrv::http::HttpResponseParser}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily Http\+Response\+::ptr Web\+Srv\+::http\+::\+Http\+Response\+Parser\+::get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+获取http响应报文储存结构 
+
+\begin{DoxyReturn}{Returns}
+Http\+Response\+::ptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponseParser_a86234c609f0e1d575c28c7a62fb9d76c}\label{classWebSrv_1_1http_1_1HttpResponseParser_a86234c609f0e1d575c28c7a62fb9d76c}} 
+\index{WebSrv::http::HttpResponseParser@{WebSrv::http::HttpResponseParser}!getHttpResponseBufferSize@{getHttpResponseBufferSize}}
+\index{getHttpResponseBufferSize@{getHttpResponseBufferSize}!WebSrv::http::HttpResponseParser@{WebSrv::http::HttpResponseParser}}
+\doxysubsubsection{\texorpdfstring{getHttpResponseBufferSize()}{getHttpResponseBufferSize()}}
+{\footnotesize\ttfamily uint64\+\_\+t Web\+Srv\+::http\+::\+Http\+Response\+Parser\+::get\+Http\+Response\+Buffer\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+返回http 响应协议解析的缓存大小 
+
+\begin{DoxyReturn}{Returns}
+uint64\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponseParser_a53198bddb80e068879cde18a93ea93a7}\label{classWebSrv_1_1http_1_1HttpResponseParser_a53198bddb80e068879cde18a93ea93a7}} 
+\index{WebSrv::http::HttpResponseParser@{WebSrv::http::HttpResponseParser}!getHttpResponseMaxBodySize@{getHttpResponseMaxBodySize}}
+\index{getHttpResponseMaxBodySize@{getHttpResponseMaxBodySize}!WebSrv::http::HttpResponseParser@{WebSrv::http::HttpResponseParser}}
+\doxysubsubsection{\texorpdfstring{getHttpResponseMaxBodySize()}{getHttpResponseMaxBodySize()}}
+{\footnotesize\ttfamily uint64\+\_\+t Web\+Srv\+::http\+::\+Http\+Response\+Parser\+::get\+Http\+Response\+Max\+Body\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+返回http 响应协议解析的最大消息体大小 
+
+\begin{DoxyReturn}{Returns}
+uint64\+\_\+t 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tiny\+Web\+Server/http/httpparser.\+h\item 
+src/http/httpparser.\+cpp\end{DoxyCompactItemize}

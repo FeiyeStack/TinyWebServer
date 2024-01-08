@@ -1,0 +1,76 @@
+\hypertarget{classWebSrv_1_1MySQLTransaction}{}\doxysection{Web\+Srv\+::My\+SQLTransaction Class Reference}
+\label{classWebSrv_1_1MySQLTransaction}\index{WebSrv::MySQLTransaction@{WebSrv::MySQLTransaction}}
+
+
+Inheritance diagram for Web\+Srv\+::My\+SQLTransaction\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classWebSrv_1_1MySQLTransaction__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Web\+Srv\+::My\+SQLTransaction\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classWebSrv_1_1MySQLTransaction__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1MySQLTransaction_a54fa97db7c64f188e492e8b49bdd14c8}\label{classWebSrv_1_1MySQLTransaction_a54fa97db7c64f188e492e8b49bdd14c8}} 
+using {\bfseries ptr} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classWebSrv_1_1MySQLTransaction}{My\+SQLTransaction}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1MySQLTransaction_a0f654cad49a88ea0a7ef192ec7d5ab61}\label{classWebSrv_1_1MySQLTransaction_a0f654cad49a88ea0a7ef192ec7d5ab61}} 
+bool {\bfseries begin} () override
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1MySQLTransaction_aa9d7b30a45f46fc1d0d7d511f7d71f2a}\label{classWebSrv_1_1MySQLTransaction_aa9d7b30a45f46fc1d0d7d511f7d71f2a}} 
+bool {\bfseries commit} () override
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1MySQLTransaction_a8fac70aea0f917b361d2587dc531acb3}\label{classWebSrv_1_1MySQLTransaction_a8fac70aea0f917b361d2587dc531acb3}} 
+bool {\bfseries rollback} () override
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1MySQLTransaction_afd5109024c190642bac10b2e48a5b3cd}\label{classWebSrv_1_1MySQLTransaction_afd5109024c190642bac10b2e48a5b3cd}} 
+virtual int {\bfseries execute} (const char $\ast$format,...) override
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1MySQLTransaction_ad3b0d65e6d4f9f8b8f38aae75153fd37}\label{classWebSrv_1_1MySQLTransaction_ad3b0d65e6d4f9f8b8f38aae75153fd37}} 
+int {\bfseries execute} (const char $\ast$format, va\+\_\+list ap)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1MySQLTransaction_af4aaf52e3052448d68ce9bc611fcb9f5}\label{classWebSrv_1_1MySQLTransaction_af4aaf52e3052448d68ce9bc611fcb9f5}} 
+virtual int {\bfseries execute} (const std\+::string \&sql) override
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1MySQLTransaction_aed866375245b6826c3db50e2440346a6}\label{classWebSrv_1_1MySQLTransaction_aed866375245b6826c3db50e2440346a6}} 
+int64\+\_\+t {\bfseries get\+Last\+Insert\+Id} () override
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1MySQLTransaction_a05a64eefb131c737369609117412c21d}\label{classWebSrv_1_1MySQLTransaction_a05a64eefb131c737369609117412c21d}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classWebSrv_1_1MySQL}{My\+SQL}} $>$ {\bfseries get\+My\+SQL} ()
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1MySQLTransaction_aeae83f5cf821350298e84d2f6cbda88f}\label{classWebSrv_1_1MySQLTransaction_aeae83f5cf821350298e84d2f6cbda88f}} 
+bool {\bfseries is\+Auto\+Commit} () const
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1MySQLTransaction_a96bf3679e1934dc5fa9cbbd5dbdd618a}\label{classWebSrv_1_1MySQLTransaction_a96bf3679e1934dc5fa9cbbd5dbdd618a}} 
+bool {\bfseries is\+Finished} () const
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1MySQLTransaction_a134686911c669c0334f1a32e90caf5c9}\label{classWebSrv_1_1MySQLTransaction_a134686911c669c0334f1a32e90caf5c9}} 
+bool {\bfseries is\+Error} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1MySQLTransaction_aaaa7aff151e577024c1a9e20b86b0dfa}\label{classWebSrv_1_1MySQLTransaction_aaaa7aff151e577024c1a9e20b86b0dfa}} 
+static My\+SQLTransaction\+::ptr {\bfseries Create} (My\+SQL\+::ptr mysql, bool auto\+\_\+commit)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tiny\+Web\+Server/db/mysql.\+h\item 
+src/db/mysql.\+cpp\end{DoxyCompactItemize}

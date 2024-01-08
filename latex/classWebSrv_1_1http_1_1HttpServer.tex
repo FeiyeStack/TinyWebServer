@@ -1,0 +1,95 @@
+\hypertarget{classWebSrv_1_1http_1_1HttpServer}{}\doxysection{Web\+Srv\+::http\+::Http\+Server Class Reference}
+\label{classWebSrv_1_1http_1_1HttpServer}\index{WebSrv::http::HttpServer@{WebSrv::http::HttpServer}}
+
+
+Inheritance diagram for Web\+Srv\+::http\+::Http\+Server\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classWebSrv_1_1http_1_1HttpServer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Web\+Srv\+::http\+::Http\+Server\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classWebSrv_1_1http_1_1HttpServer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpServer_ac1aa58e6dbeced364ba93d1a577b10c5}\label{classWebSrv_1_1http_1_1HttpServer_ac1aa58e6dbeced364ba93d1a577b10c5}} 
+using {\bfseries ptr} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpServer}{Http\+Server}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpServer_a4af5a65f567a15ca343485419773971f}\label{classWebSrv_1_1http_1_1HttpServer_a4af5a65f567a15ca343485419773971f}} 
+{\bfseries Http\+Server} (\mbox{\hyperlink{classWebSrv_1_1IOManager}{IOManager}} $\ast$worker=IOManager\+::get\+This(), \mbox{\hyperlink{classWebSrv_1_1IOManager}{IOManager}} $\ast$io\+Worker=IOManager\+::get\+This(), \mbox{\hyperlink{classWebSrv_1_1IOManager}{IOManager}} $\ast$accept\+Worker=IOManager\+::get\+This(), bool keepalive=false)
+\item 
+void \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpServer_aaa9032280898976f2d96647bbb9a347d}{set\+Name}} (const std\+::string \&name) override
+\begin{DoxyCompactList}\small\item\em 设置服务器名 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpServer_a91290e87fc05c35580cb9380c52afbda}\label{classWebSrv_1_1http_1_1HttpServer_a91290e87fc05c35580cb9380c52afbda}} 
+void {\bfseries set\+Servlet\+Dispatch} (Servlet\+Dispatch\+::ptr dispatch)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpServer_a9c5481b8370789ae7426ca7a567f6bb1}\label{classWebSrv_1_1http_1_1HttpServer_a9c5481b8370789ae7426ca7a567f6bb1}} 
+Servlet\+Dispatch\+::ptr {\bfseries get\+Servlet\+Dispatch} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpServer_aa1345e17cf24076422f7b39677053f39}{handle\+Client}} (Socket\+::ptr client) override
+\begin{DoxyCompactList}\small\item\em 处理新连接的socket \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpServer_aa1345e17cf24076422f7b39677053f39}\label{classWebSrv_1_1http_1_1HttpServer_aa1345e17cf24076422f7b39677053f39}} 
+\index{WebSrv::http::HttpServer@{WebSrv::http::HttpServer}!handleClient@{handleClient}}
+\index{handleClient@{handleClient}!WebSrv::http::HttpServer@{WebSrv::http::HttpServer}}
+\doxysubsubsection{\texorpdfstring{handleClient()}{handleClient()}}
+{\footnotesize\ttfamily void Web\+Srv\+::http\+::\+Http\+Server\+::handle\+Client (\begin{DoxyParamCaption}\item[{Socket\+::ptr}]{client }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+处理新连接的socket 
+
+
+\begin{DoxyParams}{Parameters}
+{\em client} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classWebSrv_1_1TcpServer_ac0f49b373882ab37d8355780ec1f51a1}{Web\+Srv\+::\+Tcp\+Server}}.
+
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpServer_aaa9032280898976f2d96647bbb9a347d}\label{classWebSrv_1_1http_1_1HttpServer_aaa9032280898976f2d96647bbb9a347d}} 
+\index{WebSrv::http::HttpServer@{WebSrv::http::HttpServer}!setName@{setName}}
+\index{setName@{setName}!WebSrv::http::HttpServer@{WebSrv::http::HttpServer}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Web\+Srv\+::http\+::\+Http\+Server\+::set\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+设置服务器名 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classWebSrv_1_1TcpServer_a18cd7c2b8756c6e5b3895d51243a790a}{Web\+Srv\+::\+Tcp\+Server}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tiny\+Web\+Server/http/httpserver.\+h\item 
+src/http/httpserver.\+cpp\end{DoxyCompactItemize}

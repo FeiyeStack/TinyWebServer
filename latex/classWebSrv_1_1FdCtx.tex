@@ -1,0 +1,210 @@
+\hypertarget{classWebSrv_1_1FdCtx}{}\doxysection{Web\+Srv\+::Fd\+Ctx Class Reference}
+\label{classWebSrv_1_1FdCtx}\index{WebSrv::FdCtx@{WebSrv::FdCtx}}
+
+
+管理文件句柄上下文类  
+
+
+
+
+{\ttfamily \#include $<$fdmanager.\+h$>$}
+
+
+
+Inheritance diagram for Web\+Srv\+::Fd\+Ctx\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classWebSrv_1_1FdCtx__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Web\+Srv\+::Fd\+Ctx\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classWebSrv_1_1FdCtx__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1FdCtx_ab06b1eafb0d651fea884d64ea36ec2e0}\label{classWebSrv_1_1FdCtx_ab06b1eafb0d651fea884d64ea36ec2e0}} 
+using {\bfseries ptr} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classWebSrv_1_1FdCtx}{Fd\+Ctx}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1FdCtx_ae272381b5ea36c94f9f3fdd213dea576}\label{classWebSrv_1_1FdCtx_ae272381b5ea36c94f9f3fdd213dea576}} 
+{\bfseries Fd\+Ctx} (int fd)
+\item 
+bool \mbox{\hyperlink{classWebSrv_1_1FdCtx_a71cd667b6af2ce39ef70945c08567dd5}{is\+Init}} () const
+\begin{DoxyCompactList}\small\item\em 是否初始化 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebSrv_1_1FdCtx_aab0074418a1e3af1c22dde77a6ac0a57}{is\+Socket}} ()
+\begin{DoxyCompactList}\small\item\em 是否是socket \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebSrv_1_1FdCtx_a0f90902d35fc59896844435646890a47}{is\+Close}} ()
+\begin{DoxyCompactList}\small\item\em 是否是关闭的 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebSrv_1_1FdCtx_a9be270f92f28f6261f2a7ada64961671}{get\+Sys\+Nonblock}} ()
+\begin{DoxyCompactList}\small\item\em 是否是系统的阻塞 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebSrv_1_1FdCtx_a47e5b3c9fd54266ae8fe1f0b724409a7}{get\+User\+Nonblock}} ()
+\begin{DoxyCompactList}\small\item\em 是否是用户设置的非阻塞 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1FdCtx_a71d34f66b4cee9a3564b6b89aeb1dadb}{set\+Sys\+Nonblock}} (bool sys\+Nonblock)
+\begin{DoxyCompactList}\small\item\em 设置系统的非阻塞 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1FdCtx_a28bfe48c62d0d3790ad38dc0fb594ab8}{set\+User\+Nonblock}} (bool user\+Nonblock)
+\begin{DoxyCompactList}\small\item\em 设置用户的非阻塞 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1FdCtx_a65f8276242fc9c8d1379a5502cd546ae}{set\+Timeout}} (int so\+\_\+timeout, uint64\+\_\+t timeout)
+\begin{DoxyCompactList}\small\item\em 设置读写超时 \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{classWebSrv_1_1FdCtx_acd7ed6a68f285451c6824c69368d3513}{get\+Timeout}} (int so\+\_\+timeout)
+\begin{DoxyCompactList}\small\item\em 获取读写超时 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+管理文件句柄上下文类 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebSrv_1_1FdCtx_a9be270f92f28f6261f2a7ada64961671}\label{classWebSrv_1_1FdCtx_a9be270f92f28f6261f2a7ada64961671}} 
+\index{WebSrv::FdCtx@{WebSrv::FdCtx}!getSysNonblock@{getSysNonblock}}
+\index{getSysNonblock@{getSysNonblock}!WebSrv::FdCtx@{WebSrv::FdCtx}}
+\doxysubsubsection{\texorpdfstring{getSysNonblock()}{getSysNonblock()}}
+{\footnotesize\ttfamily bool Web\+Srv\+::\+Fd\+Ctx\+::get\+Sys\+Nonblock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+是否是系统的阻塞 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1FdCtx_acd7ed6a68f285451c6824c69368d3513}\label{classWebSrv_1_1FdCtx_acd7ed6a68f285451c6824c69368d3513}} 
+\index{WebSrv::FdCtx@{WebSrv::FdCtx}!getTimeout@{getTimeout}}
+\index{getTimeout@{getTimeout}!WebSrv::FdCtx@{WebSrv::FdCtx}}
+\doxysubsubsection{\texorpdfstring{getTimeout()}{getTimeout()}}
+{\footnotesize\ttfamily uint64\+\_\+t Web\+Srv\+::\+Fd\+Ctx\+::get\+Timeout (\begin{DoxyParamCaption}\item[{int}]{so\+\_\+timeout }\end{DoxyParamCaption})}
+
+
+
+获取读写超时 
+
+
+\begin{DoxyParams}{Parameters}
+{\em so\+\_\+timeout} & SO\+\_\+\+RCVTIMEO/\+SO\+\_\+\+SNDTIMEO \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1FdCtx_a47e5b3c9fd54266ae8fe1f0b724409a7}\label{classWebSrv_1_1FdCtx_a47e5b3c9fd54266ae8fe1f0b724409a7}} 
+\index{WebSrv::FdCtx@{WebSrv::FdCtx}!getUserNonblock@{getUserNonblock}}
+\index{getUserNonblock@{getUserNonblock}!WebSrv::FdCtx@{WebSrv::FdCtx}}
+\doxysubsubsection{\texorpdfstring{getUserNonblock()}{getUserNonblock()}}
+{\footnotesize\ttfamily bool Web\+Srv\+::\+Fd\+Ctx\+::get\+User\+Nonblock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+是否是用户设置的非阻塞 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1FdCtx_a0f90902d35fc59896844435646890a47}\label{classWebSrv_1_1FdCtx_a0f90902d35fc59896844435646890a47}} 
+\index{WebSrv::FdCtx@{WebSrv::FdCtx}!isClose@{isClose}}
+\index{isClose@{isClose}!WebSrv::FdCtx@{WebSrv::FdCtx}}
+\doxysubsubsection{\texorpdfstring{isClose()}{isClose()}}
+{\footnotesize\ttfamily bool Web\+Srv\+::\+Fd\+Ctx\+::is\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+是否是关闭的 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1FdCtx_a71cd667b6af2ce39ef70945c08567dd5}\label{classWebSrv_1_1FdCtx_a71cd667b6af2ce39ef70945c08567dd5}} 
+\index{WebSrv::FdCtx@{WebSrv::FdCtx}!isInit@{isInit}}
+\index{isInit@{isInit}!WebSrv::FdCtx@{WebSrv::FdCtx}}
+\doxysubsubsection{\texorpdfstring{isInit()}{isInit()}}
+{\footnotesize\ttfamily bool Web\+Srv\+::\+Fd\+Ctx\+::is\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+是否初始化 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1FdCtx_aab0074418a1e3af1c22dde77a6ac0a57}\label{classWebSrv_1_1FdCtx_aab0074418a1e3af1c22dde77a6ac0a57}} 
+\index{WebSrv::FdCtx@{WebSrv::FdCtx}!isSocket@{isSocket}}
+\index{isSocket@{isSocket}!WebSrv::FdCtx@{WebSrv::FdCtx}}
+\doxysubsubsection{\texorpdfstring{isSocket()}{isSocket()}}
+{\footnotesize\ttfamily bool Web\+Srv\+::\+Fd\+Ctx\+::is\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+是否是socket 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1FdCtx_a71d34f66b4cee9a3564b6b89aeb1dadb}\label{classWebSrv_1_1FdCtx_a71d34f66b4cee9a3564b6b89aeb1dadb}} 
+\index{WebSrv::FdCtx@{WebSrv::FdCtx}!setSysNonblock@{setSysNonblock}}
+\index{setSysNonblock@{setSysNonblock}!WebSrv::FdCtx@{WebSrv::FdCtx}}
+\doxysubsubsection{\texorpdfstring{setSysNonblock()}{setSysNonblock()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Fd\+Ctx\+::set\+Sys\+Nonblock (\begin{DoxyParamCaption}\item[{bool}]{sys\+Nonblock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+设置系统的非阻塞 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sys\+Nonblock} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1FdCtx_a65f8276242fc9c8d1379a5502cd546ae}\label{classWebSrv_1_1FdCtx_a65f8276242fc9c8d1379a5502cd546ae}} 
+\index{WebSrv::FdCtx@{WebSrv::FdCtx}!setTimeout@{setTimeout}}
+\index{setTimeout@{setTimeout}!WebSrv::FdCtx@{WebSrv::FdCtx}}
+\doxysubsubsection{\texorpdfstring{setTimeout()}{setTimeout()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Fd\+Ctx\+::set\+Timeout (\begin{DoxyParamCaption}\item[{int}]{so\+\_\+timeout,  }\item[{uint64\+\_\+t}]{timeout }\end{DoxyParamCaption})}
+
+
+
+设置读写超时 
+
+
+\begin{DoxyParams}{Parameters}
+{\em so\+\_\+timeout} & SO\+\_\+\+RCVTIMEO/\+SO\+\_\+\+SNDTIMEO \\
+\hline
+{\em timeout} & 超时时间ms \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1FdCtx_a28bfe48c62d0d3790ad38dc0fb594ab8}\label{classWebSrv_1_1FdCtx_a28bfe48c62d0d3790ad38dc0fb594ab8}} 
+\index{WebSrv::FdCtx@{WebSrv::FdCtx}!setUserNonblock@{setUserNonblock}}
+\index{setUserNonblock@{setUserNonblock}!WebSrv::FdCtx@{WebSrv::FdCtx}}
+\doxysubsubsection{\texorpdfstring{setUserNonblock()}{setUserNonblock()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Fd\+Ctx\+::set\+User\+Nonblock (\begin{DoxyParamCaption}\item[{bool}]{user\+Nonblock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+设置用户的非阻塞 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tiny\+Web\+Server/fdmanager.\+h\item 
+src/fdmanager.\+cpp\end{DoxyCompactItemize}

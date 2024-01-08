@@ -1,0 +1,309 @@
+\hypertarget{classWebSrv_1_1http_1_1HttpResponse}{}\doxysection{Web\+Srv\+::http\+::Http\+Response Class Reference}
+\label{classWebSrv_1_1http_1_1HttpResponse}\index{WebSrv::http::HttpResponse@{WebSrv::http::HttpResponse}}
+
+
+http响应报文结构体  
+
+
+
+
+{\ttfamily \#include $<$http.\+h$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structWebSrv_1_1http_1_1HttpResponse_1_1CookieOptions}{Cookie\+Options}}
+\begin{DoxyCompactList}\small\item\em cookie关键参数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponse_a2cb439f676f236802eb763d44524eb66}\label{classWebSrv_1_1http_1_1HttpResponse_a2cb439f676f236802eb763d44524eb66}} 
+using {\bfseries ptr} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponse}{Http\+Response}} $>$
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponse_a752373946c5c98251dc76fd84e3228ff}\label{classWebSrv_1_1http_1_1HttpResponse_a752373946c5c98251dc76fd84e3228ff}} 
+using {\bfseries Map} = std\+::map$<$ std\+::string, std\+::string, \mbox{\hyperlink{structWebSrv_1_1http_1_1CaseInsensitiveLess}{Case\+Insensitive\+Less}} $>$
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponse_a0ebd85e6b088af7949ca9599a5bd9c4a}\label{classWebSrv_1_1http_1_1HttpResponse_a0ebd85e6b088af7949ca9599a5bd9c4a}} 
+using {\bfseries Cookie\+Map} = std\+::map$<$ std\+::string, std\+::pair$<$ std\+::string, \mbox{\hyperlink{structWebSrv_1_1http_1_1HttpResponse_1_1CookieOptions}{Http\+Response\+::\+Cookie\+Options}} $>$, \mbox{\hyperlink{structWebSrv_1_1http_1_1CaseInsensitiveLess}{Case\+Insensitive\+Less}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponse_aa8a20b1109fa98a05ccc22350c205892}\label{classWebSrv_1_1http_1_1HttpResponse_aa8a20b1109fa98a05ccc22350c205892}} 
+{\bfseries Http\+Response} (uint8\+\_\+t version=0x11)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponse_a636ca8b831f9ec4a61ad68a5a45a6b23}\label{classWebSrv_1_1http_1_1HttpResponse_a636ca8b831f9ec4a61ad68a5a45a6b23}} 
+Http\+Status \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponse_a636ca8b831f9ec4a61ad68a5a45a6b23}{get\+Status}} () const
+\begin{DoxyCompactList}\small\item\em 获取响应状态 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponse_aeb7be2fae3bd1861e45556d8013dbff2}\label{classWebSrv_1_1http_1_1HttpResponse_aeb7be2fae3bd1861e45556d8013dbff2}} 
+uint8\+\_\+t \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponse_aeb7be2fae3bd1861e45556d8013dbff2}{get\+Version}} () const
+\begin{DoxyCompactList}\small\item\em 获取http 版本 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponse_a44914126ab263b4f9497577b64261e45}\label{classWebSrv_1_1http_1_1HttpResponse_a44914126ab263b4f9497577b64261e45}} 
+const std\+::string \& \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponse_a44914126ab263b4f9497577b64261e45}{get\+Body}} () const
+\begin{DoxyCompactList}\small\item\em 获取响应消息体 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponse_ac7d3b81a07e0133600ee8a4e28050974}\label{classWebSrv_1_1http_1_1HttpResponse_ac7d3b81a07e0133600ee8a4e28050974}} 
+const std\+::string \& \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponse_ac7d3b81a07e0133600ee8a4e28050974}{get\+Reason}} () const
+\begin{DoxyCompactList}\small\item\em 获取响应原因 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponse_a1cc3856c9beae924f30b521903a26eeb}\label{classWebSrv_1_1http_1_1HttpResponse_a1cc3856c9beae924f30b521903a26eeb}} 
+const Map \& \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponse_a1cc3856c9beae924f30b521903a26eeb}{get\+Headers}} () const
+\begin{DoxyCompactList}\small\item\em 获取响应头部map \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponse_a46b529c79563d24a1a0c9219ff82fb7a}\label{classWebSrv_1_1http_1_1HttpResponse_a46b529c79563d24a1a0c9219ff82fb7a}} 
+void \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponse_a46b529c79563d24a1a0c9219ff82fb7a}{set\+Status}} (Http\+Status status)
+\begin{DoxyCompactList}\small\item\em 响应状态 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponse_abb87ace24bf7f8383113e7c9819ecfc8}\label{classWebSrv_1_1http_1_1HttpResponse_abb87ace24bf7f8383113e7c9819ecfc8}} 
+void \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponse_abb87ace24bf7f8383113e7c9819ecfc8}{set\+Version}} (uint8\+\_\+t version)
+\begin{DoxyCompactList}\small\item\em http 版本 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponse_a9b442eb4fab961a8b8739e81a986a8db}\label{classWebSrv_1_1http_1_1HttpResponse_a9b442eb4fab961a8b8739e81a986a8db}} 
+void \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponse_a9b442eb4fab961a8b8739e81a986a8db}{set\+Body}} (const std\+::string \&body)
+\begin{DoxyCompactList}\small\item\em 响应消息体 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponse_a2b1485fc13b4123839539d2b076bac17}\label{classWebSrv_1_1http_1_1HttpResponse_a2b1485fc13b4123839539d2b076bac17}} 
+void \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponse_a2b1485fc13b4123839539d2b076bac17}{set\+Reason}} (const std\+::string \&reason)
+\begin{DoxyCompactList}\small\item\em 响应原因 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponse_a36a6e82dd6e990925d4736ceca7c1f1a}\label{classWebSrv_1_1http_1_1HttpResponse_a36a6e82dd6e990925d4736ceca7c1f1a}} 
+void \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponse_a36a6e82dd6e990925d4736ceca7c1f1a}{set\+Headers}} (const Map \&headers)
+\begin{DoxyCompactList}\small\item\em 响应头部map \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponse_a3368964114153c3a6905795ce0bc6eb9}{get\+Header}} (const std\+::string \&key, const std\+::string \&def=\char`\"{}\char`\"{}) const
+\begin{DoxyCompactList}\small\item\em 获取\+HTTP请求的头部参数(不包含cookie) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponse_a4803c74b1ab638f23c7a7246a22f9bbb}{has\+Header}} (const std\+::string \&key, std\+::string $\ast$result) const
+\begin{DoxyCompactList}\small\item\em 判断\+Http请求的头部参数(不包含cookie) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponse_aae42c03a5701423544e689c03588d70a}{set\+Header}} (const std\+::string \&key, const std\+::string \&value)
+\begin{DoxyCompactList}\small\item\em 设置\+HTTP请求的头部参数(不包含cookie) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponse_a8cf5b089b3efc7698d940daf4287e195}{del\+Header}} (const std\+::string \&key)
+\begin{DoxyCompactList}\small\item\em 删除对应键值的\+HTTP请求的头部参数(不包含cookie) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponse_a5e7e7a6b5e2c2e290fd544b7ee9b6380}{set\+Cookie}} (const std\+::string \&key, const std\+::string \&value, const \mbox{\hyperlink{structWebSrv_1_1http_1_1HttpResponse_1_1CookieOptions}{Cookie\+Options}} \&options=\mbox{\hyperlink{structWebSrv_1_1http_1_1HttpResponse_1_1CookieOptions}{Cookie\+Options}}())
+\begin{DoxyCompactList}\small\item\em 设置cookie 参数 \end{DoxyCompactList}\item 
+std\+::pair$<$ std\+::string, \mbox{\hyperlink{structWebSrv_1_1http_1_1HttpResponse_1_1CookieOptions}{Http\+Response\+::\+Cookie\+Options}} $>$ \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponse_a3159bd95bc4a6614811733b0b67e2365}{get\+Cookie}} (const std\+::string \&key)
+\begin{DoxyCompactList}\small\item\em 获取cookie 参数，不存在时第一个参数为\char`\"{}\char`\"{} \end{DoxyCompactList}\item 
+const Cookie\+Map \& \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponse_ac1be96d16ba37e3e879aef7f48cd51da}{get\+Cookies}} () const
+\begin{DoxyCompactList}\small\item\em 获取cookie\+Map \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponse_a3d7b758c084c2205c4c39e68704c62dd}{get\+Header\+As}} (const std\+::string \&key, const T \&def=T())
+\begin{DoxyCompactList}\small\item\em 获取http响应的头部参数 （通常不用只有少部分需要类型转换） \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponse_ae17b36d96f92a34677f7cf7535b0f0bd}{check\+Get\+Header\+As}} (const std\+::string \&key, T \&result, const T \&def=T())
+\begin{DoxyCompactList}\small\item\em 检查并获取\+Http响应的头部参数（通常不用只有少部分需要类型转换） \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponse_acaeac645fbbee484b6187782e44608ad}{dump}} (std\+::ostream \&os) const
+\begin{DoxyCompactList}\small\item\em 序列化输出到流中 \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpResponse_ac32ec93f504948a04e988b4dc4691bac}{to\+String}} () const
+\begin{DoxyCompactList}\small\item\em 转成字符串类型 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+http响应报文结构体 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponse_ae17b36d96f92a34677f7cf7535b0f0bd}\label{classWebSrv_1_1http_1_1HttpResponse_ae17b36d96f92a34677f7cf7535b0f0bd}} 
+\index{WebSrv::http::HttpResponse@{WebSrv::http::HttpResponse}!checkGetHeaderAs@{checkGetHeaderAs}}
+\index{checkGetHeaderAs@{checkGetHeaderAs}!WebSrv::http::HttpResponse@{WebSrv::http::HttpResponse}}
+\doxysubsubsection{\texorpdfstring{checkGetHeaderAs()}{checkGetHeaderAs()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool Web\+Srv\+::http\+::\+Http\+Response\+::check\+Get\+Header\+As (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key,  }\item[{T \&}]{result,  }\item[{const T \&}]{def = {\ttfamily T()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+检查并获取\+Http响应的头部参数（通常不用只有少部分需要类型转换） 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & 参数类型 \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em key} & 键 \\
+\hline
+{\em result} & 返回值 \\
+\hline
+{\em def} & 默认值 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 存在且转换成功result返回为对应值 
+
+false result返回默认值 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponse_a8cf5b089b3efc7698d940daf4287e195}\label{classWebSrv_1_1http_1_1HttpResponse_a8cf5b089b3efc7698d940daf4287e195}} 
+\index{WebSrv::http::HttpResponse@{WebSrv::http::HttpResponse}!delHeader@{delHeader}}
+\index{delHeader@{delHeader}!WebSrv::http::HttpResponse@{WebSrv::http::HttpResponse}}
+\doxysubsubsection{\texorpdfstring{delHeader()}{delHeader()}}
+{\footnotesize\ttfamily void Web\+Srv\+::http\+::\+Http\+Response\+::del\+Header (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})}
+
+
+
+删除对应键值的\+HTTP请求的头部参数(不包含cookie) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & 键 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponse_acaeac645fbbee484b6187782e44608ad}\label{classWebSrv_1_1http_1_1HttpResponse_acaeac645fbbee484b6187782e44608ad}} 
+\index{WebSrv::http::HttpResponse@{WebSrv::http::HttpResponse}!dump@{dump}}
+\index{dump@{dump}!WebSrv::http::HttpResponse@{WebSrv::http::HttpResponse}}
+\doxysubsubsection{\texorpdfstring{dump()}{dump()}}
+{\footnotesize\ttfamily std\+::ostream \& Web\+Srv\+::http\+::\+Http\+Response\+::dump (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const}
+
+
+
+序列化输出到流中 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::ostream\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponse_a3159bd95bc4a6614811733b0b67e2365}\label{classWebSrv_1_1http_1_1HttpResponse_a3159bd95bc4a6614811733b0b67e2365}} 
+\index{WebSrv::http::HttpResponse@{WebSrv::http::HttpResponse}!getCookie@{getCookie}}
+\index{getCookie@{getCookie}!WebSrv::http::HttpResponse@{WebSrv::http::HttpResponse}}
+\doxysubsubsection{\texorpdfstring{getCookie()}{getCookie()}}
+{\footnotesize\ttfamily std\+::pair$<$ std\+::string, \mbox{\hyperlink{structWebSrv_1_1http_1_1HttpResponse_1_1CookieOptions}{Http\+Response\+::\+Cookie\+Options}} $>$ Web\+Srv\+::http\+::\+Http\+Response\+::get\+Cookie (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})}
+
+
+
+获取cookie 参数，不存在时第一个参数为\char`\"{}\char`\"{} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::pair$<$std\+::string,\+Http\+Response\+::\+Cookie\+Options$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponse_ac1be96d16ba37e3e879aef7f48cd51da}\label{classWebSrv_1_1http_1_1HttpResponse_ac1be96d16ba37e3e879aef7f48cd51da}} 
+\index{WebSrv::http::HttpResponse@{WebSrv::http::HttpResponse}!getCookies@{getCookies}}
+\index{getCookies@{getCookies}!WebSrv::http::HttpResponse@{WebSrv::http::HttpResponse}}
+\doxysubsubsection{\texorpdfstring{getCookies()}{getCookies()}}
+{\footnotesize\ttfamily const Cookie\+Map\& Web\+Srv\+::http\+::\+Http\+Response\+::get\+Cookies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+获取cookie\+Map 
+
+\begin{DoxyReturn}{Returns}
+const Cookie\+Map\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponse_a3368964114153c3a6905795ce0bc6eb9}\label{classWebSrv_1_1http_1_1HttpResponse_a3368964114153c3a6905795ce0bc6eb9}} 
+\index{WebSrv::http::HttpResponse@{WebSrv::http::HttpResponse}!getHeader@{getHeader}}
+\index{getHeader@{getHeader}!WebSrv::http::HttpResponse@{WebSrv::http::HttpResponse}}
+\doxysubsubsection{\texorpdfstring{getHeader()}{getHeader()}}
+{\footnotesize\ttfamily std\+::string Web\+Srv\+::http\+::\+Http\+Response\+::get\+Header (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key,  }\item[{const std\+::string \&}]{def = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption}) const}
+
+
+
+获取\+HTTP请求的头部参数(不包含cookie) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & 键 \\
+\hline
+{\em def} & 默认值 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 存在返回对应值，否则为默认值 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponse_a3d7b758c084c2205c4c39e68704c62dd}\label{classWebSrv_1_1http_1_1HttpResponse_a3d7b758c084c2205c4c39e68704c62dd}} 
+\index{WebSrv::http::HttpResponse@{WebSrv::http::HttpResponse}!getHeaderAs@{getHeaderAs}}
+\index{getHeaderAs@{getHeaderAs}!WebSrv::http::HttpResponse@{WebSrv::http::HttpResponse}}
+\doxysubsubsection{\texorpdfstring{getHeaderAs()}{getHeaderAs()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T Web\+Srv\+::http\+::\+Http\+Response\+::get\+Header\+As (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key,  }\item[{const T \&}]{def = {\ttfamily T()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+获取http响应的头部参数 （通常不用只有少部分需要类型转换） 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & 参数类型 \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em key} & 键 \\
+\hline
+{\em def} & 默认值 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T 存在且转换成功返回对应值，否则为默认值 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponse_a4803c74b1ab638f23c7a7246a22f9bbb}\label{classWebSrv_1_1http_1_1HttpResponse_a4803c74b1ab638f23c7a7246a22f9bbb}} 
+\index{WebSrv::http::HttpResponse@{WebSrv::http::HttpResponse}!hasHeader@{hasHeader}}
+\index{hasHeader@{hasHeader}!WebSrv::http::HttpResponse@{WebSrv::http::HttpResponse}}
+\doxysubsubsection{\texorpdfstring{hasHeader()}{hasHeader()}}
+{\footnotesize\ttfamily bool Web\+Srv\+::http\+::\+Http\+Response\+::has\+Header (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key,  }\item[{std\+::string $\ast$}]{result }\end{DoxyParamCaption}) const}
+
+
+
+判断\+Http请求的头部参数(不包含cookie) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & 键 \\
+\hline
+{\em result} & 返回值 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 存在result非空返回为对应值 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponse_a5e7e7a6b5e2c2e290fd544b7ee9b6380}\label{classWebSrv_1_1http_1_1HttpResponse_a5e7e7a6b5e2c2e290fd544b7ee9b6380}} 
+\index{WebSrv::http::HttpResponse@{WebSrv::http::HttpResponse}!setCookie@{setCookie}}
+\index{setCookie@{setCookie}!WebSrv::http::HttpResponse@{WebSrv::http::HttpResponse}}
+\doxysubsubsection{\texorpdfstring{setCookie()}{setCookie()}}
+{\footnotesize\ttfamily void Web\+Srv\+::http\+::\+Http\+Response\+::set\+Cookie (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key,  }\item[{const std\+::string \&}]{value,  }\item[{const \mbox{\hyperlink{structWebSrv_1_1http_1_1HttpResponse_1_1CookieOptions}{Cookie\+Options}} \&}]{options = {\ttfamily \mbox{\hyperlink{structWebSrv_1_1http_1_1HttpResponse_1_1CookieOptions}{Cookie\+Options}}()} }\end{DoxyParamCaption})}
+
+
+
+设置cookie 参数 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & \\
+\hline
+{\em value} & \\
+\hline
+{\em options} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponse_aae42c03a5701423544e689c03588d70a}\label{classWebSrv_1_1http_1_1HttpResponse_aae42c03a5701423544e689c03588d70a}} 
+\index{WebSrv::http::HttpResponse@{WebSrv::http::HttpResponse}!setHeader@{setHeader}}
+\index{setHeader@{setHeader}!WebSrv::http::HttpResponse@{WebSrv::http::HttpResponse}}
+\doxysubsubsection{\texorpdfstring{setHeader()}{setHeader()}}
+{\footnotesize\ttfamily void Web\+Srv\+::http\+::\+Http\+Response\+::set\+Header (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key,  }\item[{const std\+::string \&}]{value }\end{DoxyParamCaption})}
+
+
+
+设置\+HTTP请求的头部参数(不包含cookie) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & 键 \\
+\hline
+{\em value} & 值 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpResponse_ac32ec93f504948a04e988b4dc4691bac}\label{classWebSrv_1_1http_1_1HttpResponse_ac32ec93f504948a04e988b4dc4691bac}} 
+\index{WebSrv::http::HttpResponse@{WebSrv::http::HttpResponse}!toString@{toString}}
+\index{toString@{toString}!WebSrv::http::HttpResponse@{WebSrv::http::HttpResponse}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string Web\+Srv\+::http\+::\+Http\+Response\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+转成字符串类型 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tiny\+Web\+Server/http/http.\+h\item 
+src/http/http.\+cpp\end{DoxyCompactItemize}

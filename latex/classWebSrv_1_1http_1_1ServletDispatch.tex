@@ -1,0 +1,241 @@
+\hypertarget{classWebSrv_1_1http_1_1ServletDispatch}{}\doxysection{Web\+Srv\+::http\+::Servlet\+Dispatch Class Reference}
+\label{classWebSrv_1_1http_1_1ServletDispatch}\index{WebSrv::http::ServletDispatch@{WebSrv::http::ServletDispatch}}
+
+
+Servlet分发器  
+
+
+
+
+{\ttfamily \#include $<$servlet.\+h$>$}
+
+
+
+Inheritance diagram for Web\+Srv\+::http\+::Servlet\+Dispatch\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classWebSrv_1_1http_1_1ServletDispatch__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Web\+Srv\+::http\+::Servlet\+Dispatch\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classWebSrv_1_1http_1_1ServletDispatch__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1ServletDispatch_a3a042d79ebabce452caa0bb87089498e}\label{classWebSrv_1_1http_1_1ServletDispatch_a3a042d79ebabce452caa0bb87089498e}} 
+using {\bfseries ptr} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classWebSrv_1_1http_1_1ServletDispatch}{Servlet\+Dispatch}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1ServletDispatch_a8d602fcf408a05176af15479375979e3}\label{classWebSrv_1_1http_1_1ServletDispatch_a8d602fcf408a05176af15479375979e3}} 
+int32\+\_\+t {\bfseries handle} (http\+::\+Http\+Request\+::ptr request, http\+::\+Http\+Response\+::ptr response, http\+::\+Http\+Session\+::ptr session) override
+\item 
+void \mbox{\hyperlink{classWebSrv_1_1http_1_1ServletDispatch_a1d2d874b9dbcf25ffbab4cea7622d907}{add\+Servlet}} (const std\+::string \&uri, Servlet\+::ptr servlet)
+\begin{DoxyCompactList}\small\item\em 添加\+Servlet \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1http_1_1ServletDispatch_ab89e9c5c313954f7aea78a62c6097cd8}{add\+Servlet}} (const std\+::string \&uri, Function\+Servlet\+::callback cb)
+\begin{DoxyCompactList}\small\item\em 添加\+Servlet \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1http_1_1ServletDispatch_aba31e8b8fd59bef47d47ae21a3057c8b}{add\+Glob\+Servlet}} (const std\+::string \&uri, Servlet\+::ptr slt)
+\begin{DoxyCompactList}\small\item\em 添加模糊匹配\+Servlet \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1http_1_1ServletDispatch_ae538a8ef1ca956fea2469d8fd0442f64}{add\+Glob\+Servlet}} (const std\+::string \&uri, Function\+Servlet\+::callback cb)
+\begin{DoxyCompactList}\small\item\em 添加模糊匹配\+Servlet \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1http_1_1ServletDispatch_ae81d5f29500713b77a74ef2bd962f641}{del\+Servlet}} (const std\+::string \&uri)
+\begin{DoxyCompactList}\small\item\em 删除\+Servlet \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1http_1_1ServletDispatch_a6c76f5b63c0c5f6cd1b9fcb12f6573ff}{del\+Glob\+Servlet}} (const std\+::string \&uri)
+\begin{DoxyCompactList}\small\item\em 删除模糊匹配\+Servlet \end{DoxyCompactList}\item 
+Servlet\+::ptr \mbox{\hyperlink{classWebSrv_1_1http_1_1ServletDispatch_acb97eb245d62825d661d387e7c16d372}{get\+Servlet}} (const std\+::string \&uri)
+\begin{DoxyCompactList}\small\item\em 获取\+Servlet \end{DoxyCompactList}\item 
+Servlet\+::ptr \mbox{\hyperlink{classWebSrv_1_1http_1_1ServletDispatch_a6939741f748e2b17217a29d0786325e2}{get\+Glob\+Servlet}} (const std\+::string \&uri)
+\begin{DoxyCompactList}\small\item\em 获取模糊匹配\+Servlet \end{DoxyCompactList}\item 
+Servlet\+::ptr \mbox{\hyperlink{classWebSrv_1_1http_1_1ServletDispatch_a4d40e5ceb1236d2e2879f63e304ae38a}{get\+Default}} () const
+\begin{DoxyCompactList}\small\item\em 默认servlet \end{DoxyCompactList}\item 
+Servlet\+::ptr \mbox{\hyperlink{classWebSrv_1_1http_1_1ServletDispatch_a8bd07ce448ff1ba7465881f5f6809be3}{get\+Matched\+Servlet}} (const std\+::string \&uri)
+\begin{DoxyCompactList}\small\item\em 使用uri获取\+Servlet 优先精准，其次模糊匹配 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Servlet分发器 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1ServletDispatch_ae538a8ef1ca956fea2469d8fd0442f64}\label{classWebSrv_1_1http_1_1ServletDispatch_ae538a8ef1ca956fea2469d8fd0442f64}} 
+\index{WebSrv::http::ServletDispatch@{WebSrv::http::ServletDispatch}!addGlobServlet@{addGlobServlet}}
+\index{addGlobServlet@{addGlobServlet}!WebSrv::http::ServletDispatch@{WebSrv::http::ServletDispatch}}
+\doxysubsubsection{\texorpdfstring{addGlobServlet()}{addGlobServlet()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Web\+Srv\+::http\+::\+Servlet\+Dispatch\+::add\+Glob\+Servlet (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{uri,  }\item[{Function\+Servlet\+::callback}]{cb }\end{DoxyParamCaption})}
+
+
+
+添加模糊匹配\+Servlet 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uri} & \\
+\hline
+{\em cb} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1ServletDispatch_aba31e8b8fd59bef47d47ae21a3057c8b}\label{classWebSrv_1_1http_1_1ServletDispatch_aba31e8b8fd59bef47d47ae21a3057c8b}} 
+\index{WebSrv::http::ServletDispatch@{WebSrv::http::ServletDispatch}!addGlobServlet@{addGlobServlet}}
+\index{addGlobServlet@{addGlobServlet}!WebSrv::http::ServletDispatch@{WebSrv::http::ServletDispatch}}
+\doxysubsubsection{\texorpdfstring{addGlobServlet()}{addGlobServlet()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Web\+Srv\+::http\+::\+Servlet\+Dispatch\+::add\+Glob\+Servlet (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{uri,  }\item[{Servlet\+::ptr}]{slt }\end{DoxyParamCaption})}
+
+
+
+添加模糊匹配\+Servlet 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uri} & \\
+\hline
+{\em servlet} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1ServletDispatch_ab89e9c5c313954f7aea78a62c6097cd8}\label{classWebSrv_1_1http_1_1ServletDispatch_ab89e9c5c313954f7aea78a62c6097cd8}} 
+\index{WebSrv::http::ServletDispatch@{WebSrv::http::ServletDispatch}!addServlet@{addServlet}}
+\index{addServlet@{addServlet}!WebSrv::http::ServletDispatch@{WebSrv::http::ServletDispatch}}
+\doxysubsubsection{\texorpdfstring{addServlet()}{addServlet()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Web\+Srv\+::http\+::\+Servlet\+Dispatch\+::add\+Servlet (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{uri,  }\item[{Function\+Servlet\+::callback}]{cb }\end{DoxyParamCaption})}
+
+
+
+添加\+Servlet 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uri} & \\
+\hline
+{\em cb} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1ServletDispatch_a1d2d874b9dbcf25ffbab4cea7622d907}\label{classWebSrv_1_1http_1_1ServletDispatch_a1d2d874b9dbcf25ffbab4cea7622d907}} 
+\index{WebSrv::http::ServletDispatch@{WebSrv::http::ServletDispatch}!addServlet@{addServlet}}
+\index{addServlet@{addServlet}!WebSrv::http::ServletDispatch@{WebSrv::http::ServletDispatch}}
+\doxysubsubsection{\texorpdfstring{addServlet()}{addServlet()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Web\+Srv\+::http\+::\+Servlet\+Dispatch\+::add\+Servlet (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{uri,  }\item[{Servlet\+::ptr}]{servlet }\end{DoxyParamCaption})}
+
+
+
+添加\+Servlet 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uri} & \\
+\hline
+{\em servlet} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1ServletDispatch_a6c76f5b63c0c5f6cd1b9fcb12f6573ff}\label{classWebSrv_1_1http_1_1ServletDispatch_a6c76f5b63c0c5f6cd1b9fcb12f6573ff}} 
+\index{WebSrv::http::ServletDispatch@{WebSrv::http::ServletDispatch}!delGlobServlet@{delGlobServlet}}
+\index{delGlobServlet@{delGlobServlet}!WebSrv::http::ServletDispatch@{WebSrv::http::ServletDispatch}}
+\doxysubsubsection{\texorpdfstring{delGlobServlet()}{delGlobServlet()}}
+{\footnotesize\ttfamily void Web\+Srv\+::http\+::\+Servlet\+Dispatch\+::del\+Glob\+Servlet (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{uri }\end{DoxyParamCaption})}
+
+
+
+删除模糊匹配\+Servlet 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uri} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1ServletDispatch_ae81d5f29500713b77a74ef2bd962f641}\label{classWebSrv_1_1http_1_1ServletDispatch_ae81d5f29500713b77a74ef2bd962f641}} 
+\index{WebSrv::http::ServletDispatch@{WebSrv::http::ServletDispatch}!delServlet@{delServlet}}
+\index{delServlet@{delServlet}!WebSrv::http::ServletDispatch@{WebSrv::http::ServletDispatch}}
+\doxysubsubsection{\texorpdfstring{delServlet()}{delServlet()}}
+{\footnotesize\ttfamily void Web\+Srv\+::http\+::\+Servlet\+Dispatch\+::del\+Servlet (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{uri }\end{DoxyParamCaption})}
+
+
+
+删除\+Servlet 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uri} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1ServletDispatch_a4d40e5ceb1236d2e2879f63e304ae38a}\label{classWebSrv_1_1http_1_1ServletDispatch_a4d40e5ceb1236d2e2879f63e304ae38a}} 
+\index{WebSrv::http::ServletDispatch@{WebSrv::http::ServletDispatch}!getDefault@{getDefault}}
+\index{getDefault@{getDefault}!WebSrv::http::ServletDispatch@{WebSrv::http::ServletDispatch}}
+\doxysubsubsection{\texorpdfstring{getDefault()}{getDefault()}}
+{\footnotesize\ttfamily Servlet\+::ptr Web\+Srv\+::http\+::\+Servlet\+Dispatch\+::get\+Default (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+默认servlet 
+
+\begin{DoxyReturn}{Returns}
+Servlet\+::ptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1ServletDispatch_a6939741f748e2b17217a29d0786325e2}\label{classWebSrv_1_1http_1_1ServletDispatch_a6939741f748e2b17217a29d0786325e2}} 
+\index{WebSrv::http::ServletDispatch@{WebSrv::http::ServletDispatch}!getGlobServlet@{getGlobServlet}}
+\index{getGlobServlet@{getGlobServlet}!WebSrv::http::ServletDispatch@{WebSrv::http::ServletDispatch}}
+\doxysubsubsection{\texorpdfstring{getGlobServlet()}{getGlobServlet()}}
+{\footnotesize\ttfamily Servlet\+::ptr Web\+Srv\+::http\+::\+Servlet\+Dispatch\+::get\+Glob\+Servlet (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{uri }\end{DoxyParamCaption})}
+
+
+
+获取模糊匹配\+Servlet 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uri} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Servlet\+::ptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1ServletDispatch_a8bd07ce448ff1ba7465881f5f6809be3}\label{classWebSrv_1_1http_1_1ServletDispatch_a8bd07ce448ff1ba7465881f5f6809be3}} 
+\index{WebSrv::http::ServletDispatch@{WebSrv::http::ServletDispatch}!getMatchedServlet@{getMatchedServlet}}
+\index{getMatchedServlet@{getMatchedServlet}!WebSrv::http::ServletDispatch@{WebSrv::http::ServletDispatch}}
+\doxysubsubsection{\texorpdfstring{getMatchedServlet()}{getMatchedServlet()}}
+{\footnotesize\ttfamily Servlet\+::ptr Web\+Srv\+::http\+::\+Servlet\+Dispatch\+::get\+Matched\+Servlet (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{uri }\end{DoxyParamCaption})}
+
+
+
+使用uri获取\+Servlet 优先精准，其次模糊匹配 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uri} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Servlet\+::ptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1ServletDispatch_acb97eb245d62825d661d387e7c16d372}\label{classWebSrv_1_1http_1_1ServletDispatch_acb97eb245d62825d661d387e7c16d372}} 
+\index{WebSrv::http::ServletDispatch@{WebSrv::http::ServletDispatch}!getServlet@{getServlet}}
+\index{getServlet@{getServlet}!WebSrv::http::ServletDispatch@{WebSrv::http::ServletDispatch}}
+\doxysubsubsection{\texorpdfstring{getServlet()}{getServlet()}}
+{\footnotesize\ttfamily Servlet\+::ptr Web\+Srv\+::http\+::\+Servlet\+Dispatch\+::get\+Servlet (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{uri }\end{DoxyParamCaption})}
+
+
+
+获取\+Servlet 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uri} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Servlet\+::ptr 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tiny\+Web\+Server/http/servlet.\+h\item 
+src/http/servlet.\+cpp\end{DoxyCompactItemize}

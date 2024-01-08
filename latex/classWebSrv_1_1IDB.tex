@@ -1,0 +1,48 @@
+\hypertarget{classWebSrv_1_1IDB}{}\doxysection{Web\+Srv\+::IDB Class Reference}
+\label{classWebSrv_1_1IDB}\index{WebSrv::IDB@{WebSrv::IDB}}
+
+
+Inheritance diagram for Web\+Srv\+::IDB\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classWebSrv_1_1IDB__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Web\+Srv\+::IDB\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classWebSrv_1_1IDB__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1IDB_a5ca6f01e1b93ce8187da25ad76367634}\label{classWebSrv_1_1IDB_a5ca6f01e1b93ce8187da25ad76367634}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classWebSrv_1_1IDB}{IDB}} $>$ {\bfseries ptr}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1IDB_abb429302c809c3ffe6ac1f3285c98c64}\label{classWebSrv_1_1IDB_abb429302c809c3ffe6ac1f3285c98c64}} 
+virtual IStmt\+::ptr {\bfseries prepare} (const std\+::string \&stmt)=0
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1IDB_affa28426f9a41c4a6c46d71eab34b778}\label{classWebSrv_1_1IDB_affa28426f9a41c4a6c46d71eab34b778}} 
+virtual int {\bfseries get\+Errno} ()=0
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1IDB_a4dcdc7917a71aef9e64161ec9e42ad40}\label{classWebSrv_1_1IDB_a4dcdc7917a71aef9e64161ec9e42ad40}} 
+virtual std\+::string {\bfseries get\+Err\+Str} ()=0
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1IDB_a8e4d4b0883513d4b96d770310baa7f57}\label{classWebSrv_1_1IDB_a8e4d4b0883513d4b96d770310baa7f57}} 
+virtual ITransaction\+::ptr {\bfseries open\+Transaction} (bool auto\+\_\+commit=false)=0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tiny\+Web\+Server/db/db.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,483 @@
+\hypertarget{classWebSrv_1_1Socket}{}\doxysection{Web\+Srv\+::Socket Class Reference}
+\label{classWebSrv_1_1Socket}\index{WebSrv::Socket@{WebSrv::Socket}}
+
+
+Inheritance diagram for Web\+Srv\+::Socket\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classWebSrv_1_1Socket__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Web\+Srv\+::Socket\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classWebSrv_1_1Socket__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a8f72fadbf1839fdb5384cc61184aed87}\label{classWebSrv_1_1Socket_a8f72fadbf1839fdb5384cc61184aed87}} 
+enum \mbox{\hyperlink{classWebSrv_1_1Socket_a8f72fadbf1839fdb5384cc61184aed87}{Type}} \{ {\bfseries TCP} = SOCK\+\_\+\+STREAM
+, {\bfseries UDP} = SOCK\+\_\+\+DGRAM
+ \}
+\begin{DoxyCompactList}\small\item\em socket类型 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_ad670e8eb9f3ae6a65b9217e031ba1455}\label{classWebSrv_1_1Socket_ad670e8eb9f3ae6a65b9217e031ba1455}} 
+enum \mbox{\hyperlink{classWebSrv_1_1Socket_ad670e8eb9f3ae6a65b9217e031ba1455}{Family}} \{ {\bfseries Ipv4} = AF\+\_\+\+INET
+, {\bfseries Ipv6} = AF\+\_\+\+INET6
+, {\bfseries UNIX} = AF\+\_\+\+UNIX
+ \}
+\begin{DoxyCompactList}\small\item\em Socket协议簇 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a8848987b3a866a3c6612a1f86d5693c1}\label{classWebSrv_1_1Socket_a8848987b3a866a3c6612a1f86d5693c1}} 
+using {\bfseries ptr} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classWebSrv_1_1Socket}{Socket}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWebSrv_1_1Socket_a408a90f625c0864038d0e99319a65482}{Socket}} (int family, int type, int protocol=0)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classWebSrv_1_1Socket}{Socket}} object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebSrv_1_1Socket_a9be3e3fc218a1ca680f1239cb5677200}{get\+Option}} (int level, int option, void $\ast$result, socklen\+\_\+t $\ast$len)
+\begin{DoxyCompactList}\small\item\em getsockopt \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{classWebSrv_1_1Socket_a0d7666e95319c988c3e4edf7674b6962}{get\+Option}} (int level, int option, T \&result)
+\begin{DoxyCompactList}\small\item\em getsockopt 模板 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebSrv_1_1Socket_a50d47364b3be676e8bc0e539a44f8969}{set\+Option}} (int level, int option, const void $\ast$value, socklen\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em setsockopt \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{classWebSrv_1_1Socket_a1d7aa6c90887bf0a55110d7b9d8c3a09}{set\+Option}} (int level, int option, const T \&value)
+\begin{DoxyCompactList}\small\item\em getsockopt 模板 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a5ccaf933d74056a05fdda9aa736ec948}\label{classWebSrv_1_1Socket_a5ccaf933d74056a05fdda9aa736ec948}} 
+int64\+\_\+t {\bfseries get\+Send\+Timeout} ()
+\item 
+void \mbox{\hyperlink{classWebSrv_1_1Socket_ad476c0df60a47bfed7c8ab4bdb263eb7}{set\+Send\+Timeout}} (int64\+\_\+t timeout)
+\begin{DoxyCompactList}\small\item\em 设置超时时间 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a05fac6b090e01011b79746925fd404d0}\label{classWebSrv_1_1Socket_a05fac6b090e01011b79746925fd404d0}} 
+int64\+\_\+t {\bfseries get\+Recv\+Timeout} ()
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a2d77a221ff10408239c99ea745a996f2}\label{classWebSrv_1_1Socket_a2d77a221ff10408239c99ea745a996f2}} 
+void {\bfseries set\+Recv\+Timeout} (int64\+\_\+t timeout)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_aa27ea1f0decf5906fd939daa81a415b5}\label{classWebSrv_1_1Socket_aa27ea1f0decf5906fd939daa81a415b5}} 
+int {\bfseries get\+Error} ()
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_acfd51c6808c5e486ab2c726783a235d1}\label{classWebSrv_1_1Socket_acfd51c6808c5e486ab2c726783a235d1}} 
+bool {\bfseries bind} (Address\+::ptr address)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a99d70e26fbe3902828baa73b3d912f7c}\label{classWebSrv_1_1Socket_a99d70e26fbe3902828baa73b3d912f7c}} 
+virtual bool {\bfseries listen} (int backlog=SOMAXCONN)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_ab79c149474fd8fff9bbbb13c885f0a98}\label{classWebSrv_1_1Socket_ab79c149474fd8fff9bbbb13c885f0a98}} 
+virtual bool {\bfseries close} ()
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a5e40140bdc637c3915f28dfbaec4de68}\label{classWebSrv_1_1Socket_a5e40140bdc637c3915f28dfbaec4de68}} 
+virtual Socket\+::ptr {\bfseries accept} ()
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a8d9d6177a11f5747363c8f39ddfa84ae}\label{classWebSrv_1_1Socket_a8d9d6177a11f5747363c8f39ddfa84ae}} 
+virtual bool {\bfseries connect} (const Address\+::ptr addr, int64\+\_\+t timeout\+Ms=-\/1)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a338822dbaeed96bab84cf3a6b798df82}\label{classWebSrv_1_1Socket_a338822dbaeed96bab84cf3a6b798df82}} 
+virtual bool {\bfseries reconnect} (int64\+\_\+t timeout\+Ms=-\/1)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a02045a79556c024a515c9648e86ff8a4}\label{classWebSrv_1_1Socket_a02045a79556c024a515c9648e86ff8a4}} 
+virtual int {\bfseries send} (const void $\ast$buffer, size\+\_\+t length, int flags=0)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a8545969dbbfd04ef69e9d5a79bb2166a}\label{classWebSrv_1_1Socket_a8545969dbbfd04ef69e9d5a79bb2166a}} 
+virtual int {\bfseries send} (iovec $\ast$buffers, size\+\_\+t length, int flags=0)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_ae43514e438900f17274d9d0d1c37c60f}\label{classWebSrv_1_1Socket_ae43514e438900f17274d9d0d1c37c60f}} 
+virtual int {\bfseries send\+To} (const void $\ast$buffer, size\+\_\+t length, const Address\+::ptr to, int flags=0)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a8233adb08939e5842339e5aee276ac60}\label{classWebSrv_1_1Socket_a8233adb08939e5842339e5aee276ac60}} 
+virtual int {\bfseries send\+To} (iovec $\ast$buffers, size\+\_\+t length, const Address\+::ptr to, int flags=0)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a43933e91bcc2bfcca13cbc7089781eac}\label{classWebSrv_1_1Socket_a43933e91bcc2bfcca13cbc7089781eac}} 
+virtual int {\bfseries recv} (void $\ast$buffer, size\+\_\+t length, int flags=0)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_aecebf09eb1f1b34aebde0f592390651c}\label{classWebSrv_1_1Socket_aecebf09eb1f1b34aebde0f592390651c}} 
+virtual int {\bfseries recv} (iovec $\ast$buffers, size\+\_\+t length, int flags=0)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a9c0f3a5859a997f1e49dd128bc24bc5a}\label{classWebSrv_1_1Socket_a9c0f3a5859a997f1e49dd128bc24bc5a}} 
+virtual int {\bfseries recv\+From} (void $\ast$buffer, size\+\_\+t length, Address\+::ptr from, int flags=0)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a665f0bd5c82292273fba1961231576ae}\label{classWebSrv_1_1Socket_a665f0bd5c82292273fba1961231576ae}} 
+virtual int {\bfseries recv\+From} (iovec $\ast$buffers, size\+\_\+t length, Address\+::ptr from, int flags=0)
+\item 
+Address\+::ptr \mbox{\hyperlink{classWebSrv_1_1Socket_a440a1e89a7099b87b36d9c1d5fb5fef1}{get\+Remote\+Address}} () const
+\begin{DoxyCompactList}\small\item\em 获取远端地址 \end{DoxyCompactList}\item 
+Address\+::ptr \mbox{\hyperlink{classWebSrv_1_1Socket_a12c9d07b250ef1128d18ea657b87de55}{get\+Local\+Address}} () const
+\begin{DoxyCompactList}\small\item\em 获取本地地址 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_adfcdd6acd0aacdc0d4450160b67399ff}\label{classWebSrv_1_1Socket_adfcdd6acd0aacdc0d4450160b67399ff}} 
+int \mbox{\hyperlink{classWebSrv_1_1Socket_adfcdd6acd0aacdc0d4450160b67399ff}{get\+Family}} () const
+\begin{DoxyCompactList}\small\item\em 获取协议簇 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a9434424b0c862b7eaed379242f2c2150}\label{classWebSrv_1_1Socket_a9434424b0c862b7eaed379242f2c2150}} 
+int \mbox{\hyperlink{classWebSrv_1_1Socket_a9434424b0c862b7eaed379242f2c2150}{get\+Type}} () const
+\begin{DoxyCompactList}\small\item\em 获取类型 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a572d1cd682b8c3967fa14c5042bb3138}\label{classWebSrv_1_1Socket_a572d1cd682b8c3967fa14c5042bb3138}} 
+int \mbox{\hyperlink{classWebSrv_1_1Socket_a572d1cd682b8c3967fa14c5042bb3138}{get\+Protocol}} () const
+\begin{DoxyCompactList}\small\item\em 获取协议 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebSrv_1_1Socket_a97cd8255859c5d151af13e70afa73ec6}{is\+Valid}} () const
+\begin{DoxyCompactList}\small\item\em socket是否有效 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebSrv_1_1Socket_a3ef5e5435506caec53c0d0ad1e806d9a}{is\+Connected}} () const
+\begin{DoxyCompactList}\small\item\em 是否是连接状态 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a6ddf11f011efae8908299cf543450d79}\label{classWebSrv_1_1Socket_a6ddf11f011efae8908299cf543450d79}} 
+virtual std\+::ostream \& {\bfseries dump} (std\+::ostream \&os) const
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a046d6ce4d74b58b97df721f830b40348}\label{classWebSrv_1_1Socket_a046d6ce4d74b58b97df721f830b40348}} 
+virtual std\+::string {\bfseries to\+String} () const
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a455dc983c3c6c40fa113b3719db80f86}\label{classWebSrv_1_1Socket_a455dc983c3c6c40fa113b3719db80f86}} 
+{\bfseries operator int} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a0d3c188cd62a1db561f5a05fc8ce7745}\label{classWebSrv_1_1Socket_a0d3c188cd62a1db561f5a05fc8ce7745}} 
+static Socket\+::ptr {\bfseries Create\+TCP} (Address\+::ptr address)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a66e66ad05ac783be2eca70202916eac1}\label{classWebSrv_1_1Socket_a66e66ad05ac783be2eca70202916eac1}} 
+static Socket\+::ptr {\bfseries Create\+UDP} (Address\+::ptr address)
+\item 
+static Socket\+::ptr \mbox{\hyperlink{classWebSrv_1_1Socket_a669d785aa6dc68e9bf5722d9f3e14d56}{Create\+TCPSocket}} ()
+\begin{DoxyCompactList}\small\item\em 创建tcp ipv4 TCP socket \end{DoxyCompactList}\item 
+static Socket\+::ptr \mbox{\hyperlink{classWebSrv_1_1Socket_ad919ca0067e61f37643e2a5befa005b4}{Create\+UCPSocket}} ()
+\begin{DoxyCompactList}\small\item\em 创建ucp ipv4 UCP socket \end{DoxyCompactList}\item 
+static Socket\+::ptr \mbox{\hyperlink{classWebSrv_1_1Socket_a747a0417fc2218da3e9ee7461ca6d237}{Create\+TCPSocket6}} ()
+\begin{DoxyCompactList}\small\item\em 创建ucp ipv6 TCP socket \end{DoxyCompactList}\item 
+static Socket\+::ptr \mbox{\hyperlink{classWebSrv_1_1Socket_aab744be804d9287019382249d8894da7}{Create\+UCPSocket6}} ()
+\begin{DoxyCompactList}\small\item\em 创建ucp ipv6 UCP socket \end{DoxyCompactList}\item 
+static Socket\+::ptr \mbox{\hyperlink{classWebSrv_1_1Socket_a442d3b518e5300fc962dab9b3c83f30b}{Create\+Unix\+TCPSocket}} ()
+\begin{DoxyCompactList}\small\item\em Create a Unix TCP \mbox{\hyperlink{classWebSrv_1_1Socket}{Socket}}. \end{DoxyCompactList}\item 
+static Socket\+::ptr \mbox{\hyperlink{classWebSrv_1_1Socket_a434e2a01aacbe9446296ea677d0b6786}{Create\+Unix\+UCPSocket}} ()
+\begin{DoxyCompactList}\small\item\em Create a Unix UCP \mbox{\hyperlink{classWebSrv_1_1Socket}{Socket}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a2fda1c673f47a7003fdc4a27852195c8}\label{classWebSrv_1_1Socket_a2fda1c673f47a7003fdc4a27852195c8}} 
+void {\bfseries new\+Socket} ()
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_ace5bf3dace1f039d5e10aef654be9c63}\label{classWebSrv_1_1Socket_ace5bf3dace1f039d5e10aef654be9c63}} 
+void {\bfseries init\+Local\+Address} ()
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a05e13564268aaccd490a9d885846c24b}\label{classWebSrv_1_1Socket_a05e13564268aaccd490a9d885846c24b}} 
+void {\bfseries init\+Socket} ()
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a5fd45449c3027c998c2468669edc3718}\label{classWebSrv_1_1Socket_a5fd45449c3027c998c2468669edc3718}} 
+void {\bfseries init\+Remote\+Address} ()
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a694e75eba7f198efedcd2c0ce525a91f}\label{classWebSrv_1_1Socket_a694e75eba7f198efedcd2c0ce525a91f}} 
+bool {\bfseries init} (int socket)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a3a0d76d64d04684e99dae2e630da5efd}\label{classWebSrv_1_1Socket_a3a0d76d64d04684e99dae2e630da5efd}} 
+int {\bfseries \+\_\+socket}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_afcf8ae11545666e0bdf379f431fc2fd8}\label{classWebSrv_1_1Socket_afcf8ae11545666e0bdf379f431fc2fd8}} 
+int {\bfseries \+\_\+family}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a1114337c03631ec8284d5aa06b9bbcdf}\label{classWebSrv_1_1Socket_a1114337c03631ec8284d5aa06b9bbcdf}} 
+int {\bfseries \+\_\+type}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a06e31acd1e693604b517ba572dbb5c1f}\label{classWebSrv_1_1Socket_a06e31acd1e693604b517ba572dbb5c1f}} 
+int {\bfseries \+\_\+protocol}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_ab2f3ea75ae529aadb628468cdb646c86}\label{classWebSrv_1_1Socket_ab2f3ea75ae529aadb628468cdb646c86}} 
+bool {\bfseries \+\_\+is\+Connected}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_ad2cade054c1da7db428cd9513ed3b033}\label{classWebSrv_1_1Socket_ad2cade054c1da7db428cd9513ed3b033}} 
+Address\+::ptr {\bfseries \+\_\+local\+Address}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Socket_ab72cad746085eb0447be7fd128b4edf6}\label{classWebSrv_1_1Socket_ab72cad746085eb0447be7fd128b4edf6}} 
+Address\+::ptr {\bfseries \+\_\+remote\+Address}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a408a90f625c0864038d0e99319a65482}\label{classWebSrv_1_1Socket_a408a90f625c0864038d0e99319a65482}} 
+\index{WebSrv::Socket@{WebSrv::Socket}!Socket@{Socket}}
+\index{Socket@{Socket}!WebSrv::Socket@{WebSrv::Socket}}
+\doxysubsubsection{\texorpdfstring{Socket()}{Socket()}}
+{\footnotesize\ttfamily Web\+Srv\+::\+Socket\+::\+Socket (\begin{DoxyParamCaption}\item[{int}]{family,  }\item[{int}]{type,  }\item[{int}]{protocol = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classWebSrv_1_1Socket}{Socket}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em family} & 协议簇 \\
+\hline
+{\em type} & 类型 \\
+\hline
+{\em protocol} & 协议 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a669d785aa6dc68e9bf5722d9f3e14d56}\label{classWebSrv_1_1Socket_a669d785aa6dc68e9bf5722d9f3e14d56}} 
+\index{WebSrv::Socket@{WebSrv::Socket}!CreateTCPSocket@{CreateTCPSocket}}
+\index{CreateTCPSocket@{CreateTCPSocket}!WebSrv::Socket@{WebSrv::Socket}}
+\doxysubsubsection{\texorpdfstring{CreateTCPSocket()}{CreateTCPSocket()}}
+{\footnotesize\ttfamily Socket\+::ptr Web\+Srv\+::\+Socket\+::\+Create\+TCPSocket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+创建tcp ipv4 TCP socket 
+
+\begin{DoxyReturn}{Returns}
+Socket\+::ptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a747a0417fc2218da3e9ee7461ca6d237}\label{classWebSrv_1_1Socket_a747a0417fc2218da3e9ee7461ca6d237}} 
+\index{WebSrv::Socket@{WebSrv::Socket}!CreateTCPSocket6@{CreateTCPSocket6}}
+\index{CreateTCPSocket6@{CreateTCPSocket6}!WebSrv::Socket@{WebSrv::Socket}}
+\doxysubsubsection{\texorpdfstring{CreateTCPSocket6()}{CreateTCPSocket6()}}
+{\footnotesize\ttfamily Socket\+::ptr Web\+Srv\+::\+Socket\+::\+Create\+TCPSocket6 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+创建ucp ipv6 TCP socket 
+
+\begin{DoxyReturn}{Returns}
+Socket\+::ptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1Socket_ad919ca0067e61f37643e2a5befa005b4}\label{classWebSrv_1_1Socket_ad919ca0067e61f37643e2a5befa005b4}} 
+\index{WebSrv::Socket@{WebSrv::Socket}!CreateUCPSocket@{CreateUCPSocket}}
+\index{CreateUCPSocket@{CreateUCPSocket}!WebSrv::Socket@{WebSrv::Socket}}
+\doxysubsubsection{\texorpdfstring{CreateUCPSocket()}{CreateUCPSocket()}}
+{\footnotesize\ttfamily Socket\+::ptr Web\+Srv\+::\+Socket\+::\+Create\+UCPSocket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+创建ucp ipv4 UCP socket 
+
+\begin{DoxyReturn}{Returns}
+Socket\+::ptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1Socket_aab744be804d9287019382249d8894da7}\label{classWebSrv_1_1Socket_aab744be804d9287019382249d8894da7}} 
+\index{WebSrv::Socket@{WebSrv::Socket}!CreateUCPSocket6@{CreateUCPSocket6}}
+\index{CreateUCPSocket6@{CreateUCPSocket6}!WebSrv::Socket@{WebSrv::Socket}}
+\doxysubsubsection{\texorpdfstring{CreateUCPSocket6()}{CreateUCPSocket6()}}
+{\footnotesize\ttfamily Socket\+::ptr Web\+Srv\+::\+Socket\+::\+Create\+UCPSocket6 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+创建ucp ipv6 UCP socket 
+
+\begin{DoxyReturn}{Returns}
+Socket\+::ptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a442d3b518e5300fc962dab9b3c83f30b}\label{classWebSrv_1_1Socket_a442d3b518e5300fc962dab9b3c83f30b}} 
+\index{WebSrv::Socket@{WebSrv::Socket}!CreateUnixTCPSocket@{CreateUnixTCPSocket}}
+\index{CreateUnixTCPSocket@{CreateUnixTCPSocket}!WebSrv::Socket@{WebSrv::Socket}}
+\doxysubsubsection{\texorpdfstring{CreateUnixTCPSocket()}{CreateUnixTCPSocket()}}
+{\footnotesize\ttfamily Socket\+::ptr Web\+Srv\+::\+Socket\+::\+Create\+Unix\+TCPSocket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a Unix TCP \mbox{\hyperlink{classWebSrv_1_1Socket}{Socket}}. 
+
+\begin{DoxyReturn}{Returns}
+Socket\+::ptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a434e2a01aacbe9446296ea677d0b6786}\label{classWebSrv_1_1Socket_a434e2a01aacbe9446296ea677d0b6786}} 
+\index{WebSrv::Socket@{WebSrv::Socket}!CreateUnixUCPSocket@{CreateUnixUCPSocket}}
+\index{CreateUnixUCPSocket@{CreateUnixUCPSocket}!WebSrv::Socket@{WebSrv::Socket}}
+\doxysubsubsection{\texorpdfstring{CreateUnixUCPSocket()}{CreateUnixUCPSocket()}}
+{\footnotesize\ttfamily Socket\+::ptr Web\+Srv\+::\+Socket\+::\+Create\+Unix\+UCPSocket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a Unix UCP \mbox{\hyperlink{classWebSrv_1_1Socket}{Socket}}. 
+
+\begin{DoxyReturn}{Returns}
+Socket\+::ptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a12c9d07b250ef1128d18ea657b87de55}\label{classWebSrv_1_1Socket_a12c9d07b250ef1128d18ea657b87de55}} 
+\index{WebSrv::Socket@{WebSrv::Socket}!getLocalAddress@{getLocalAddress}}
+\index{getLocalAddress@{getLocalAddress}!WebSrv::Socket@{WebSrv::Socket}}
+\doxysubsubsection{\texorpdfstring{getLocalAddress()}{getLocalAddress()}}
+{\footnotesize\ttfamily Address\+::ptr Web\+Srv\+::\+Socket\+::get\+Local\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+获取本地地址 
+
+\begin{DoxyReturn}{Returns}
+Address\+::ptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a0d7666e95319c988c3e4edf7674b6962}\label{classWebSrv_1_1Socket_a0d7666e95319c988c3e4edf7674b6962}} 
+\index{WebSrv::Socket@{WebSrv::Socket}!getOption@{getOption}}
+\index{getOption@{getOption}!WebSrv::Socket@{WebSrv::Socket}}
+\doxysubsubsection{\texorpdfstring{getOption()}{getOption()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool Web\+Srv\+::\+Socket\+::get\+Option (\begin{DoxyParamCaption}\item[{int}]{level,  }\item[{int}]{option,  }\item[{T \&}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+getsockopt 模板 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & \\
+\hline
+{\em option} & \\
+\hline
+{\em result} & \\
+\hline
+{\em len} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a9be3e3fc218a1ca680f1239cb5677200}\label{classWebSrv_1_1Socket_a9be3e3fc218a1ca680f1239cb5677200}} 
+\index{WebSrv::Socket@{WebSrv::Socket}!getOption@{getOption}}
+\index{getOption@{getOption}!WebSrv::Socket@{WebSrv::Socket}}
+\doxysubsubsection{\texorpdfstring{getOption()}{getOption()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Web\+Srv\+::\+Socket\+::get\+Option (\begin{DoxyParamCaption}\item[{int}]{level,  }\item[{int}]{option,  }\item[{void $\ast$}]{result,  }\item[{socklen\+\_\+t $\ast$}]{len }\end{DoxyParamCaption})}
+
+
+
+getsockopt 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & \\
+\hline
+{\em option} & \\
+\hline
+{\em result} & \\
+\hline
+{\em len} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a440a1e89a7099b87b36d9c1d5fb5fef1}\label{classWebSrv_1_1Socket_a440a1e89a7099b87b36d9c1d5fb5fef1}} 
+\index{WebSrv::Socket@{WebSrv::Socket}!getRemoteAddress@{getRemoteAddress}}
+\index{getRemoteAddress@{getRemoteAddress}!WebSrv::Socket@{WebSrv::Socket}}
+\doxysubsubsection{\texorpdfstring{getRemoteAddress()}{getRemoteAddress()}}
+{\footnotesize\ttfamily Address\+::ptr Web\+Srv\+::\+Socket\+::get\+Remote\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+获取远端地址 
+
+\begin{DoxyReturn}{Returns}
+Address\+::ptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a3ef5e5435506caec53c0d0ad1e806d9a}\label{classWebSrv_1_1Socket_a3ef5e5435506caec53c0d0ad1e806d9a}} 
+\index{WebSrv::Socket@{WebSrv::Socket}!isConnected@{isConnected}}
+\index{isConnected@{isConnected}!WebSrv::Socket@{WebSrv::Socket}}
+\doxysubsubsection{\texorpdfstring{isConnected()}{isConnected()}}
+{\footnotesize\ttfamily bool Web\+Srv\+::\+Socket\+::is\+Connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+是否是连接状态 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a97cd8255859c5d151af13e70afa73ec6}\label{classWebSrv_1_1Socket_a97cd8255859c5d151af13e70afa73ec6}} 
+\index{WebSrv::Socket@{WebSrv::Socket}!isValid@{isValid}}
+\index{isValid@{isValid}!WebSrv::Socket@{WebSrv::Socket}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily bool Web\+Srv\+::\+Socket\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+socket是否有效 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a1d7aa6c90887bf0a55110d7b9d8c3a09}\label{classWebSrv_1_1Socket_a1d7aa6c90887bf0a55110d7b9d8c3a09}} 
+\index{WebSrv::Socket@{WebSrv::Socket}!setOption@{setOption}}
+\index{setOption@{setOption}!WebSrv::Socket@{WebSrv::Socket}}
+\doxysubsubsection{\texorpdfstring{setOption()}{setOption()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool Web\+Srv\+::\+Socket\+::set\+Option (\begin{DoxyParamCaption}\item[{int}]{level,  }\item[{int}]{option,  }\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+getsockopt 模板 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & \\
+\hline
+{\em option} & \\
+\hline
+{\em result} & \\
+\hline
+{\em len} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1Socket_a50d47364b3be676e8bc0e539a44f8969}\label{classWebSrv_1_1Socket_a50d47364b3be676e8bc0e539a44f8969}} 
+\index{WebSrv::Socket@{WebSrv::Socket}!setOption@{setOption}}
+\index{setOption@{setOption}!WebSrv::Socket@{WebSrv::Socket}}
+\doxysubsubsection{\texorpdfstring{setOption()}{setOption()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Web\+Srv\+::\+Socket\+::set\+Option (\begin{DoxyParamCaption}\item[{int}]{level,  }\item[{int}]{option,  }\item[{const void $\ast$}]{value,  }\item[{socklen\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+setsockopt 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & \\
+\hline
+{\em option} & \\
+\hline
+{\em value} & \\
+\hline
+{\em len} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1Socket_ad476c0df60a47bfed7c8ab4bdb263eb7}\label{classWebSrv_1_1Socket_ad476c0df60a47bfed7c8ab4bdb263eb7}} 
+\index{WebSrv::Socket@{WebSrv::Socket}!setSendTimeout@{setSendTimeout}}
+\index{setSendTimeout@{setSendTimeout}!WebSrv::Socket@{WebSrv::Socket}}
+\doxysubsubsection{\texorpdfstring{setSendTimeout()}{setSendTimeout()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Socket\+::set\+Send\+Timeout (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{timeout }\end{DoxyParamCaption})}
+
+
+
+设置超时时间 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timeout} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tiny\+Web\+Server/socket.\+h\item 
+src/socket.\+cpp\end{DoxyCompactItemize}

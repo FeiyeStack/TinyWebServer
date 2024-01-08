@@ -1,0 +1,138 @@
+\hypertarget{classWebSrv_1_1TimerManager}{}\doxysection{Web\+Srv\+::Timer\+Manager Class Reference}
+\label{classWebSrv_1_1TimerManager}\index{WebSrv::TimerManager@{WebSrv::TimerManager}}
+
+
+Inheritance diagram for Web\+Srv\+::Timer\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{classWebSrv_1_1TimerManager__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Timer\+::ptr \mbox{\hyperlink{classWebSrv_1_1TimerManager_ab97c6b27a8a319df72604daa3bd6c8bf}{add\+Timer}} (uint64\+\_\+t ms, std\+::function$<$ void()$>$ cb, bool recurring=false)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classWebSrv_1_1Timer}{Timer}} object. \end{DoxyCompactList}\item 
+Timer\+::ptr \mbox{\hyperlink{classWebSrv_1_1TimerManager_a50f2ad28de6d70c5b2db96529bc76ea7}{add\+Condition\+Timer}} (uint64\+\_\+t ms, std\+::function$<$ void()$>$ cb, std\+::function$<$ bool()$>$ cond\+Cb, bool recurring=false)
+\begin{DoxyCompactList}\small\item\em 条件定时器 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1TimerManager_a69da35ccab57adeee9b4d04bbdf3be9f}{list\+Expired\+Callback}} (std\+::vector$<$ std\+::function$<$ void()$>$$>$ \&cbs)
+\begin{DoxyCompactList}\small\item\em 获取超时定时器列表 \end{DoxyCompactList}\item 
+std\+::function$<$ void()$>$ \mbox{\hyperlink{classWebSrv_1_1TimerManager_a52a6c226968314189182d8ccbd022f9b}{get\+Expired\+Callback}} ()
+\begin{DoxyCompactList}\small\item\em 取出一个超时定时器 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebSrv_1_1TimerManager_a1442acf41da8f49b89ba9ae7db7bb5cf}{has\+Timer}} ()
+\begin{DoxyCompactList}\small\item\em 是否还有定时器 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1TimerManager_a363f9b6341473f7b4a2baa9287de0e22}\label{classWebSrv_1_1TimerManager_a363f9b6341473f7b4a2baa9287de0e22}} 
+uint64\+\_\+t \mbox{\hyperlink{classWebSrv_1_1TimerManager_a363f9b6341473f7b4a2baa9287de0e22}{get\+Next\+Timer}} ()
+\begin{DoxyCompactList}\small\item\em 下一个定时器执行时间 为0超时 为最大时为空 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1TimerManager_afe8b48641cf1d87e4cd81e1be324632b}\label{classWebSrv_1_1TimerManager_afe8b48641cf1d87e4cd81e1be324632b}} 
+void \mbox{\hyperlink{classWebSrv_1_1TimerManager_afe8b48641cf1d87e4cd81e1be324632b}{close\+Recurring\+Timers}} ()
+\begin{DoxyCompactList}\small\item\em 关闭循环定时器,结束后用的 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1TimerManager_ade2ca6ec85e9b2ff536733afcf36305c}\label{classWebSrv_1_1TimerManager_ade2ca6ec85e9b2ff536733afcf36305c}} 
+virtual void \mbox{\hyperlink{classWebSrv_1_1TimerManager_ade2ca6ec85e9b2ff536733afcf36305c}{on\+Timer\+Inserted\+At\+Front}} ()=0
+\begin{DoxyCompactList}\small\item\em 如果定时插入在顶部时触发操作 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1TimerManager_a50de43af5bed41f30c071d8cce0e81bc}\label{classWebSrv_1_1TimerManager_a50de43af5bed41f30c071d8cce0e81bc}} 
+class {\bfseries Timer}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebSrv_1_1TimerManager_a50f2ad28de6d70c5b2db96529bc76ea7}\label{classWebSrv_1_1TimerManager_a50f2ad28de6d70c5b2db96529bc76ea7}} 
+\index{WebSrv::TimerManager@{WebSrv::TimerManager}!addConditionTimer@{addConditionTimer}}
+\index{addConditionTimer@{addConditionTimer}!WebSrv::TimerManager@{WebSrv::TimerManager}}
+\doxysubsubsection{\texorpdfstring{addConditionTimer()}{addConditionTimer()}}
+{\footnotesize\ttfamily Timer\+::ptr Web\+Srv\+::\+Timer\+Manager\+::add\+Condition\+Timer (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{ms,  }\item[{std\+::function$<$ void()$>$}]{cb,  }\item[{std\+::function$<$ bool()$>$}]{cond\+Cb,  }\item[{bool}]{recurring = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+条件定时器 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ms} & 定时器执行间隔 \\
+\hline
+{\em cb} & 回调函数 \\
+\hline
+{\em recurring} & 是否循环执行 \\
+\hline
+{\em cond} & 条件回调 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Timer\+::ptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1TimerManager_ab97c6b27a8a319df72604daa3bd6c8bf}\label{classWebSrv_1_1TimerManager_ab97c6b27a8a319df72604daa3bd6c8bf}} 
+\index{WebSrv::TimerManager@{WebSrv::TimerManager}!addTimer@{addTimer}}
+\index{addTimer@{addTimer}!WebSrv::TimerManager@{WebSrv::TimerManager}}
+\doxysubsubsection{\texorpdfstring{addTimer()}{addTimer()}}
+{\footnotesize\ttfamily Timer\+::ptr Web\+Srv\+::\+Timer\+Manager\+::add\+Timer (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{ms,  }\item[{std\+::function$<$ void()$>$}]{cb,  }\item[{bool}]{recurring = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classWebSrv_1_1Timer}{Timer}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ms} & 定时器执行间隔 \\
+\hline
+{\em cb} & 回调函数 \\
+\hline
+{\em recurring} & 是否循环执行 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1TimerManager_a52a6c226968314189182d8ccbd022f9b}\label{classWebSrv_1_1TimerManager_a52a6c226968314189182d8ccbd022f9b}} 
+\index{WebSrv::TimerManager@{WebSrv::TimerManager}!getExpiredCallback@{getExpiredCallback}}
+\index{getExpiredCallback@{getExpiredCallback}!WebSrv::TimerManager@{WebSrv::TimerManager}}
+\doxysubsubsection{\texorpdfstring{getExpiredCallback()}{getExpiredCallback()}}
+{\footnotesize\ttfamily std\+::function$<$ void()$>$ Web\+Srv\+::\+Timer\+Manager\+::get\+Expired\+Callback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+取出一个超时定时器 
+
+\begin{DoxyReturn}{Returns}
+std\+::function$<$void()$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1TimerManager_a1442acf41da8f49b89ba9ae7db7bb5cf}\label{classWebSrv_1_1TimerManager_a1442acf41da8f49b89ba9ae7db7bb5cf}} 
+\index{WebSrv::TimerManager@{WebSrv::TimerManager}!hasTimer@{hasTimer}}
+\index{hasTimer@{hasTimer}!WebSrv::TimerManager@{WebSrv::TimerManager}}
+\doxysubsubsection{\texorpdfstring{hasTimer()}{hasTimer()}}
+{\footnotesize\ttfamily bool Web\+Srv\+::\+Timer\+Manager\+::has\+Timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+是否还有定时器 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1TimerManager_a69da35ccab57adeee9b4d04bbdf3be9f}\label{classWebSrv_1_1TimerManager_a69da35ccab57adeee9b4d04bbdf3be9f}} 
+\index{WebSrv::TimerManager@{WebSrv::TimerManager}!listExpiredCallback@{listExpiredCallback}}
+\index{listExpiredCallback@{listExpiredCallback}!WebSrv::TimerManager@{WebSrv::TimerManager}}
+\doxysubsubsection{\texorpdfstring{listExpiredCallback()}{listExpiredCallback()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Timer\+Manager\+::list\+Expired\+Callback (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::function$<$ void()$>$$>$ \&}]{cbs }\end{DoxyParamCaption})}
+
+
+
+获取超时定时器列表 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cbs} & 超时定时器列表 \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tiny\+Web\+Server/timer.\+h\item 
+src/timer.\+cpp\end{DoxyCompactItemize}

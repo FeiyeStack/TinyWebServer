@@ -1,0 +1,80 @@
+\hypertarget{classWebSrv_1_1http_1_1HttpSession}{}\doxysection{Web\+Srv\+::http\+::Http\+Session Class Reference}
+\label{classWebSrv_1_1http_1_1HttpSession}\index{WebSrv::http::HttpSession@{WebSrv::http::HttpSession}}
+
+
+Inheritance diagram for Web\+Srv\+::http\+::Http\+Session\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classWebSrv_1_1http_1_1HttpSession__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Web\+Srv\+::http\+::Http\+Session\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classWebSrv_1_1http_1_1HttpSession__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpSession_aba1c6a164d1c2bfdc3900703a79d0452}\label{classWebSrv_1_1http_1_1HttpSession_aba1c6a164d1c2bfdc3900703a79d0452}} 
+using {\bfseries ptr} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpSession}{Http\+Session}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpSession_a69f8a45b651e183dd1f0eee8b29a5df6}\label{classWebSrv_1_1http_1_1HttpSession_a69f8a45b651e183dd1f0eee8b29a5df6}} 
+{\bfseries Http\+Session} (Socket\+::ptr socket, bool owner=true)
+\item 
+Http\+Request\+::ptr \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpSession_abee7a9dc2658ab4d4dad46248d031366}{recv\+Request}} ()
+\begin{DoxyCompactList}\small\item\em 解析请求头 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classWebSrv_1_1http_1_1HttpSession_a291fcf2063419eb62ca01adb07be50c9}{send\+Response}} (Http\+Response\+::ptr response)
+\begin{DoxyCompactList}\small\item\em 发送\+HTTP响应 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpSession_abee7a9dc2658ab4d4dad46248d031366}\label{classWebSrv_1_1http_1_1HttpSession_abee7a9dc2658ab4d4dad46248d031366}} 
+\index{WebSrv::http::HttpSession@{WebSrv::http::HttpSession}!recvRequest@{recvRequest}}
+\index{recvRequest@{recvRequest}!WebSrv::http::HttpSession@{WebSrv::http::HttpSession}}
+\doxysubsubsection{\texorpdfstring{recvRequest()}{recvRequest()}}
+{\footnotesize\ttfamily Http\+Request\+::ptr Web\+Srv\+::http\+::\+Http\+Session\+::recv\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+解析请求头 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & 返回请求，null为解析失败 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1http_1_1HttpSession_a291fcf2063419eb62ca01adb07be50c9}\label{classWebSrv_1_1http_1_1HttpSession_a291fcf2063419eb62ca01adb07be50c9}} 
+\index{WebSrv::http::HttpSession@{WebSrv::http::HttpSession}!sendResponse@{sendResponse}}
+\index{sendResponse@{sendResponse}!WebSrv::http::HttpSession@{WebSrv::http::HttpSession}}
+\doxysubsubsection{\texorpdfstring{sendResponse()}{sendResponse()}}
+{\footnotesize\ttfamily int Web\+Srv\+::http\+::\+Http\+Session\+::send\+Response (\begin{DoxyParamCaption}\item[{Http\+Response\+::ptr}]{response }\end{DoxyParamCaption})}
+
+
+
+发送\+HTTP响应 
+
+
+\begin{DoxyParams}{Parameters}
+{\em response} & \\
+\hline
+{\em ret} & 成功返回发送长度，失败返回-\/1 \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tiny\+Web\+Server/http/httpsession.\+h\item 
+src/http/httpsession.\+cpp\end{DoxyCompactItemize}

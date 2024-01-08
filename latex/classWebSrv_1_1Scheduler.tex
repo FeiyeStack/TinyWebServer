@@ -1,0 +1,216 @@
+\hypertarget{classWebSrv_1_1Scheduler}{}\doxysection{Web\+Srv\+::Scheduler Class Reference}
+\label{classWebSrv_1_1Scheduler}\index{WebSrv::Scheduler@{WebSrv::Scheduler}}
+
+
+协程调度器，内部包含一个线程池，n+m个协程，每个线程一个主协程和n个子协程  
+
+
+
+
+{\ttfamily \#include $<$scheduler.\+h$>$}
+
+
+
+Inheritance diagram for Web\+Srv\+::Scheduler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classWebSrv_1_1Scheduler__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Scheduler_a29ece42cc5041986cbd2aa2f96aec198}\label{classWebSrv_1_1Scheduler_a29ece42cc5041986cbd2aa2f96aec198}} 
+using {\bfseries ptr} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classWebSrv_1_1Scheduler}{Scheduler}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWebSrv_1_1Scheduler_a0669863c26fd0ca9b5b1098c2d9197fc}{Scheduler}} (size\+\_\+t threads=1, bool use\+\_\+caller=true, const std\+::string \&name=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classWebSrv_1_1Scheduler}{Scheduler}} object. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classWebSrv_1_1Scheduler_a198752491ee42d3fb03beefd41ad2e8d}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em 返回协程调度器名 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1Scheduler_aec4d460f1306ceb3d72b0c1e0ae749b9}\label{classWebSrv_1_1Scheduler_aec4d460f1306ceb3d72b0c1e0ae749b9}} 
+void \mbox{\hyperlink{classWebSrv_1_1Scheduler_aec4d460f1306ceb3d72b0c1e0ae749b9}{start}} ()
+\begin{DoxyCompactList}\small\item\em 开始运行 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1Scheduler_ad1c00be821dedb09ca2ddc33e0107dd5}\label{classWebSrv_1_1Scheduler_ad1c00be821dedb09ca2ddc33e0107dd5}} 
+virtual void \mbox{\hyperlink{classWebSrv_1_1Scheduler_ad1c00be821dedb09ca2ddc33e0107dd5}{stop}} ()
+\begin{DoxyCompactList}\small\item\em 停止运行 \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Fiber\+Or\+Cb $>$ }\\void \mbox{\hyperlink{classWebSrv_1_1Scheduler_a1f217a7e359eb64cd0cc09bddec8990a}{schedule}} (Fiber\+Or\+Cb fc, std\+::thread\+::id threadid=std\+::thread\+::id())
+\item 
+{\footnotesize template$<$class Input\+Iterator $>$ }\\void \mbox{\hyperlink{classWebSrv_1_1Scheduler_a95febf056d658187b4c59ae51892cfe7}{schedule}} (Input\+Iterator begin, Input\+Iterator end)
+\begin{DoxyCompactList}\small\item\em 批量添加协程或回调函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSrv_1_1Scheduler_a52b48478be09c4e13a5afcfd0d5c8f20}{switch\+To}} (std\+::thread\+::id threadid=std\+::thread\+::id())
+\begin{DoxyCompactList}\small\item\em 切换到指定线程执行 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Scheduler_aee6d76df30fdeee60a1882caca07a1c5}\label{classWebSrv_1_1Scheduler_aee6d76df30fdeee60a1882caca07a1c5}} 
+static \mbox{\hyperlink{classWebSrv_1_1Scheduler}{Scheduler}} $\ast$ \mbox{\hyperlink{classWebSrv_1_1Scheduler_aee6d76df30fdeee60a1882caca07a1c5}{get\+This}} ()
+\begin{DoxyCompactList}\small\item\em 返回当前协程调度器 \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classWebSrv_1_1Fiber}{Fiber}} $\ast$ \mbox{\hyperlink{classWebSrv_1_1Scheduler_a10b3cd89e29cf6b72def58398975f7d0}{get\+Main\+Fiber}} ()
+\begin{DoxyCompactList}\small\item\em 主协程 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Scheduler_ac315d669f4911a30cd3395635e5a3150}\label{classWebSrv_1_1Scheduler_ac315d669f4911a30cd3395635e5a3150}} 
+virtual void \mbox{\hyperlink{classWebSrv_1_1Scheduler_ac315d669f4911a30cd3395635e5a3150}{tickle}} ()
+\begin{DoxyCompactList}\small\item\em 通知调度器有任务发生 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1Scheduler_adbdc6eb23f829f4152509deb15a292ed}\label{classWebSrv_1_1Scheduler_adbdc6eb23f829f4152509deb15a292ed}} 
+void {\bfseries run} ()
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Scheduler_a77d975b80a2af677dd94d5b675a47fc9}\label{classWebSrv_1_1Scheduler_a77d975b80a2af677dd94d5b675a47fc9}} 
+virtual bool {\bfseries stopping} ()
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Scheduler_aec558c84ec88f71c2d4b0f6dcdf4d1e4}\label{classWebSrv_1_1Scheduler_aec558c84ec88f71c2d4b0f6dcdf4d1e4}} 
+virtual void {\bfseries idle} ()
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Scheduler_ad33900c626c7adeb6dc9a7b8ad20d3fa}\label{classWebSrv_1_1Scheduler_ad33900c626c7adeb6dc9a7b8ad20d3fa}} 
+void {\bfseries set\+This} ()
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Scheduler_a3f694dc1d99aedb18dab00064088e9a5}\label{classWebSrv_1_1Scheduler_a3f694dc1d99aedb18dab00064088e9a5}} 
+bool \mbox{\hyperlink{classWebSrv_1_1Scheduler_a3f694dc1d99aedb18dab00064088e9a5}{has\+Idle\+Threads}} ()
+\begin{DoxyCompactList}\small\item\em 是否有空闲协程 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1Scheduler_a8071a9ab094d1018761589b6f9198ae3}\label{classWebSrv_1_1Scheduler_a8071a9ab094d1018761589b6f9198ae3}} 
+std\+::vector$<$ std\+::thread\+::id $>$ \mbox{\hyperlink{classWebSrv_1_1Scheduler_a8071a9ab094d1018761589b6f9198ae3}{\+\_\+thread\+Ids}}
+\begin{DoxyCompactList}\small\item\em 协程下的线程id数组 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1Scheduler_a0ede7c20fda6a9c992817f65dc372fe7}\label{classWebSrv_1_1Scheduler_a0ede7c20fda6a9c992817f65dc372fe7}} 
+std\+::atomic$<$ uint64\+\_\+t $>$ \mbox{\hyperlink{classWebSrv_1_1Scheduler_a0ede7c20fda6a9c992817f65dc372fe7}{\+\_\+idle\+Thread\+Count}} = 0
+\begin{DoxyCompactList}\small\item\em 空闲协程数量 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1Scheduler_ae825a70e3c3c15a871c7de74b7ed98e5}\label{classWebSrv_1_1Scheduler_ae825a70e3c3c15a871c7de74b7ed98e5}} 
+std\+::atomic$<$ uint64\+\_\+t $>$ \mbox{\hyperlink{classWebSrv_1_1Scheduler_ae825a70e3c3c15a871c7de74b7ed98e5}{\+\_\+active\+Thread\+Count}} = 0
+\begin{DoxyCompactList}\small\item\em 活动协程数量 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1Scheduler_ac21f85f39fdfa9780b135944c0f70bdc}\label{classWebSrv_1_1Scheduler_ac21f85f39fdfa9780b135944c0f70bdc}} 
+bool \mbox{\hyperlink{classWebSrv_1_1Scheduler_ac21f85f39fdfa9780b135944c0f70bdc}{\+\_\+stopping}} = true
+\begin{DoxyCompactList}\small\item\em 是否正在停止 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1Scheduler_a692ad04048c5bf66ccaa4f4af72ef4c3}\label{classWebSrv_1_1Scheduler_a692ad04048c5bf66ccaa4f4af72ef4c3}} 
+bool \mbox{\hyperlink{classWebSrv_1_1Scheduler_a692ad04048c5bf66ccaa4f4af72ef4c3}{\+\_\+auto\+Stop}} = false
+\begin{DoxyCompactList}\small\item\em 是否自动停止 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1Scheduler_aeedcbf3bab52587aa4498378c085982b}\label{classWebSrv_1_1Scheduler_aeedcbf3bab52587aa4498378c085982b}} 
+std\+::thread\+::id \mbox{\hyperlink{classWebSrv_1_1Scheduler_aeedcbf3bab52587aa4498378c085982b}{\+\_\+root\+Threadid}}
+\begin{DoxyCompactList}\small\item\em 主线程id(use\+\_\+caller) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1Scheduler_ad55f6bddeef3628bafe2e183eddb7252}\label{classWebSrv_1_1Scheduler_ad55f6bddeef3628bafe2e183eddb7252}} 
+size\+\_\+t \mbox{\hyperlink{classWebSrv_1_1Scheduler_ad55f6bddeef3628bafe2e183eddb7252}{\+\_\+thread\+Num}}
+\begin{DoxyCompactList}\small\item\em 线程数量 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+协程调度器，内部包含一个线程池，n+m个协程，每个线程一个主协程和n个子协程 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWebSrv_1_1Scheduler_a0669863c26fd0ca9b5b1098c2d9197fc}\label{classWebSrv_1_1Scheduler_a0669863c26fd0ca9b5b1098c2d9197fc}} 
+\index{WebSrv::Scheduler@{WebSrv::Scheduler}!Scheduler@{Scheduler}}
+\index{Scheduler@{Scheduler}!WebSrv::Scheduler@{WebSrv::Scheduler}}
+\doxysubsubsection{\texorpdfstring{Scheduler()}{Scheduler()}}
+{\footnotesize\ttfamily Web\+Srv\+::\+Scheduler\+::\+Scheduler (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{threads = {\ttfamily 1},  }\item[{bool}]{use\+\_\+caller = {\ttfamily true},  }\item[{const std\+::string \&}]{name = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classWebSrv_1_1Scheduler}{Scheduler}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em threads} & 线程数量 \\
+\hline
+{\em use\+\_\+caller} & 是否由当前线程调用 \\
+\hline
+{\em name} & 协程调度器名 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebSrv_1_1Scheduler_a10b3cd89e29cf6b72def58398975f7d0}\label{classWebSrv_1_1Scheduler_a10b3cd89e29cf6b72def58398975f7d0}} 
+\index{WebSrv::Scheduler@{WebSrv::Scheduler}!getMainFiber@{getMainFiber}}
+\index{getMainFiber@{getMainFiber}!WebSrv::Scheduler@{WebSrv::Scheduler}}
+\doxysubsubsection{\texorpdfstring{getMainFiber()}{getMainFiber()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classWebSrv_1_1Fiber}{Fiber}} $\ast$ Web\+Srv\+::\+Scheduler\+::get\+Main\+Fiber (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+主协程 
+
+\begin{DoxyReturn}{Returns}
+Fiber\+::ptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1Scheduler_a198752491ee42d3fb03beefd41ad2e8d}\label{classWebSrv_1_1Scheduler_a198752491ee42d3fb03beefd41ad2e8d}} 
+\index{WebSrv::Scheduler@{WebSrv::Scheduler}!getName@{getName}}
+\index{getName@{getName}!WebSrv::Scheduler@{WebSrv::Scheduler}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily const std\+::string\& Web\+Srv\+::\+Scheduler\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+返回协程调度器名 
+
+\begin{DoxyReturn}{Returns}
+const std\+::string\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebSrv_1_1Scheduler_a1f217a7e359eb64cd0cc09bddec8990a}\label{classWebSrv_1_1Scheduler_a1f217a7e359eb64cd0cc09bddec8990a}} 
+\index{WebSrv::Scheduler@{WebSrv::Scheduler}!schedule@{schedule}}
+\index{schedule@{schedule}!WebSrv::Scheduler@{WebSrv::Scheduler}}
+\doxysubsubsection{\texorpdfstring{schedule()}{schedule()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class Fiber\+Or\+Cb $>$ \\
+void Web\+Srv\+::\+Scheduler\+::schedule (\begin{DoxyParamCaption}\item[{Fiber\+Or\+Cb}]{fc,  }\item[{std\+::thread\+::id}]{threadid = {\ttfamily std\+:\+:thread\+:\+:id()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Fiber\+Or\+Cb} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em fc} & 协程或回调函数 \\
+\hline
+{\em thread} & 指定线程执行，-\/1为任意线程 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1Scheduler_a95febf056d658187b4c59ae51892cfe7}\label{classWebSrv_1_1Scheduler_a95febf056d658187b4c59ae51892cfe7}} 
+\index{WebSrv::Scheduler@{WebSrv::Scheduler}!schedule@{schedule}}
+\index{schedule@{schedule}!WebSrv::Scheduler@{WebSrv::Scheduler}}
+\doxysubsubsection{\texorpdfstring{schedule()}{schedule()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class Input\+Iterator $>$ \\
+void Web\+Srv\+::\+Scheduler\+::schedule (\begin{DoxyParamCaption}\item[{Input\+Iterator}]{begin,  }\item[{Input\+Iterator}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+批量添加协程或回调函数 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Input\+Iterator} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em begin} & \\
+\hline
+{\em end} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebSrv_1_1Scheduler_a52b48478be09c4e13a5afcfd0d5c8f20}\label{classWebSrv_1_1Scheduler_a52b48478be09c4e13a5afcfd0d5c8f20}} 
+\index{WebSrv::Scheduler@{WebSrv::Scheduler}!switchTo@{switchTo}}
+\index{switchTo@{switchTo}!WebSrv::Scheduler@{WebSrv::Scheduler}}
+\doxysubsubsection{\texorpdfstring{switchTo()}{switchTo()}}
+{\footnotesize\ttfamily void Web\+Srv\+::\+Scheduler\+::switch\+To (\begin{DoxyParamCaption}\item[{std\+::thread\+::id}]{threadid = {\ttfamily std\+:\+:thread\+:\+:id()} }\end{DoxyParamCaption})}
+
+
+
+切换到指定线程执行 
+
+
+\begin{DoxyParams}{Parameters}
+{\em thread} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tiny\+Web\+Server/scheduler.\+h\item 
+src/scheduler.\+cpp\end{DoxyCompactItemize}

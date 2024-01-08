@@ -1,0 +1,61 @@
+\hypertarget{classWebSrv_1_1LoggerManage}{}\doxysection{Web\+Srv\+::Logger\+Manage Class Reference}
+\label{classWebSrv_1_1LoggerManage}\index{WebSrv::LoggerManage@{WebSrv::LoggerManage}}
+
+
+管理日志器  
+
+
+
+
+{\ttfamily \#include $<$logger.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1LoggerManage_a6ea7194a719b422eec95fbc1e4147177}\label{classWebSrv_1_1LoggerManage_a6ea7194a719b422eec95fbc1e4147177}} 
+{\bfseries Logger\+Manage} (const \mbox{\hyperlink{classWebSrv_1_1LoggerManage}{Logger\+Manage}} \&)=delete
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1LoggerManage_a44b36556093562ea8d44392be4d806f1}\label{classWebSrv_1_1LoggerManage_a44b36556093562ea8d44392be4d806f1}} 
+{\bfseries Logger\+Manage} (\mbox{\hyperlink{classWebSrv_1_1LoggerManage}{Logger\+Manage}} \&\&)=delete
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1LoggerManage_a2d9a48ec3348b9b98844308c9d2c9320}\label{classWebSrv_1_1LoggerManage_a2d9a48ec3348b9b98844308c9d2c9320}} 
+\mbox{\hyperlink{classWebSrv_1_1LoggerManage}{Logger\+Manage}} \& {\bfseries operator=} (const \mbox{\hyperlink{classWebSrv_1_1LoggerManage}{Logger\+Manage}} \&)=delete
+\item 
+Logger\+::ptr \mbox{\hyperlink{classWebSrv_1_1LoggerManage_a42e3222df19eaf337705aede89eb5a5a}{get\+Logger}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em 通过名称获取日志器，如果不存在创建一个 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebSrv_1_1LoggerManage_a2bd218b2de3c21eb12c958731c84a177}\label{classWebSrv_1_1LoggerManage_a2bd218b2de3c21eb12c958731c84a177}} 
+Logger\+::ptr \mbox{\hyperlink{classWebSrv_1_1LoggerManage_a2bd218b2de3c21eb12c958731c84a177}{get\+Root}} ()
+\begin{DoxyCompactList}\small\item\em 获取主日志器 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1LoggerManage_a6cb957828423715e9cd49fd40ca880d6}\label{classWebSrv_1_1LoggerManage_a6cb957828423715e9cd49fd40ca880d6}} 
+static \mbox{\hyperlink{classWebSrv_1_1LoggerManage}{Logger\+Manage}} $\ast$ {\bfseries get\+Instance} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+管理日志器 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebSrv_1_1LoggerManage_a42e3222df19eaf337705aede89eb5a5a}\label{classWebSrv_1_1LoggerManage_a42e3222df19eaf337705aede89eb5a5a}} 
+\index{WebSrv::LoggerManage@{WebSrv::LoggerManage}!getLogger@{getLogger}}
+\index{getLogger@{getLogger}!WebSrv::LoggerManage@{WebSrv::LoggerManage}}
+\doxysubsubsection{\texorpdfstring{getLogger()}{getLogger()}}
+{\footnotesize\ttfamily Logger\+::ptr Web\+Srv\+::\+Logger\+Manage\+::get\+Logger (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+通过名称获取日志器，如果不存在创建一个 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tiny\+Web\+Server/log/logger.\+h\item 
+src/log/logger.\+cpp\end{DoxyCompactItemize}

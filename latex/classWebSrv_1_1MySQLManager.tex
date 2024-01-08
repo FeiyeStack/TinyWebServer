@@ -1,0 +1,53 @@
+\hypertarget{classWebSrv_1_1MySQLManager}{}\doxysection{Web\+Srv\+::My\+SQLManager Class Reference}
+\label{classWebSrv_1_1MySQLManager}\index{WebSrv::MySQLManager@{WebSrv::MySQLManager}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1MySQLManager_ae7aa079b49a9a0cf5af045d8a3166ba4}\label{classWebSrv_1_1MySQLManager_ae7aa079b49a9a0cf5af045d8a3166ba4}} 
+My\+SQL\+::ptr {\bfseries get} (const std\+::string \&name)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1MySQLManager_abe2161729a90ffe4a8526c134909b3f4}\label{classWebSrv_1_1MySQLManager_abe2161729a90ffe4a8526c134909b3f4}} 
+void {\bfseries register\+My\+SQL} (const std\+::string \&name, const std\+::map$<$ std\+::string, std\+::string $>$ \&params)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1MySQLManager_a7ad4f4d1e3572f9d7940fc659a8b1859}\label{classWebSrv_1_1MySQLManager_a7ad4f4d1e3572f9d7940fc659a8b1859}} 
+void {\bfseries check\+Connection} (int sec=30)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1MySQLManager_a72e61ac6392c7b787fe4137aa10cae73}\label{classWebSrv_1_1MySQLManager_a72e61ac6392c7b787fe4137aa10cae73}} 
+uint32\+\_\+t {\bfseries get\+Max\+Conn} () const
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1MySQLManager_ad575125bd4e2e76a94dc8d0f9e42401c}\label{classWebSrv_1_1MySQLManager_ad575125bd4e2e76a94dc8d0f9e42401c}} 
+void {\bfseries set\+Max\+Conn} (uint32\+\_\+t v)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1MySQLManager_a1907bcbf2f309be58f1b264b5fcb0fd6}\label{classWebSrv_1_1MySQLManager_a1907bcbf2f309be58f1b264b5fcb0fd6}} 
+int {\bfseries execute} (const std\+::string \&name, const char $\ast$format,...)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1MySQLManager_a4328e838a9da3e12fb3b1ddf0049b850}\label{classWebSrv_1_1MySQLManager_a4328e838a9da3e12fb3b1ddf0049b850}} 
+int {\bfseries execute} (const std\+::string \&name, const char $\ast$format, va\+\_\+list ap)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1MySQLManager_a80f85f7efd3d748569a710b8f5d386d4}\label{classWebSrv_1_1MySQLManager_a80f85f7efd3d748569a710b8f5d386d4}} 
+int {\bfseries execute} (const std\+::string \&name, const std\+::string \&sql)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1MySQLManager_a49921df6ffb6f0796e856ce065f0c5d0}\label{classWebSrv_1_1MySQLManager_a49921df6ffb6f0796e856ce065f0c5d0}} 
+ISQLData\+::ptr {\bfseries query} (const std\+::string \&name, const char $\ast$format,...)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1MySQLManager_a5341ee79966f1f9e58b75068df2cf7f9}\label{classWebSrv_1_1MySQLManager_a5341ee79966f1f9e58b75068df2cf7f9}} 
+ISQLData\+::ptr {\bfseries query} (const std\+::string \&name, const char $\ast$format, va\+\_\+list ap)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1MySQLManager_af3f29cb51af3f3dfed8e4473458210ee}\label{classWebSrv_1_1MySQLManager_af3f29cb51af3f3dfed8e4473458210ee}} 
+ISQLData\+::ptr {\bfseries query} (const std\+::string \&name, const std\+::string \&sql)
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1MySQLManager_ae17e1eea3ded5aacc2da9c001ff38fee}\label{classWebSrv_1_1MySQLManager_ae17e1eea3ded5aacc2da9c001ff38fee}} 
+My\+SQLTransaction\+::ptr {\bfseries open\+Transaction} (const std\+::string \&name, bool auto\+\_\+commit)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1MySQLManager_a930f38018fed51d345e3e01a3d4a3b9c}\label{classWebSrv_1_1MySQLManager_a930f38018fed51d345e3e01a3d4a3b9c}} 
+static \mbox{\hyperlink{classWebSrv_1_1MySQLManager}{My\+SQLManager}} $\ast$ {\bfseries get\+My\+SQLManager} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tiny\+Web\+Server/db/mysql.\+h\item 
+src/db/mysql.\+cpp\end{DoxyCompactItemize}

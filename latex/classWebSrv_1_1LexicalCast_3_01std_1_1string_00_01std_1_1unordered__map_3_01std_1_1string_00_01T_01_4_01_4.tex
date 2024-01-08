@@ -1,0 +1,38 @@
+\hypertarget{classWebSrv_1_1LexicalCast_3_01std_1_1string_00_01std_1_1unordered__map_3_01std_1_1string_00_01T_01_4_01_4}{}\doxysection{Web\+Srv\+::Lexical\+Cast$<$ std\+::string, std\+::unordered\+\_\+map$<$ std\+::string, T $>$ $>$ Class Template Reference}
+\label{classWebSrv_1_1LexicalCast_3_01std_1_1string_00_01std_1_1unordered__map_3_01std_1_1string_00_01T_01_4_01_4}\index{WebSrv::LexicalCast$<$ std::string, std::unordered\_map$<$ std::string, T $>$ $>$@{WebSrv::LexicalCast$<$ std::string, std::unordered\_map$<$ std::string, T $>$ $>$}}
+
+
+特化 std\+::unordered\+\_\+map$<$std\+::string,\+T$>$ 转 yaml string ,  
+
+
+
+
+{\ttfamily \#include $<$configvar.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebSrv_1_1LexicalCast_3_01std_1_1string_00_01std_1_1unordered__map_3_01std_1_1string_00_01T_01_4_01_4_a3f9772f50c848421d11b7cc1ca20f73b}\label{classWebSrv_1_1LexicalCast_3_01std_1_1string_00_01std_1_1unordered__map_3_01std_1_1string_00_01T_01_4_01_4_a3f9772f50c848421d11b7cc1ca20f73b}} 
+std\+::string {\bfseries operator()} (const std\+::unordered\+\_\+map$<$ std\+::string, T $>$ \&v)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Web\+Srv\+::\+Lexical\+Cast$<$ std\+::string, std\+::unordered\+\_\+map$<$ std\+::string, T $>$ $>$}
+
+特化 std\+::unordered\+\_\+map$<$std\+::string,\+T$>$ 转 yaml string , 
+
+\begin{DoxyWarning}{Warning}
+因为yaml没有unordered\+\_\+map,所以key对应唯一值，如果有非唯一值会导致前面的value数据丢失 
+\end{DoxyWarning}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & 转换类型 \\
+\hline
+\end{DoxyTemplParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tiny\+Web\+Server/configvar.\+h\end{DoxyCompactItemize}
