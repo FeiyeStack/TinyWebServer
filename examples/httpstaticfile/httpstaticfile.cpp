@@ -240,14 +240,17 @@ private:
 
                         is.seekg(rangeStart, std::ios::beg);
                         is.read(content.data(), readSize);
+                        is.close();
                         response->setBody(content);
                         response->setStatus((WebSrv::http::HTTP_STATUS_PARTIAL_CONTENT));
                         response->setHeader("Content-Range", "bytes " + std::to_string(rangeStart) + "-" + std::to_string(rangeEnd - 1) + "/" + std::to_string(fileSize));
                         //SRV_LOG_DEBUG(g_logger)<<fileSize<<": bytes " + std::to_string(rangeStart) + "-" + std::to_string(rangeEnd - 1) + "/" + std::to_string(fileSize);
+                        
                         return 1;
                     }
                 }
             }
+            is.close();
         }
         return 0;
     }
@@ -277,11 +280,15 @@ void run(WebSrv::http::HttpServer::ptr httpServer, HttpStaticFile::ptr httpStati
 int main()
 {
     g_logger->setLevel(WebSrv::LogLevel::Info);
-    WebSrv::IOManager scheduler(2);
-    WebSrv::http::HttpServer::ptr httpServer(new WebSrv::http::HttpServer(&scheduler, &scheduler, &scheduler, true));
+    WebSrv::IOManager ioscheduler(6);
+    WebSrv::IOManager scheduler(12);
+
+
+    WebSrv::http::HttpServer::ptr httpServer(new WebSrv::http::HttpServer(&scheduler, &ioscheduler, &scheduler, true));
     HttpStaticFile::ptr httpStaticFile(new HttpStaticFile(httpServer));
 
     httpServer->setName("http server/1.0.0");
     scheduler.start();
+    ioscheduler.start();
     scheduler.schedule(std::bind(run, httpServer, httpStaticFile));
 }
