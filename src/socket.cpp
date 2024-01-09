@@ -53,12 +53,14 @@ namespace WebSrv
     Socket::ptr Socket::CreateUnixTCPSocket()
     {
         Socket::ptr socket(new Socket(UNIX, TCP, 0));
+        socket->newSocket();
         return socket;
     }
 
     Socket::ptr Socket::CreateUnixUCPSocket()
     {
         Socket::ptr socket(new Socket(UNIX, UDP, 0));
+        socket->newSocket();
         return socket;
     }
 
@@ -69,7 +71,6 @@ namespace WebSrv
           _protocol(protocol),
           _isConnected(false)
     {
-        _socket = socket(_family, _type, _protocol);
     }
 
     Socket::~Socket()
