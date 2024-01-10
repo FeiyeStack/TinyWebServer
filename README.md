@@ -39,8 +39,8 @@
 ## 一些问题
 
 最开始实现的是windows端，并且使用c++20 协程，但后面先放弃了
-一是结构问题，当初使用c++20 协程，但应为是协程函数体包裹的，注定构建形式会不一样，由于设计能力较弱，出现那种协程函数体套娃包裹，不是很合适
-二是日志模块，在c++20协程无法正确执行，和上述一样，投递日志事件时，报错点为析构`std::base_string （0xfeeefeeefeeefeee <error: Cannot access memory at address 0xfeeefeeefeeefeee>）`疑似指针悬空，但它是智能指针包裹，使用linux协程到未出错。
+一是结构问题，当初使用c++20 协程，但因为为是协程函数体包裹的，注定构建形式会不一样，由于设计能力较弱，出现那种协程函数体套娃包裹，不是很合适
+二是日志模块，在c++20协程无法正确执行，底层问题，投递日志事件时，报错点为析构`std::base_string （0xfeeefeeefeeefeee <error: Cannot access memory at address 0xfeeefeeefeeefeee>）`疑似指针悬空，但它是智能指针包裹，使用linux协程到未出错。
 三使用读写锁（c++ 17的`std::shared_mutex`）会出现锁不住的情况，只能使用互斥锁，但希望使用读写锁的场景，使用互斥锁的会拖慢速度。
 
 
